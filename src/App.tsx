@@ -84,9 +84,9 @@ function VideoHero() {
 
   return (
     <section className='relative'>
-      <div className='relative h-[48vh] md:h-[70vh] overflow-hidden'>
+      <div className='relative h-[48vh] md:h-[70vh] overflow-hidden bg-black'>
         <video
-          className='absolute inset-0 h-full w-full object-cover'
+          className='absolute inset-0 h-full w-full object-contain'
           autoPlay
           muted
           loop
@@ -108,6 +108,19 @@ function VideoHero() {
         </div>
       </div>
     </section>
+  )
+}
+
+function SectionMarker({ label }: { label: string }) {
+  return (
+    <div className='flex items-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-neutral-500'>
+      <span aria-hidden className='hidden sm:block h-px flex-1 bg-neutral-200' />
+      <span className='inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1 shadow-sm'>
+        <span aria-hidden className='h-2 w-2 rounded-full bg-emerald-500' />
+        {label}
+      </span>
+      <span aria-hidden className='hidden sm:block h-px flex-1 bg-neutral-200' />
+    </div>
   )
 }
 
@@ -149,8 +162,9 @@ function HomePage() {
 
       <section id='about' className='relative overflow-hidden'>
         <div className='mx-auto max-w-6xl px-4 py-12 md:py-16 grid md:grid-cols-2 gap-8 items-center'>
-          <div>
-            <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>About</h2>
+          <div className='space-y-4'>
+            <SectionMarker label='About' />
+            <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>About AssetScape</h2>
             <p className='mt-4 text-base leading-relaxed'>
               We combine three‑dimensional data management with a real‑time 3D graphics engine so you can manage assets with context and clarity. AssetScape® is a practical way to see, decide and track across an entire network.
             </p>
@@ -181,10 +195,14 @@ function HomePage() {
       </section>
 
       <section id='features' className='mx-auto max-w-6xl px-4 py-14'>
-        <h2 className='text-2xl font-semibold tracking-tight'>Features</h2>
+        <div className='space-y-3 text-center md:text-left'>
+          <SectionMarker label='Features' />
+          <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>Platform highlights</h2>
+          <p className='text-sm text-neutral-600'>Explore the capabilities that transform complex, spatial asset datasets into a unified operational view.</p>
+        </div>
         <div className='mt-8 grid md:grid-cols-2 gap-8'>
           {featuresBullets.map((f) => (
-            <div key={f.h} className='border border-neutral-200 rounded-xl p-5'>
+            <div key={f.h} className='border border-neutral-200 rounded-xl p-5 shadow-sm'>
               <h3 className='font-semibold'>{f.h}</h3>
               <p className='mt-2 text-sm leading-relaxed'>{f.p}</p>
             </div>
@@ -194,7 +212,11 @@ function HomePage() {
 
       <section id='services' className='bg-neutral-50 border-y border-neutral-200'>
         <div className='mx-auto max-w-6xl px-4 py-14'>
-          <h2 className='text-2xl font-semibold tracking-tight'>Services</h2>
+          <div className='space-y-3 text-center md:text-left'>
+            <SectionMarker label='Services' />
+            <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>Specialist services</h2>
+            <p className='text-sm text-neutral-600'>From data capture to in-depth analysis, our team supports every stage of the asset lifecycle.</p>
+          </div>
           <div className='mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
             {services.map((s) => (
               <a key={s.title} href={s.href} className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'>
