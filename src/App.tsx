@@ -1,31 +1,74 @@
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import type { ReactNode } from 'react'
+import type { To } from 'react-router-dom'
 import { useEffect } from 'react'
 
+import roundLogo from './assets/logo-round.png'
+import wordmarkLogo from './assets/logo-wordmark.png'
+
 function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const targetId = hash.replace('#', '')
+      const scrollToTarget = () => {
+        const element = document.getElementById(targetId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          return true
+        }
+        return false
+      }
+
+      if (scrollToTarget()) return
+
+      const timeout = window.setTimeout(() => {
+        scrollToTarget()
+      }, 120)
+
+      return () => window.clearTimeout(timeout)
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname, hash])
+
   return null
 }
 
 function Layout({ children }: { children: ReactNode }) {
-  const logo = 'https://www.assetscape.co.uk/wp-content/uploads/2017/03/AS-logo1.png'
+  const navLinks: { label: string; to: To }[] = [
+    { label: 'Home', to: '/' },
+    { label: 'Features', to: { pathname: '/', hash: '#features' } },
+    { label: 'Services', to: { pathname: '/', hash: '#services' } },
+    { label: 'Projects', to: { pathname: '/', hash: '#projects' } },
+    { label: 'Documents', to: '/documents' },
+    { label: 'Contact', to: { pathname: '/', hash: '#contact' } },
+  ]
+
   return (
     <div className='min-h-screen bg-white text-neutral-800'>
-      <header className='sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-neutral-200'>
-        <div className='mx-auto max-w-6xl px-4 py-3 flex items-center justify-between'>
-          <Link to='/' className='flex items-center gap-3'>
-            <img src={logo} alt='AssetScape logo' className='h-10 w-auto' />
-            <span className='sr-only'>AssetScape</span>
-          </Link>
-          <nav className='hidden md:flex items-center gap-6 text-sm'>
-            <Link to='/' className='hover:underline'>Home</Link>
-            <a href='#features' className='hover:underline'>Features</a>
-            <a href='#services' className='hover:underline'>Services</a>
-            <a href='#projects' className='hover:underline'>Projects</a>
-            <Link to='/documents' className='hover:underline'>Documents</Link>
-            <a href='#contact' className='hover:underline'>Contact</a>
-          </nav>
+      <header className='sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur'>
+        <div className='mx-auto max-w-6xl px-4'>
+          <div className='flex h-20 items-center justify-between gap-6'>
+            <Link to='/' aria-label='AssetScape home' className='flex h-full items-center gap-3'>
+              <img src={roundLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
+              <img src={wordmarkLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
+            </Link>
+            <nav className='hidden md:flex items-center gap-5 text-sm font-medium text-neutral-700'>
+              {navLinks.map((item) => (
+                <Link key={item.label} to={item.to} className='transition-colors hover:text-neutral-900'>
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                to={{ pathname: '/', hash: '#full-video' }}
+                className='inline-flex items-center rounded-full border border-neutral-900 bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
+              >
+                Full-length video
+              </Link>
+            </nav>
+          </div>
         </div>
       </header>
       {children}
@@ -107,7 +150,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className='bg-neutral-50 border-y border-neutral-200'>
+        <section className='bg-neutral-50 border-y border-neutral-200'>
         <div className='mx-auto max-w-6xl px-4 py-12 grid md:grid-cols-3 gap-8'>
           <div>
             <h3 className='text-lg font-semibold'>Simplify the complex</h3>
@@ -182,8 +225,8 @@ function HomePage() {
         </figure>
       </section>
 
-      {/* Full-length promo video section */}
-      <section className='bg-neutral-50 border-y border-neutral-200'>
+        {/* Full-length promo video section */}
+        <section id='full-video' className='bg-neutral-50 border-y border-neutral-200'>
         <div className='mx-auto max-w-6xl px-4 py-14'>
           <h2 className='text-2xl font-semibold tracking-tight'>Watch the video</h2>
           <div className='mt-6 aspect-video w-full rounded-xl overflow-hidden border border-neutral-200'>
@@ -259,12 +302,12 @@ function ProjectPage({ title, subtitle, sections, images }: ProjectPageProps) {
 }
 
 function Footer() {
-  const logo = 'https://www.assetscape.co.uk/wp-content/uploads/2017/03/AS-logo1.png'
   return (
     <footer className='bg-neutral-50 border-t border-neutral-200 mt-10'>
       <div className='mx-auto max-w-6xl px-4 py-10 grid md:grid-cols-3 gap-8 text-sm'>
-        <div>
-          <img src={logo} alt='AssetScape logo' className='h-8 w-auto' />
+        <div className='flex items-center gap-3'>
+          <img src={roundLogo} alt='' aria-hidden className='h-12 w-auto object-contain' />
+          <img src={wordmarkLogo} alt='AssetScape' className='h-12 w-auto object-contain' />
         </div>
         <div>
           <div className='font-medium'>United Kingdom</div>
