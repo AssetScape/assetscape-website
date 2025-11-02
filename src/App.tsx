@@ -4,9 +4,7 @@ import { useEffect } from 'react'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
   return null
 }
 
@@ -24,10 +22,9 @@ function Layout({ children }: { children: ReactNode }) {
             <Link to='/' className='hover:underline'>Home</Link>
             <a href='#features' className='hover:underline'>Features</a>
             <a href='#services' className='hover:underline'>Services</a>
-            <Link to='/projects/m3-j2-4a' className='hover:underline'>Projects</Link>
-            <a href='#news' className='hover:underline'>News</a>
-            <a href='#documents' className='hover:underline'>Documents</a>
-            <a href='#demo' className='hover:underline'>Request a Demo</a>
+            <a href='#projects' className='hover:underline'>Projects</a>
+            <Link to='/documents' className='hover:underline'>Documents</Link>
+            <a href='#contact' className='hover:underline'>Contact</a>
           </nav>
         </div>
       </header>
@@ -43,21 +40,14 @@ function VideoHero() {
   return (
     <section className='relative'>
       <div className='relative h-[48vh] md:h-[70vh] overflow-hidden'>
-        <video
-          className='absolute inset-0 h-full w-full object-cover'
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={poster}
-        >
+        <video className='absolute inset-0 h-full w-full object-cover' autoPlay muted loop playsInline poster={poster}>
           <source src={videoSrc} type='video/mp4' />
         </video>
         <div className='absolute inset-0 bg-black/35' />
         <div className='relative z-10 mx-auto max-w-6xl px-4 h-full flex items-end pb-8'>
           <div className='rounded-xl bg-white/80 backdrop-blur p-4 md:p-6'>
-            <h1 className='text-2xl md:text-3xl font-semibold tracking-tight'>AssetScape® is an asset management solution with a difference.</h1>
-            <p className='mt-2 text-sm md:text-base'>3D data management paired with a real‑time graphics engine for a practical, visual approach to asset decisions.</p>
+            <h1 className='text-2xl md:text-3xl font-semibold tracking-tight'>Intelligent asset management for road, rail and water infrastructure.</h1>
+            <p className='mt-2 text-sm md:text-base'>We combine spatial data, LiDAR, imagery and records into a single 3D environment so teams can see context, make decisions and maintain assets with less site time.</p>
           </div>
         </div>
       </div>
@@ -81,10 +71,10 @@ function HomePage() {
 
   const featuresBullets = [
     { h: 'Visualise your data in 3D', p: `On site, assets function in three dimensions. AssetScape reflects this by building realistic 3D scenes that transform raw data into an interactive asset management experience.` },
-    { h: 'From Plan to Pavement and Beyond', p: `From day‑to‑day tasks such as condition monitoring and assigning maintenance works to longer‑term strategic planning, AssetScape enables you to manage assets through their whole lifecycle.` },
-    { h: 'Flexible, Adaptable, Customisable', p: `Customise tools, reorganise the user interface, alter asset models and change 3D scene visualisation.` },
+    { h: 'From Local Nodes to National Networks', p: `Support local inspections and national‑scale programmes in the same platform with consistent data, views and controls.` },
+    { h: 'Flexible, Adaptable, Customisable', p: `Customise tools, reorganise the interface, alter asset models and change 3D scene visualisation.` },
     { h: 'Take Control of your Data', p: `Bring all data together into one navigable 3D environment. Visualise, analyse, reorganise and prioritise quickly and effectively.` },
-    { h: 'From the Micro to the Macro', p: `From a single asset to the full inventory of an area, AssetScape supports work on any scale.` },
+    { h: 'From the Micro to the Macro', p: `From a single asset to a full inventory, work at the scale that fits the task.` },
     { h: 'Simple, Usable, Practical', p: `Controls are uncomplicated and intuitive. New users can be up and running within hours.` },
   ]
 
@@ -92,6 +82,9 @@ function HomePage() {
     { title: 'M3 Junction 2 to 4a Asset Verification Task', slug: 'm3-j2-4a', cover: 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/M3-Figure-1-1024x555.jpg' },
     { title: 'Assessing the Suitability of Proposed CCTV Camera Sites', slug: 'cctv-suitability', cover: 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-1-1024x555.jpg' },
     { title: 'Highways England Technology', slug: 'highways-technology', cover: 'https://www.assetscape.co.uk/wp-content/uploads/2017/04/image001.png' },
+    { title: 'National Highways CCMT System', slug: 'nh-ccmt', cover: heroImg2 },
+    { title: 'National Highways Road Lighting', slug: 'nh-road-lighting', cover: heroImg1 },
+    { title: 'National Highways Drainage', slug: 'nh-drainage', cover: heroImg3 },
   ]
 
   return (
@@ -103,7 +96,7 @@ function HomePage() {
           <div>
             <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>About</h2>
             <p className='mt-4 text-base leading-relaxed'>
-              By combining our three‑dimensional data management approach with our three‑dimensional graphics engine, we bring asset management into the 21st century. AssetScape® is more than an asset management system – it is a “World Management System”.
+              We combine three‑dimensional data management with a real‑time 3D graphics engine so you can manage assets with context and clarity. AssetScape® is a practical way to see, decide and track across an entire network.
             </p>
           </div>
           <div className='grid grid-cols-3 gap-3 md:gap-4'>
@@ -118,15 +111,15 @@ function HomePage() {
         <div className='mx-auto max-w-6xl px-4 py-12 grid md:grid-cols-3 gap-8'>
           <div>
             <h3 className='text-lg font-semibold'>Simplify the complex</h3>
-            <p className='mt-2 text-sm leading-relaxed'>AssetScape brings your data together and enables complex tasks such as data validation, making placement decisions and managing maintenance schemes.</p>
+            <p className='mt-2 text-sm leading-relaxed'>Bring your data together and enable tasks such as validation, placement decisions and maintenance planning.</p>
           </div>
           <div>
             <h3 className='text-lg font-semibold'>Bring data to life</h3>
             <p className='mt-2 text-sm leading-relaxed'>Integrate LiDAR, external databases, shapefiles and mapping, and visualise clearly in 3D.</p>
           </div>
           <div>
-            <h3 className='text-lg font-semibold'>Optimise and Innovate</h3>
-            <p className='mt-2 text-sm leading-relaxed'>Optimise systems and utilise the potential of your data.</p>
+            <h3 className='text-lg font-semibold'>Optimise and innovate</h3>
+            <p className='mt-2 text-sm leading-relaxed'>Use the potential of your data with focused tools and views.</p>
           </div>
         </div>
       </section>
@@ -179,39 +172,53 @@ function HomePage() {
         </div>
       </section>
 
-      <section id='news' className='mx-auto max-w-6xl px-4 py-14'>
-        <h2 className='text-2xl font-semibold tracking-tight'>News</h2>
-        <div className='mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          <a href='https://www.assetscape.co.uk/news/merit-award-winner-2016/' className='block border border-neutral-200 rounded-2xl p-5 hover:shadow-sm transition'>
-            <div className='text-xs text-neutral-600'>April 24, 2017</div>
-            <div className='mt-1 font-medium leading-snug'>Merit Award Winner 2016</div>
-          </a>
-          <a href='https://www.assetscape.co.uk/news/assetscape-co-sponsor-icsic-conference-hosted-by-university-of-cambridge/' className='block border border-neutral-200 rounded-2xl p-5 hover:shadow-sm transition'>
-            <div className='text-xs text-neutral-600'>April 18, 2017</div>
-            <div className='mt-1 font-medium leading-snug'>AssetScape co‑sponsor ICSIC conference</div>
-          </a>
-          <a href='https://www.assetscape.co.uk/news/cambridge-centre-for-smart-infrastructure-and-construction-partners-with-assetscape/' className='block border border-neutral-200 rounded-2xl p-5 hover:shadow-sm transition'>
-            <div className='text-xs text-neutral-600'>April 5, 2017</div>
-            <div className='mt-1 font-medium leading-snug'>Cambridge CSIC partners with AssetScape</div>
-          </a>
+      {/* Judge's quote without heading */}
+      <section className='mx-auto max-w-6xl px-4 py-14'>
+        <figure className='border border-neutral-200 rounded-2xl p-6 bg-white'>
+          <blockquote className='text-sm leading-relaxed'>
+            “This is a very elegant approach to solving a real‑world problem. The innovation is highly transferrable and helps asset managers to manage their assets more effectively, and with greater accuracy. This is a promising innovation which has the potential to transform the way data for a major project is mapped and configured.”
+          </blockquote>
+          <figcaption className='mt-3 text-xs text-neutral-600'>Judge's comments, CIOB International innovation & research award</figcaption>
+        </figure>
+      </section>
+
+      {/* Full-length promo video section */}
+      <section className='bg-neutral-50 border-y border-neutral-200'>
+        <div className='mx-auto max-w-6xl px-4 py-14'>
+          <h2 className='text-2xl font-semibold tracking-tight'>Watch the video</h2>
+          <div className='mt-6 aspect-video w-full rounded-xl overflow-hidden border border-neutral-200'>
+            <iframe
+              loading='lazy'
+              className='w-full h-full'
+              src='https://www.youtube-nocookie.com/embed/OZ3DrVDm3kU?rel=0&modestbranding=1&playsinline=1'
+              title='AssetScape promo'
+              frameBorder='0'
+              allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className='mt-3 text-sm'>
+            Prefer Vimeo later to avoid ads? We can switch the embed with no code changes elsewhere.
+          </p>
         </div>
       </section>
 
-      <section id='demo' className='bg-neutral-900 text-white'>
-        <div className='mx-auto max-w-6xl px-4 py-14 grid md:grid-cols-2 gap-8 items-center'>
-          <div>
-            <h2 className='text-2xl font-semibold tracking-tight'>Request a Demo</h2>
-            <p className='mt-2 text-sm text-neutral-300'>Use the email link to request a demonstration of AssetScape.</p>
+      {/* Contact */}
+      <section id='contact' className='bg-neutral-900 text-white'>
+        <div className='mx-auto max-w-6xl px-4 py-14 grid md:grid-cols-3 gap-8 items-start'>
+          <div className='md:col-span-2'>
+            <h2 className='text-2xl font-semibold tracking-tight'>Contact</h2>
+            <ul className='mt-4 space-y-2 text-sm'>
+              <li><a className='underline' href='mailto:enquiries@assetscape.co.uk'>enquiries@assetscape.co.uk</a></li>
+              <li><a className='underline' href='tel:+441778422380'>+44 (0)1778 422380</a></li>
+              <li>24a, The Square, Retford, Nottinghamshire, DN22 6DQ</li>
+            </ul>
           </div>
-          <div>
-            <a href='mailto:enquiries@assetscape.co.uk?subject=AssetScape%20Demo%20Request' className='inline-flex items-center justify-center rounded-xl border border-white px-5 py-3 text-sm hover:bg-white hover:text-neutral-900 transition'>Email enquiries@assetscape.co.uk</a>
+          <div className='space-y-2'>
+            <div className='text-sm'>Full‑length promo:</div>
+            <a className='inline-flex items-center justify-center rounded-xl border border-white px-4 py-2 text-sm hover:bg-white hover:text-neutral-900 transition' href='https://www.youtube.com/watch?v=OZ3DrVDm3kU' target='_blank' rel='noreferrer'>Watch on YouTube</a>
           </div>
         </div>
-      </section>
-
-      <section id='documents' className='mx-auto max-w-6xl px-4 py-14'>
-        <h2 className='text-2xl font-semibold tracking-tight'>Documents</h2>
-        <p className='mt-2 text-sm'>Link to publicly available documents if required.</p>
       </section>
     </>
   )
@@ -264,18 +271,18 @@ function Footer() {
           <ul className='mt-2 space-y-1'>
             <li><a href='mailto:enquiries@assetscape.co.uk' className='hover:underline'>enquiries@assetscape.co.uk</a></li>
             <li><a href='tel:+441778422380' className='hover:underline'>+44 (0)1778 422380</a></li>
-            <li>Pinpoint House, Burghley Street Bourne, Lincolnshire, PE10 9NS</li>
+            <li>24a, The Square, Retford, Nottinghamshire, DN22 6DQ</li>
           </ul>
         </div>
         <div className='md:text-right'>
-          <div>© 2018 AssetScape. All rights reserved.</div>
+          <div>© 2025 AssetScape Limited. All rights reserved.</div>
         </div>
       </div>
     </footer>
   )
 }
 
-// Project content
+// Existing projects
 const P_M3 = {
   title: 'M3 Junction 2 to 4a Asset Verification Task',
   subtitle: 'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
@@ -285,33 +292,29 @@ const P_M3 = {
     'https://www.assetscape.co.uk/wp-content/uploads/2018/04/M3-Figure-3-1024x555.jpg',
   ],
   sections: [
-    { h: 'Resources', p: [
-      'Aerial LiDAR',
-      'Orthographic imagery',
-      'Google Street View',
-      'Existing inventory',
-    ]},
+    { h: 'Resources', p: ['Aerial LiDAR', 'Orthographic imagery', 'Google Street View', 'Existing inventory']},
     { h: 'Methodology', p: [
-      'Use all available imagery to establish the location and type of each asset on a route',
-      '‘Accept’ into the new asset catalogue any assets from the existing inventory that can be positively identified',
-      'Add to the new asset catalogue any assets identified in the imagery but not present in the existing inventory',
-      'Add comments and alerts to assets that require them, for example where assets cannot be identified or require additional investigation',
-      'Apply auditing with progress tracking, spot checks and comment and alert reviews to ensure consistency and accuracy',
+      'Use imagery to establish the location and type of each asset on a route',
+      'Accept into the new asset catalogue assets from the existing inventory that can be positively identified',
+      'Add to the catalogue assets identified in the imagery but not present in the existing inventory',
+      'Add comments and alerts to assets that require them',
+      'Apply auditing with progress tracking, spot checks and comment and alert reviews',
     ]},
     { h: 'Overcoming Challenges', p: [
-      'Identify nearly 45 separate asset types, most with several subtypes',
-      'Select experienced data technicians with previous experience of AssetScape and highways assets',
-      'Work with specialists, from drainage to road markings, to build a comprehensive identification manual',
-      'Provide access to these specialists for the data technicians',
+      'Identify nearly 45 separate asset types',
+      'Select experienced data technicians with highways asset experience',
+      'Work with specialists to build an identification manual',
+      'Provide access to specialists for technicians',
       'Maintain and clear a regularly updated issues log',
     ]},
-    { h: 'Outcome', p: 'We delivered an accurate, up‑to‑date asset inventory in a format ready to be integrated back into Highways England’s asset management system.' },
+    { h: 'Outcome', p: 'An accurate, up‑to‑date asset inventory, ready for integration.' },
   ],
 }
 
+// CCTV
 const P_CCTV = {
   title: 'Assessing the Suitability of Proposed CCTV Camera Sites',
-  subtitle: 'Our clients, WSP, Kier and Highways England, are using our innovative 3D ‘world management’ system, AssetScape, to assess the suitability of proposed CCTV camera sites, eliminating the need for costly and dangerous site visits.',
+  subtitle: 'Clients use AssetScape to assess the suitability of proposed CCTV camera sites, eliminating the need for many site visits.',
   images: [
     'https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-1-1024x555.jpg',
     'https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-2-1024x555.jpg',
@@ -319,47 +322,108 @@ const P_CCTV = {
   ],
   sections: [
     { h: 'Configuring the 3D world', p: [
-      'LiDAR (mobile and aerial) to represent obstructions such as trees, structures and vegetation with refined point clouds',
-      'OS MasterMap with buildings automatically extruded and positioned in the 3D world',
+      'LiDAR (mobile and aerial) with refined point clouds',
+      'OS MasterMap with extruded buildings',
       'Orthographic imagery',
       'Google Street View',
-      'AssetScape’s 3D terrain maps',
+      'AssetScape 3D terrain maps',
     ]},
-    { h: '‘Line of Sight’ module', p: [
-      'Asset templates to create and experiment with different camera types and settings',
-      'Dynamically interactive camera assets that a user can operate as they would a camera in the real world',
-      'The ‘Polar Image’ which provides insights such as percentage visibility, percentage screen height and total depth',
-      'Regions which centre on each proposed camera site, allowing users to navigate around the AssetScape world',
+    { h: 'Line of Sight module', p: [
+      'Asset templates for different camera types and settings',
+      'Interactive camera assets for realistic operation',
+      'Polar Image with percentage visibility, screen height and depth',
+      'Regions centred on each proposed camera site',
     ]},
-    { h: 'Usability', p: 'With only a few hours of training, users from Kier who had never used AssetScape before were beginning their site suitability assessments.' },
+    { h: 'Usability', p: 'With a few hours of training, new users begin their assessments.' },
   ],
 }
 
+// HE Tech
 const P_HE_Tech = {
   title: 'Highways England Technology',
-  subtitle: 'Providing innovative data cleansing solution to data cleanse 25,000 technology assets for the NorthEast RCC Technology Area',
+  subtitle: 'Data cleansing for 25,000 technology assets for the NorthEast RCC Technology Area',
   images: [
     'https://www.assetscape.co.uk/wp-content/uploads/2017/04/image001.png',
     'https://www.assetscape.co.uk/wp-content/uploads/2017/04/Screen-Shot-2017-09-27-at-12.24.45-PM.png',
     'https://www.assetscape.co.uk/wp-content/uploads/2017/04/Screen-Shot-2017-09-27-at-12.25.00-PM.png',
   ],
   sections: [
-    { p: 'AssetScape has a solid foundation for complex data cleansing across highways infrastructure assets. The platform was loaded with Highways England’s LiDAR, ortho‑imagery, video and incomplete technology inventory. Using the data cleansing module, the processing team re‑invented 18,000 marker post positions and located over 30 different technology asset types.' },
-    { p: 'Semi‑automated processors such as point‑cloud feature recognition and AssetScape’s 3D visualisation tools enabled accurate plotting of the new inventory to within less than a metre.' },
-    { p: 'AssetScape handled the geodatabase and cleansing task configured with AVIS/OS imagery, LiDAR and OS mapping and tailored schema and attributes for the task.' },
-    { p: 'The approach included a detailed processing methodology, audit protocols and an output specification. All users were trained and tested to ensure high‑quality outputs. Auditing is a module within AssetScape with reporting and statistical analytics.' },
+    { p: 'AssetScape provides a foundation for complex data cleansing across highways technology assets.' },
+    { p: 'Point‑cloud feature recognition and 3D visualisation enable accurate plotting to within less than a metre.' },
+    { p: 'The task used AVIS/OS imagery, LiDAR, OS mapping and a tailored schema.' },
+    { p: 'The approach included processing methodology, audit protocols and output specification with auditing and analytics.' },
   ],
 }
 
-export default function AssetScapeApp() {
+// New placeholder projects
+const P_NH_CCMT = {
+  title: 'National Highways CCMT System',
+  subtitle: 'A configurable platform supporting Contract Completion and Handback workflows at scale.',
+  images: [],
+  sections: [
+    { h: 'Scope', p: ['Decision tracking', 'Evidence and audit', 'Programme‑wide reporting']},
+    { h: 'Approach', p: 'Configured modules for handback decisions, with role‑based workflows and versioned change control.' },
+  ],
+}
+
+const P_NH_RL = {
+  title: 'National Highways Road Lighting',
+  subtitle: 'Inventory verification and condition intelligence for lighting assets.',
+  images: [],
+  sections: [
+    { h: 'Data inputs', p: ['LiDAR', 'Night imagery', 'Existing inventory', 'Site records']},
+    { h: 'Outcome', p: 'Clean inventory, prioritised interventions and export‑ready datasets.' },
+  ],
+}
+
+const P_NH_DR = {
+  title: 'National Highways Drainage',
+  subtitle: 'Drainage asset identification, verification and risk insights.',
+  images: [],
+  sections: [
+    { h: 'Process', p: ['Imagery‑led identification', 'Schema alignment', 'QA/QA with audits']},
+    { h: 'Result', p: 'A verified drainage dataset aligned to export formats.' },
+  ],
+}
+
+function DocumentsPage() {
+  const docs = [
+    { name: 'Capability (General)', file: 'AssetScape_Capability_General.pdf' },
+    { name: 'Capability Sheet 1 – LiDAR', file: 'AssetScape_Capability_Sheet1_LiDAR.pdf' },
+    { name: 'Capability Sheet 2 – AMS', file: 'AssetScape_Capability_Sheet2_AMS.pdf' },
+    { name: 'Capability Sheet 3 – Coastal', file: 'AssetScape_Capability_Sheet3_Coastal.pdf' },
+    { name: 'Data Cleansing', file: 'AssetScape_Capability_DataCleansing.pdf' },
+  ]
+  return (
+    <section className='mx-auto max-w-3xl px-4 py-10'>
+      <h1 className='text-3xl font-semibold tracking-tight'>Documents</h1>
+      <p className='mt-2 text-sm'>Download PDFs. Files are hosted with this site.</p>
+      <ul className='mt-6 space-y-3'>
+        {docs.map((d) => (
+          <li key={d.file}>
+            <a className='underline' href={`${import.meta.env.BASE_URL}docs/${d.file}`} download>
+              {d.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+export default function App() {
   return (
     <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Layout><HomePage /></Layout>} />
+        <Route path='/documents' element={<Layout><DocumentsPage /></Layout>} />
         <Route path='/projects/m3-j2-4a' element={<Layout><ProjectPage {...P_M3} /></Layout>} />
         <Route path='/projects/cctv-suitability' element={<Layout><ProjectPage {...P_CCTV} /></Layout>} />
         <Route path='/projects/highways-technology' element={<Layout><ProjectPage {...P_HE_Tech} /></Layout>} />
+        <Route path='/projects/nh-ccmt' element={<Layout><ProjectPage {...P_NH_CCMT} /></Layout>} />
+        <Route path='/projects/nh-road-lighting' element={<Layout><ProjectPage {...P_NH_RL} /></Layout>} />
+        <Route path='/projects/nh-drainage' element={<Layout><ProjectPage {...P_NH_DR} /></Layout>} />
       </Routes>
     </HashRouter>
   )
