@@ -1,8 +1,12 @@
-# AssetScape Website (Vite + React + Tailwind + GitHub Pages)
+# AssetScape Website – updated
 
-## Scripts
-- `npm run dev` – local development
-- `npm run build` – production build
+## One-time setup
+1. Ensure your repo default branch is `main` (or edit the workflow to match).
+2. Repo Settings → Pages → Source: GitHub Actions.
 
-## Deploy
-GitHub Actions builds `main` and deploys to GitHub Pages.
+## Deploy steps (each time)
+1. Upload the contents of this ZIP (not the ZIP itself) to the repo root.
+2. Commit to `main`. The GitHub Action will build and publish.
+
+## Documents
+- Place PDFs in `public/docs/`. Links use `${import.meta.env.BASE_URL}docs/<file>.pdf` to work on GitHub Pages.
