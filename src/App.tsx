@@ -52,10 +52,15 @@ function Layout({ children }: { children: ReactNode }) {
       <header className='sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur'>
         <div className='mx-auto max-w-6xl px-4'>
           <div className='flex h-20 items-center justify-between gap-6'>
-            <Link to='/' aria-label='AssetScape home' className='flex h-full items-center gap-3'>
-              <img src={roundLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
-              <img src={wordmarkLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
-            </Link>
+            <Link to='/' aria-label='AssetScape home' className='flex items-center gap-3 h-20'>
+  {/* Round logo anchors the centre line */}
+  <img src={roundLogo} alt='' aria-hidden className='block h-12 w-auto object-contain' />
+
+  {/* Wordmark centred to the same vertical midline */}
+  <div className='h-12 grid place-items-center'>
+    <img src={wordmarkLogo} alt='' aria-hidden className='block h-7 w-auto object-contain' />
+  </div>
+</Link>
             <nav className='hidden md:flex items-center gap-5 text-sm font-medium text-neutral-700'>
               {navLinks.map((item) => (
                 <Link key={item.label} to={item.to} className='transition-colors hover:text-neutral-900'>
