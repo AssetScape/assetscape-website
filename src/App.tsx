@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 
 import roundLogo from './assets/logo-round.png'
 import wordmarkLogo from './assets/logo-wordmark.png'
+import heroVideo from './assets/AS_SHORT_720_optimized.mp4'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -79,18 +80,30 @@ function Layout({ children }: { children: ReactNode }) {
 
 function VideoHero() {
   const poster = 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/18.jpg'
-  const videoSrc = 'https://samplelib.com/lib/preview/mp4/sample-10s.mp4'
+  const videoSrc = heroVideo
+
   return (
     <section className='relative'>
       <div className='relative h-[48vh] md:h-[70vh] overflow-hidden'>
-        <video className='absolute inset-0 h-full w-full object-cover' autoPlay muted loop playsInline poster={poster}>
+        <video
+          className='absolute inset-0 h-full w-full object-cover'
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={poster}
+        >
           <source src={videoSrc} type='video/mp4' />
         </video>
         <div className='absolute inset-0 bg-black/35' />
         <div className='relative z-10 mx-auto max-w-6xl px-4 h-full flex items-end pb-8'>
           <div className='rounded-xl bg-white/80 backdrop-blur p-4 md:p-6'>
-            <h1 className='text-2xl md:text-3xl font-semibold tracking-tight'>Intelligent asset management for road, rail and water infrastructure.</h1>
-            <p className='mt-2 text-sm md:text-base'>We combine spatial data, LiDAR, imagery and records into a single 3D environment so teams can see context, make decisions and maintain assets with less site time.</p>
+            <h1 className='text-2xl md:text-3xl font-semibold tracking-tight'>
+              Intelligent asset management for road, rail and water infrastructure.
+            </h1>
+            <p className='mt-2 text-sm md:text-base'>
+              We combine spatial data, LiDAR, imagery and records into a single 3D environment so teams can see context, make decisions and maintain assets with less site time.
+            </p>
           </div>
         </div>
       </div>
