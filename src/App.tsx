@@ -212,7 +212,7 @@ function HomePage() {
 
       <section id='projects' className='bg-neutral-50 border-y border-neutral-200'>
         <div className='mx-auto max-w-6xl px-4 py-14'>
-          <h2 className='text-2xl font-semibold tracking-tight'>Current Projects</h2>
+          <h2 className='text-2xl font-semibold tracking-tight'>Projects</h2>
           <div className='mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
             {projects.map((p) => (
               <Link key={p.slug} to={`/projects/${p.slug}`} className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'>
@@ -254,7 +254,7 @@ function HomePage() {
             ></iframe>
           </div>
           <p className='mt-3 text-sm'>
-            Prefer Vimeo later to avoid ads? We can switch the embed with no code changes elsewhere.
+            Prefer live demo? Reach out!
           </p>
         </div>
       </section>
@@ -271,7 +271,7 @@ function HomePage() {
             </ul>
           </div>
           <div className='space-y-2'>
-            <div className='text-sm'>Full‑length promo:</div>
+            <div className='text-sm'>Full‑length video on YouTube:</div>
             <a className='inline-flex items-center justify-center rounded-xl border border-white px-4 py-2 text-sm hover:bg-white hover:text-neutral-900 transition' href='https://www.youtube.com/watch?v=OZ3DrVDm3kU' target='_blank' rel='noreferrer'>Watch on YouTube</a>
           </div>
         </div>
