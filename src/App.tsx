@@ -351,12 +351,12 @@ function Footer() {
         <div className='flex flex-col gap-6 md:flex-row md:items-center md:justify-between'>
           <LogoLockup className='h-12 md:h-14' />
           <p className='max-w-xl text-sm text-neutral-300'>
-            Let's discuss how AssetScape can support your next programme. Drop us a note or call and we'll set up a session tailored to your assets and workflows.
+            
           </p>
         </div>
         <div className='grid gap-10 md:grid-cols-3 text-sm'>
           <div className='space-y-3'>
-            <h2 className='text-xl font-semibold tracking-tight'>Contact</h2>
+            <h2 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Contact</h2>
             <ul className='space-y-2'>
               <li>
                 <a className='hover:underline' href='mailto:enquiries@assetscape.co.uk'>
@@ -371,11 +371,11 @@ function Footer() {
             </ul>
           </div>
           <div className='space-y-3'>
-            <h3 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Office</h3>
+            <h2 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Office</h2>
             <address className='not-italic leading-relaxed text-neutral-300'>
-              24a, The Square
+              24A The Square
               <br />
-              Retford, Nottinghamshire
+              Retford
               <br />
               DN22 6DQ
               <br />
@@ -383,9 +383,12 @@ function Footer() {
             </address>
           </div>
           <div className='space-y-3 md:text-right'>
-            <h3 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Hours</h3>
-            <p className='text-neutral-300'>Monday to Friday<br />09:00 – 17:30 (UK time)</p>
-            <p className='text-neutral-500 text-xs'>Need something sooner? Email us and we'll respond as quickly as possible.</p>
+            <h2 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>GET IN TOUCH</h2>
+            <p className='text-neutral-300'>
+              Let's discuss how AssetScape can support your next programme.
+              <br />
+              Drop us a note or call and we'll set up a session tailored to your assets and workflows.
+            </p>
           </div>
         </div>
         <div className='border-t border-white/10 pt-6 text-xs text-neutral-500 md:flex md:items-center md:justify-between'>
@@ -397,7 +400,7 @@ function Footer() {
   )
 }
 
-// Existing projects
+// Projects
 const P_M3 = {
   title: 'M3 Junction 2 to 4a Asset Verification Task',
   subtitle: 'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
