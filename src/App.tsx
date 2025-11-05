@@ -37,6 +37,19 @@ function ScrollToTop() {
   return null
 }
 
+function LogoLockup({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-3 ${className}`}>
+      <img src={roundLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
+      <img
+        src={wordmarkLogo}
+        alt='AssetScape'
+        className='h-full w-auto object-contain translate-y-[1px]'
+      />
+    </div>
+  )
+}
+
 function Layout({ children }: { children: ReactNode }) {
   const navLinks: { label: string; to: To }[] = [
     { label: 'Home', to: '/' },
@@ -52,9 +65,8 @@ function Layout({ children }: { children: ReactNode }) {
       <header className='sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur'>
         <div className='mx-auto max-w-6xl px-4'>
           <div className='flex h-20 items-center justify-between gap-6'>
-            <Link to='/' aria-label='AssetScape home' className='flex h-full items-center gap-3'>
-              <img src={roundLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
-              <img src={wordmarkLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
+            <Link to='/' aria-label='AssetScape home' className='flex h-full items-center'>
+              <LogoLockup className='h-12 md:h-14' />
             </Link>
             <nav className='hidden md:flex items-center gap-5 text-sm font-medium text-neutral-700'>
               {navLinks.map((item) => (
@@ -130,12 +142,12 @@ function HomePage() {
   const heroImg3 = 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/20.jpg'
 
   const services = [
-    { title: '3D Visualisation', href: 'https://www.assetscape.co.uk/3d-visualisation/', img: heroImg3 },
-    { title: 'Data Cleansing', href: 'https://www.assetscape.co.uk/data-cleansing/', img: heroImg1 },
-    { title: 'Strategic Asset Management', href: 'https://www.assetscape.co.uk/strategic-asset-management/', img: heroImg2 },
-    { title: 'Camera Placement', href: 'https://www.assetscape.co.uk/camera-placement/', img: heroImg1 },
-    { title: 'RouteWatcher', href: 'https://www.assetscape.co.uk/routewatcher/', img: heroImg2 },
-    { title: 'Mobile Data Capture', href: 'https://www.assetscape.co.uk/mobile-data-capture/', img: heroImg3 },
+    { title: '3D Visualisation', slug: '3d-visualisation', img: heroImg3 },
+    { title: 'Data Cleansing', slug: 'data-cleansing', img: heroImg1 },
+    { title: 'Strategic Asset Management', slug: 'strategic-asset-management', img: heroImg2 },
+    { title: 'Camera Placement', slug: 'camera-placement', img: heroImg1 },
+    { title: 'RouteWatcher', slug: 'routewatcher', img: heroImg2 },
+    { title: 'Mobile Data Capture', slug: 'mobile-data-capture', img: heroImg3 },
   ]
 
   const featuresBullets = [
@@ -219,14 +231,18 @@ function HomePage() {
           </div>
           <div className='mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
             {services.map((s) => (
-              <a key={s.title} href={s.href} className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'>
+              <Link
+                key={s.title}
+                to={`/services/${s.slug}`}
+                className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'
+              >
                 <div className='aspect-[16/9] overflow-hidden'>
                   <img src={s.img} alt={s.title} className='w-full h-full object-cover group-hover:scale-105 transition' />
                 </div>
                 <div className='p-4'>
-                  <h3 className='font-medium'>{s.title}</h3>
+                  <h3 className='font-medium group-hover:underline'>{s.title}</h3>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -281,34 +297,26 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id='contact' className='bg-neutral-900 text-white'>
-        <div className='mx-auto max-w-6xl px-4 py-14 grid md:grid-cols-3 gap-8 items-start'>
-          <div className='md:col-span-2'>
-            <h2 className='text-2xl font-semibold tracking-tight'>Contact</h2>
-            <ul className='mt-4 space-y-2 text-sm'>
-              <li><a className='underline' href='mailto:enquiries@assetscape.co.uk'>enquiries@assetscape.co.uk</a></li>
-              <li><a className='underline' href='tel:+441778422380'>+44 (0)1778 422380</a></li>
-              <li>24a, The Square, Retford, Nottinghamshire, DN22 6DQ</li>
-            </ul>
-          </div>
-          <div className='space-y-2'>
-            <div className='text-sm'>Full‑length video on YouTube:</div>
-            <a className='inline-flex items-center justify-center rounded-xl border border-white px-4 py-2 text-sm hover:bg-white hover:text-neutral-900 transition' href='https://www.youtube.com/watch?v=OZ3DrVDm3kU' target='_blank' rel='noreferrer'>Watch on YouTube</a>
-          </div>
-        </div>
-      </section>
     </>
   )
 }
 
-type Section = { h?: string, p: string | string[] }
-type ProjectPageProps = { title: string, subtitle?: string, sections: Section[], images?: string[] }
+type Section = { h?: string; p: string | string[] }
+type DetailPageProps = {
+  title: string
+  subtitle?: string
+  sections: Section[]
+  images?: string[]
+  backTo: To
+  backLabel: string
+}
 
-function ProjectPage({ title, subtitle, sections, images }: ProjectPageProps) {
+function DetailPage({ title, subtitle, sections, images, backTo, backLabel }: DetailPageProps) {
   return (
     <section className='mx-auto max-w-3xl px-4 py-10'>
-      <Link to='/' className='text-sm underline'>← Back to Home</Link>
+      <Link to={backTo} className='text-sm underline'>
+        {backLabel}
+      </Link>
       <h1 className='mt-4 text-3xl font-semibold tracking-tight'>{title}</h1>
       {subtitle && <p className='mt-2 text-base'>{subtitle}</p>}
       {images && images.length > 0 && (
@@ -338,22 +346,51 @@ function ProjectPage({ title, subtitle, sections, images }: ProjectPageProps) {
 
 function Footer() {
   return (
-    <footer className='bg-neutral-50 border-t border-neutral-200 mt-10'>
-      <div className='mx-auto max-w-6xl px-4 py-10 grid md:grid-cols-3 gap-8 text-sm'>
-        <div className='flex items-center gap-3'>
-          <img src={roundLogo} alt='' aria-hidden className='h-12 w-auto object-contain' />
-          <img src={wordmarkLogo} alt='AssetScape' className='h-12 w-auto object-contain' />
+    <footer id='contact' className='mt-16 bg-neutral-900 text-white'>
+      <div className='mx-auto max-w-6xl px-4 py-14 space-y-12'>
+        <div className='flex flex-col gap-6 md:flex-row md:items-center md:justify-between'>
+          <LogoLockup className='h-12 md:h-14' />
+          <p className='max-w-xl text-sm text-neutral-300'>
+            Let's discuss how AssetScape can support your next programme. Drop us a note or call and we'll set up a session tailored to your assets and workflows.
+          </p>
         </div>
-        <div>
-          <div className='font-medium'>United Kingdom</div>
-          <ul className='mt-2 space-y-1'>
-            <li><a href='mailto:enquiries@assetscape.co.uk' className='hover:underline'>enquiries@assetscape.co.uk</a></li>
-            <li><a href='tel:+441778422380' className='hover:underline'>+44 (0)1778 422380</a></li>
-            <li>24a, The Square, Retford, Nottinghamshire, DN22 6DQ</li>
-          </ul>
+        <div className='grid gap-10 md:grid-cols-3 text-sm'>
+          <div className='space-y-3'>
+            <h2 className='text-xl font-semibold tracking-tight'>Contact</h2>
+            <ul className='space-y-2'>
+              <li>
+                <a className='hover:underline' href='mailto:enquiries@assetscape.co.uk'>
+                  enquiries@assetscape.co.uk
+                </a>
+              </li>
+              <li>
+                <a className='hover:underline' href='tel:+441778422380'>
+                  +44 (0)1778 422380
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className='space-y-3'>
+            <h3 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Office</h3>
+            <address className='not-italic leading-relaxed text-neutral-300'>
+              24a, The Square
+              <br />
+              Retford, Nottinghamshire
+              <br />
+              DN22 6DQ
+              <br />
+              United Kingdom
+            </address>
+          </div>
+          <div className='space-y-3 md:text-right'>
+            <h3 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Hours</h3>
+            <p className='text-neutral-300'>Monday to Friday<br />09:00 – 17:30 (UK time)</p>
+            <p className='text-neutral-500 text-xs'>Need something sooner? Email us and we'll respond as quickly as possible.</p>
+          </div>
         </div>
-        <div className='md:text-right'>
+        <div className='border-t border-white/10 pt-6 text-xs text-neutral-500 md:flex md:items-center md:justify-between'>
           <div>© 2025 AssetScape Limited. All rights reserved.</div>
+          <div>Registered in England & Wales.</div>
         </div>
       </div>
     </footer>
@@ -387,6 +424,8 @@ const P_M3 = {
     ]},
     { h: 'Outcome', p: 'An accurate, up‑to‑date asset inventory, ready for integration.' },
   ],
+  backTo: { pathname: '/', hash: '#projects' },
+  backLabel: '← Back to Projects',
 }
 
 // CCTV
@@ -414,6 +453,8 @@ const P_CCTV = {
     ]},
     { h: 'Usability', p: 'With a few hours of training, new users begin their assessments.' },
   ],
+  backTo: { pathname: '/', hash: '#projects' },
+  backLabel: '← Back to Projects',
 }
 
 // HE Tech
@@ -431,6 +472,8 @@ const P_HE_Tech = {
     { p: 'The task used AVIS/OS imagery, LiDAR, OS mapping and a tailored schema.' },
     { p: 'The approach included processing methodology, audit protocols and output specification with auditing and analytics.' },
   ],
+  backTo: { pathname: '/', hash: '#projects' },
+  backLabel: '← Back to Projects',
 }
 
 // New placeholder projects
@@ -442,6 +485,8 @@ const P_NH_CCMT = {
     { h: 'Scope', p: ['Decision tracking', 'Evidence and audit', 'Programme‑wide reporting']},
     { h: 'Approach', p: 'Configured modules for handback decisions, with role‑based workflows and versioned change control.' },
   ],
+  backTo: { pathname: '/', hash: '#projects' },
+  backLabel: '← Back to Projects',
 }
 
 const P_NH_RL = {
@@ -452,6 +497,8 @@ const P_NH_RL = {
     { h: 'Data inputs', p: ['LiDAR', 'Night imagery', 'Existing inventory', 'Site records']},
     { h: 'Outcome', p: 'Clean inventory, prioritised interventions and export‑ready datasets.' },
   ],
+  backTo: { pathname: '/', hash: '#projects' },
+  backLabel: '← Back to Projects',
 }
 
 const P_NH_DR = {
@@ -462,6 +509,194 @@ const P_NH_DR = {
     { h: 'Process', p: ['Imagery‑led identification', 'Schema alignment', 'QA/QA with audits']},
     { h: 'Result', p: 'A verified drainage dataset aligned to export formats.' },
   ],
+  backTo: { pathname: '/', hash: '#projects' },
+  backLabel: '← Back to Projects',
+}
+
+const SERVICE_BACK_TO: To = { pathname: '/', hash: '#services' }
+const SERVICE_BACK_LABEL = '← Back to Services'
+
+const S_3D = {
+  title: '3D Visualisation',
+  subtitle: 'Build immersive, navigable 3D scenes that place every asset in context.',
+  images: [
+    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/20.jpg',
+    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/35.jpg',
+  ],
+  sections: [
+    {
+      h: 'Integrated data sources',
+      p: [
+        'Combine LiDAR, photogrammetry and BIM to construct true-to-life environments.',
+        'Overlay mapping, CAD and attribute data with precise georeferencing.',
+        'Blend aerial and terrestrial imagery for full corridor coverage.',
+      ],
+    },
+    {
+      h: 'Capabilities',
+      p: [
+        'Interrogate assets with measurement, slicing and annotation tools.',
+        'Switch viewpoints instantly to support design, maintenance and stakeholder reviews.',
+        'Export presentation-ready imagery and video fly-throughs.',
+      ],
+    },
+    {
+      h: 'Delivery',
+      p: 'AssetScape tailors visualisations to your asset classes and workflows, ensuring key information is surfaced with minimal navigation.',
+    },
+  ],
+  backTo: SERVICE_BACK_TO,
+  backLabel: SERVICE_BACK_LABEL,
+}
+
+const S_DataCleansing = {
+  title: 'Data Cleansing',
+  subtitle: 'Reconcile inventories and records into a single dependable dataset.',
+  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/18.jpg'],
+  sections: [
+    {
+      h: 'Approach',
+      p: [
+        'Review existing schemas and align to AssetScape taxonomies.',
+        'Blend automated validation with expert QA/QC for critical assets.',
+        'Capture commentary, discrepancies and approvals in an auditable log.',
+      ],
+    },
+    {
+      h: 'Data inputs',
+      p: [
+        'Historic inventories, spreadsheets and databases.',
+        'Site observations, as-built drawings and survey outputs.',
+        'Feedback from maintainers and operations teams.',
+      ],
+    },
+    {
+      h: 'Outcome',
+      p: 'Deliver a cleansed, schema-compliant dataset ready for import into AMS, GIS or BIM platforms.',
+    },
+  ],
+  backTo: SERVICE_BACK_TO,
+  backLabel: SERVICE_BACK_LABEL,
+}
+
+const S_Strategic = {
+  title: 'Strategic Asset Management',
+  subtitle: 'Translate asset intelligence into clear investment decisions.',
+  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/35.jpg'],
+  sections: [
+    {
+      h: 'Focus areas',
+      p: [
+        'Lifecycle planning aligned to risk and performance.',
+        'Scenario modelling with configurable scoring and weighting.',
+        'Portfolio dashboards for leadership reporting.',
+      ],
+    },
+    {
+      h: 'How AssetScape helps',
+      p: [
+        'Spatialise programme data to highlight hotspots and dependencies.',
+        'Blend condition, utilisation and risk indicators into a single workspace.',
+        'Export ready-made packs for governance and funding boards.',
+      ],
+    },
+    {
+      h: 'Result',
+      p: 'Empower teams with a transparent evidence base for investment planning and prioritisation.',
+    },
+  ],
+  backTo: SERVICE_BACK_TO,
+  backLabel: SERVICE_BACK_LABEL,
+}
+
+const S_CameraPlacement = {
+  title: 'Camera Placement',
+  subtitle: 'Design effective CCTV schemes using virtual line-of-sight analysis.',
+  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-1-1024x555.jpg'],
+  sections: [
+    {
+      h: 'Inputs',
+      p: [
+        '3D corridor models generated from LiDAR, imagery and mapping.',
+        'Template libraries covering fixed, PTZ and specialist camera hardware.',
+        'Digital terrain data to capture gradients, cuttings and structures.',
+      ],
+    },
+    {
+      h: 'Analysis',
+      p: [
+        'Simulate line-of-sight and coverage envelopes with adjustable mounting heights.',
+        'Compare alternative pole and bracket locations inside the 3D world.',
+        'Produce visibility heatmaps and polar plots for stakeholders.',
+      ],
+    },
+    {
+      h: 'Outcome',
+      p: 'Generate evidence packs and camera schedules to accelerate approvals and installation.',
+    },
+  ],
+  backTo: SERVICE_BACK_TO,
+  backLabel: SERVICE_BACK_LABEL,
+}
+
+const S_RouteWatcher = {
+  title: 'RouteWatcher',
+  subtitle: 'Monitor corridors remotely with scheduled capture and secure sharing.',
+  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/20.jpg'],
+  sections: [
+    {
+      h: 'What RouteWatcher delivers',
+      p: [
+        'Browser-based access to the latest imagery and LiDAR along defined routes.',
+        'Timeline playback with bookmarking for incidents and inspections.',
+        'Role-based permissions to keep sensitive corridors secure.',
+      ],
+    },
+    {
+      h: 'Use cases',
+      p: [
+        'Incident investigation without site visits.',
+        'Works planning and clash detection for multiple contractors.',
+        'Evidence gathering for handback and audit.',
+      ],
+    },
+    {
+      h: 'Benefits',
+      p: 'Reduce repeat site visits while giving teams situational awareness on demand.',
+    },
+  ],
+  backTo: SERVICE_BACK_TO,
+  backLabel: SERVICE_BACK_LABEL,
+}
+
+const S_MobileData = {
+  title: 'Mobile Data Capture',
+  subtitle: 'Capture georeferenced imagery and LiDAR to keep inventories current.',
+  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/18.jpg'],
+  sections: [
+    {
+      h: 'Capabilities',
+      p: [
+        'Vehicle and backpack-based capture options with calibrated sensors.',
+        'High-resolution imagery synchronised with GNSS positioning.',
+        'Optional LiDAR integration for dense point-cloud creation.',
+      ],
+    },
+    {
+      h: 'Workflow',
+      p: [
+        'Plan survey routes, tasks and naming conventions inside AssetScape.',
+        'Capture observations with configurable forms and prompts.',
+        'Upload data to the platform for validation, enrichment and publishing.',
+      ],
+    },
+    {
+      h: 'Deliverables',
+      p: 'Structured datasets, QA reports and viewer-ready scenes ready for downstream systems.',
+    },
+  ],
+  backTo: SERVICE_BACK_TO,
+  backLabel: SERVICE_BACK_LABEL,
 }
 
 function DocumentsPage() {
@@ -496,12 +731,18 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Layout><HomePage /></Layout>} />
         <Route path='/documents' element={<Layout><DocumentsPage /></Layout>} />
-        <Route path='/projects/m3-j2-4a' element={<Layout><ProjectPage {...P_M3} /></Layout>} />
-        <Route path='/projects/cctv-suitability' element={<Layout><ProjectPage {...P_CCTV} /></Layout>} />
-        <Route path='/projects/highways-technology' element={<Layout><ProjectPage {...P_HE_Tech} /></Layout>} />
-        <Route path='/projects/nh-ccmt' element={<Layout><ProjectPage {...P_NH_CCMT} /></Layout>} />
-        <Route path='/projects/nh-road-lighting' element={<Layout><ProjectPage {...P_NH_RL} /></Layout>} />
-        <Route path='/projects/nh-drainage' element={<Layout><ProjectPage {...P_NH_DR} /></Layout>} />
+        <Route path='/projects/m3-j2-4a' element={<Layout><DetailPage {...P_M3} /></Layout>} />
+        <Route path='/projects/cctv-suitability' element={<Layout><DetailPage {...P_CCTV} /></Layout>} />
+        <Route path='/projects/highways-technology' element={<Layout><DetailPage {...P_HE_Tech} /></Layout>} />
+        <Route path='/projects/nh-ccmt' element={<Layout><DetailPage {...P_NH_CCMT} /></Layout>} />
+        <Route path='/projects/nh-road-lighting' element={<Layout><DetailPage {...P_NH_RL} /></Layout>} />
+        <Route path='/projects/nh-drainage' element={<Layout><DetailPage {...P_NH_DR} /></Layout>} />
+        <Route path='/services/3d-visualisation' element={<Layout><DetailPage {...S_3D} /></Layout>} />
+        <Route path='/services/data-cleansing' element={<Layout><DetailPage {...S_DataCleansing} /></Layout>} />
+        <Route path='/services/strategic-asset-management' element={<Layout><DetailPage {...S_Strategic} /></Layout>} />
+        <Route path='/services/camera-placement' element={<Layout><DetailPage {...S_CameraPlacement} /></Layout>} />
+        <Route path='/services/routewatcher' element={<Layout><DetailPage {...S_RouteWatcher} /></Layout>} />
+        <Route path='/services/mobile-data-capture' element={<Layout><DetailPage {...S_MobileData} /></Layout>} />
       </Routes>
     </HashRouter>
   )
