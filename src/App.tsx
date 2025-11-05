@@ -356,7 +356,7 @@ function Footer() {
         </div>
         <div className='grid gap-10 md:grid-cols-3 text-sm'>
           <div className='space-y-3'>
-            <h2 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Contact</h2>
+            <h2 className='text-sm font-bold uppercase tracking-[0.3em] text-white'>Contact</h2>
             <ul className='space-y-2'>
               <li>
                 <a className='hover:underline' href='mailto:enquiries@assetscape.co.uk'>
@@ -371,7 +371,7 @@ function Footer() {
             </ul>
           </div>
           <div className='space-y-3'>
-            <h2 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>Office</h2>
+            <h2 className='text-sm font-bold uppercase tracking-[0.3em] text-white'>Office</h2>
             <address className='not-italic leading-relaxed text-neutral-300'>
               24A The Square
               <br />
@@ -382,16 +382,16 @@ function Footer() {
               United Kingdom
             </address>
           </div>
-          <div className='space-y-3 md:text-right'>
-            <h2 className='text-sm font-semibold uppercase tracking-[0.3em] text-neutral-400'>GET IN TOUCH</h2>
+          <div className='space-y-3'>
+            <h2 className='text-sm font-bold uppercase tracking-[0.3em] text-white'>GET IN TOUCH</h2>
             <p className='text-neutral-300'>
               Let's discuss how AssetScape can support your next programme.
               <br />
-              Drop us a note or call and we'll set up a session tailored to your assets and workflows.
+              Send us an email or call and we'll set up a session tailored to your assets and workflows.
             </p>
           </div>
         </div>
-        <div className='border-t border-white/10 pt-6 text-xs text-neutral-500 md:flex md:items-center md:justify-between'>
+        <div className='border-t border-white/10 pt-6 text-xs text-neutral-400 md:flex md:items-center md:justify-between'>
           <div>© 2025 AssetScape Limited. All rights reserved.</div>
           <div>Registered in England & Wales.</div>
         </div>
