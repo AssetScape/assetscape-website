@@ -3,8 +3,11 @@ import type { ReactNode } from 'react'
 import type { To } from 'react-router-dom'
 import { useEffect } from 'react'
 
-import roundLogo from './assets/logo-round.png'
-import wordmarkLogo from './assets/logo-wordmark.png'
+import combinedLogo from './assets/logo-wordmark-combined.png'
+import combinedLogoLight from './assets/logo-wordmark-combined_lighgr.png'
+import roadImg from './assets/road.png'
+import railImg from './assets/rail.png'
+import waterImg from './assets/water.png'
 import heroVideo from './assets/AS_SHORT_720_optimized.mp4'
 
 function ScrollToTop() {
@@ -37,17 +40,16 @@ function ScrollToTop() {
   return null
 }
 
-function LogoLockup({ className = '' }: { className?: string }) {
-  return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      <img src={roundLogo} alt='' aria-hidden className='h-full w-auto object-contain' />
-      <img
-        src={wordmarkLogo}
-        alt='AssetScape'
-        className='h-full w-auto object-contain translate-y-[1px]'
-      />
-    </div>
-  )
+function LogoLockup({
+  className = '',
+  variant = 'default',
+}: {
+  className?: string
+  variant?: 'default' | 'footer'
+}) {
+  const logoSrc = variant === 'footer' ? combinedLogoLight : combinedLogo
+
+  return <img src={logoSrc} alt='AssetScape' className={`w-auto object-contain ${className}`} />
 }
 
 function Layout({ children }: { children: ReactNode }) {
@@ -178,13 +180,25 @@ function HomePage() {
             <SectionMarker label='About' />
             <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>About AssetScape</h2>
             <p className='mt-4 text-base leading-relaxed'>
-              We combine three‑dimensional data management with a real‑time 3D graphics engine so you can manage assets with context and clarity. AssetScape® is a practical way to see, decide and track across an entire network.
+              By combining a multi-dimensional data management approach with our 3 dimensional graphics engine, we have created a unique product that finally brings asset and infrastructure management into the 21st century. AssetScape® is much more than an asset management system – it’s a “World Management System”.
             </p>
           </div>
           <div className='grid grid-cols-3 gap-3 md:gap-4'>
-            <img src={heroImg1} alt='AssetScape visual 1' className='w-full h-28 md:h-40 object-cover rounded-lg' />
-            <img src={heroImg2} alt='AssetScape visual 2' className='w-full h-28 md:h-40 object-cover rounded-lg' />
-            <img src={heroImg3} alt='AssetScape visual 3' className='w-full h-28 md:h-40 object-cover rounded-lg' />
+            <img
+              src={roadImg}
+              alt='Road infrastructure visualisation'
+              className='w-full h-28 md:h-40 object-cover rounded-lg'
+            />
+            <img
+              src={railImg}
+              alt='Rail infrastructure visualisation'
+              className='w-full h-28 md:h-40 object-cover rounded-lg'
+            />
+            <img
+              src={waterImg}
+              alt='Water infrastructure visualisation'
+              className='w-full h-28 md:h-40 object-cover rounded-lg'
+            />
           </div>
         </div>
       </section>
@@ -193,15 +207,32 @@ function HomePage() {
         <div className='mx-auto max-w-6xl px-4 py-12 grid md:grid-cols-3 gap-8'>
           <div>
             <h3 className='text-lg font-semibold'>Simplify the complex</h3>
-            <p className='mt-2 text-sm leading-relaxed'>Bring your data together and enable tasks such as validation, placement decisions and maintenance planning.</p>
+            <p className='mt-2 text-sm leading-relaxed'>
+              Using AssetScape is simple and intuitive, meaning newcomers can be up and running with very little training.
+              AssetScape specialises in bringing data together in one place and presenting it in a useful, informative and
+              manageable way. Trying to pull together data from multiple systems and struggling to build a clear picture of what
+              is going on is a thing of the past. AssetScape effortlessly brings your data together 'under one roof' and enables
+              you to perform complex tasks, such as data validation, making asset placement decisions and managing maintenance
+              schemes, with ease.
+            </p>
           </div>
           <div>
             <h3 className='text-lg font-semibold'>Bring data to life</h3>
-            <p className='mt-2 text-sm leading-relaxed'>Integrate LiDAR, external databases, shapefiles and mapping, and visualise clearly in 3D.</p>
+            <p className='mt-2 text-sm leading-relaxed'>
+              As a 'World Management System', AssetScape integrates. It brings together data from a range of sources, including
+              LiDAR, external databases, shapefiles and mapping, and allows you visualise it all clearly. Whether the data comes
+              from several systems or surveys, is provided by you or is open source, and is concerned with assets or the
+              environment, AssetScape integrates it all to build a functional and dynamic 3D asset management environment.
+            </p>
           </div>
           <div>
-            <h3 className='text-lg font-semibold'>Optimise and innovate</h3>
-            <p className='mt-2 text-sm leading-relaxed'>Use the potential of your data with focused tools and views.</p>
+            <h3 className='text-lg font-semibold'>Optimise and Innovate</h3>
+            <p className='mt-2 text-sm leading-relaxed'>
+              AssetScape is aimed at asset management professionals looking to optimise their asset management systems and
+              utilise the full potential of their data. Use our system to complete existing tasks more efficiently and to explore
+              new and innovative ways to take advantage of the full spectrum of data available to you. AssetScape has the tools to
+              transform the way you approach asset management.
+            </p>
           </div>
         </div>
       </section>
@@ -349,7 +380,7 @@ function Footer() {
     <footer id='contact' className='mt-16 bg-neutral-900 text-white'>
       <div className='mx-auto max-w-6xl px-4 py-14 space-y-12'>
         <div className='flex flex-col gap-6 md:flex-row md:items-center md:justify-between'>
-          <LogoLockup className='h-12 md:h-14' />
+          <LogoLockup variant='footer' className='h-12 md:h-14' />
           <p className='max-w-xl text-sm text-neutral-300'>
             
           </p>
