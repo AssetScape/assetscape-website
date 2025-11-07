@@ -153,12 +153,30 @@ function HomePage() {
   ]
 
   const featuresBullets = [
-    { h: 'Visualise your data in 3D', p: `On site, assets function in three dimensions. AssetScape reflects this by building realistic 3D scenes that transform raw data into an interactive asset management experience.` },
-    { h: 'From Local Nodes to National Networks', p: `Support local inspections and national‑scale programmes in the same platform with consistent data, views and controls.` },
-    { h: 'Flexible, Adaptable, Customisable', p: `Customise tools, reorganise the interface, alter asset models and change 3D scene visualisation.` },
-    { h: 'Take Control of your Data', p: `Bring all data together into one navigable 3D environment. Visualise, analyse, reorganise and prioritise quickly and effectively.` },
-    { h: 'From the Micro to the Macro', p: `From a single asset to a full inventory, work at the scale that fits the task.` },
-    { h: 'Simple, Usable, Practical', p: `Controls are uncomplicated and intuitive. New users can be up and running within hours.` },
+    {
+      h: 'Visualise your data in 3D',
+      p: `On site, assets function in three dimensions. AssetScape reflects this reality by building realistic 3D scenes that transform raw data into a tangible and interactive asset management experience. These 3D scenes enable you to picture your assets fully embedded in their real-world environment and provide new perspectives that two-dimensional software solutions simply cannot offer.`,
+    },
+    {
+      h: 'From Local Nodes to National Networks',
+      p: `AssetScape is more than an innovative asset management tool – it is a comprehensive asset management system. From day to day tasks, such as condition monitoring and assigning maintenance works, to longer term strategic planning, including asset replacement and renewal schemes, AssetScape enables you to manage your assets through their whole lifecycle.`,
+    },
+    {
+      h: 'Flexible, Adaptable, Customisable',
+      p: `AssetScape is designed to be suitable for any asset management task, from data cleansing and creating asset inventories, to new asset placement and monitoring existing assets. Optimise the system to meet your needs by customising tools, reorganising the user interface, altering asset models, changing the 3D scene visualisation and more.`,
+    },
+    {
+      h: 'Take Control of your Data',
+      p: `Whatever its type, source or format AssetScape effortlessly brings all kinds of data together into one easily navigable 3D environment. Exploit the powerful insights this delivers to harness the true potential of your data. Our versatile toolkit enables you to visualise, analyse, reorganise, prioritise and utilise the full spectrum of data at your disposal quickly and effectively.`,
+    },
+    {
+      h: 'From the Micro to the Macro',
+      p: `Whether you need to interact with your data in micro or macro detail, AssetScape is designed to facilitate asset management on any scale. From exploring the placement of a single CCTV camera to managing the full asset inventory of a whole Area, AssetScape’s dynamic and fully customisable system can be adapted to suit any task, big or small.`,
+    },
+    {
+      h: 'Simple, Usable, Practical',
+      p: `Our aim is to simplify the complex, and this extends to our user interface. Our controls are uncomplicated and intuitive, and our innovative ‘Tools Frame’ provides easy access to AssetScape’s toolkit. AssetScape requires only minimal training and new users can be up and running within hours.`,
+    },
   ]
 
   const projects = [
