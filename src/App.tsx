@@ -49,6 +49,29 @@ import railImg from './assets/rail.png'
 import waterImg from './assets/water.png'
 import heroVideo from './assets/AS_SHORT_720_optimized.mp4'
 
+const projectScreenshots = {
+  'm3-j2-4a': [projectM3Screenshot1, projectM3Screenshot2, projectM3Screenshot3],
+  'cctv-suitability': [projectCctvScreenshot1, projectCctvScreenshot2, projectCctvScreenshot3],
+  'highways-technology': [projectHeTechScreenshot1, projectHeTechScreenshot2, projectHeTechScreenshot3],
+  'nh-ccmt': [
+    projectNhCcmtScreenshot1,
+    projectNhCcmtScreenshot2,
+    projectNhCcmtScreenshot3,
+    projectNhCcmtScreenshot4,
+    projectNhCcmtScreenshot5,
+  ],
+  'nh-road-lighting': [
+    projectNhRoadLightingScreenshot1,
+    projectNhRoadLightingScreenshot2,
+    projectNhRoadLightingScreenshot3,
+  ],
+  'nh-drainage': [
+    projectNhDrainageScreenshot1,
+    projectNhDrainageScreenshot2,
+    projectNhDrainageScreenshot3,
+  ],
+} as const satisfies Record<string, string[]>
+
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
 
@@ -545,7 +568,7 @@ function HomePage() {
       {/* Judge's quote without heading */}
       <section className='mx-auto max-w-6xl px-4 py-14'>
         <figure className='rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12'>
-          <blockquote className='text-2xl font-medium leading-relaxed text-neutral-800 italic font-[cursive] md:text-3xl'>
+          <blockquote className='text-xl leading-relaxed text-neutral-800 italic md:text-2xl'>
             “This is a very elegant approach to solving a real‑world problem. The innovation is highly transferrable and helps asset managers to manage their assets more effectively, and with greater accuracy. This is a promising innovation which has the potential to transform the way data for a major project is mapped and configured.”
           </blockquote>
           <figcaption className='mt-6 text-sm font-semibold uppercase tracking-wide text-neutral-600 md:text-base'>
@@ -711,11 +734,7 @@ function Footer() {
 const P_M3 = {
   title: 'M3 Junction 2 to 4a Asset Verification Task',
   subtitle: 'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
-  images: [
-    projectM3Screenshot1,
-    projectM3Screenshot2,
-    projectM3Screenshot3,
-  ],
+  images: projectScreenshots['m3-j2-4a'],
   sections: [
     { h: 'Resources', p: ['Aerial LiDAR', 'Orthographic imagery', 'Google Street View', 'Existing inventory']},
     { h: 'Methodology', p: [
@@ -742,11 +761,7 @@ const P_M3 = {
 const P_CCTV = {
   title: 'Assessing the Suitability of Proposed CCTV Camera Sites',
   subtitle: 'Clients use AssetScape to assess the suitability of proposed CCTV camera sites, eliminating the need for many site visits.',
-  images: [
-    projectCctvScreenshot1,
-    projectCctvScreenshot2,
-    projectCctvScreenshot3,
-  ],
+  images: projectScreenshots['cctv-suitability'],
   sections: [
     { h: 'Configuring the 3D world', p: [
       'LiDAR (mobile and aerial) with refined point clouds',
@@ -771,11 +786,7 @@ const P_CCTV = {
 const P_HE_Tech = {
   title: 'Highways England Technology',
   subtitle: 'Data cleansing for 25,000 technology assets for the NorthEast RCC Technology Area',
-  images: [
-    projectHeTechScreenshot1,
-    projectHeTechScreenshot2,
-    projectHeTechScreenshot3,
-  ],
+  images: projectScreenshots['highways-technology'],
   sections: [
     { p: 'AssetScape provides a foundation for complex data cleansing across highways technology assets.' },
     { p: 'Point‑cloud feature recognition and 3D visualisation enable accurate plotting to within less than a metre.' },
@@ -790,13 +801,7 @@ const P_HE_Tech = {
 const P_NH_CCMT = {
   title: 'National Highways CCMT System',
   subtitle: 'A configurable platform supporting Contract Completion and Handback workflows at scale.',
-  images: [
-    projectNhCcmtScreenshot1,
-    projectNhCcmtScreenshot2,
-    projectNhCcmtScreenshot3,
-    projectNhCcmtScreenshot4,
-    projectNhCcmtScreenshot5,
-  ],
+  images: projectScreenshots['nh-ccmt'],
   sections: [
     { h: 'Scope', p: ['Decision tracking', 'Evidence and audit', 'Programme‑wide reporting']},
     { h: 'Approach', p: 'Configured modules for handback decisions, with role‑based workflows and versioned change control.' },
@@ -808,11 +813,7 @@ const P_NH_CCMT = {
 const P_NH_RL = {
   title: 'National Highways Road Lighting',
   subtitle: 'Inventory verification and condition intelligence for lighting assets.',
-  images: [
-    projectNhRoadLightingScreenshot1,
-    projectNhRoadLightingScreenshot2,
-    projectNhRoadLightingScreenshot3,
-  ],
+  images: projectScreenshots['nh-road-lighting'],
   sections: [
     { h: 'Data inputs', p: ['LiDAR', 'Night imagery', 'Existing inventory', 'Site records']},
     { h: 'Outcome', p: 'Clean inventory, prioritised interventions and export‑ready datasets.' },
@@ -824,11 +825,7 @@ const P_NH_RL = {
 const P_NH_DR = {
   title: 'National Highways Drainage',
   subtitle: 'Drainage asset identification, verification and risk insights.',
-  images: [
-    projectNhDrainageScreenshot1,
-    projectNhDrainageScreenshot2,
-    projectNhDrainageScreenshot3,
-  ],
+  images: projectScreenshots['nh-drainage'],
   sections: [
     { h: 'Process', p: ['Imagery‑led identification', 'Schema alignment', 'QA/QA with audits']},
     { h: 'Result', p: 'A verified drainage dataset aligned to export formats.' },
