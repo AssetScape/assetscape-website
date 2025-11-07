@@ -1,7 +1,46 @@
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import type { ReactNode } from 'react'
 import type { To } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+import service3dCover from './assets/3DVisualisationCover.jpg'
+import serviceDataCleansingCover from './assets/DataCleansingCover.jpg'
+import serviceStrategicCover from './assets/StrategicAssetManagementCover.jpg'
+import serviceCameraPlacementCover from './assets/CameraPlacementCover.jpg'
+import serviceRouteWatcherCover from './assets/RouteWatcherCover.jpg'
+import serviceMobileDataCover from './assets/MobileDataCaptureCover.jpg'
+
+import projectM3Cover from './assets/M3 Junction 2 to 4a Asset Verification Task Cover.jpg'
+import projectM3Screenshot1 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 1.jpg'
+import projectM3Screenshot2 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 2.jpg'
+import projectM3Screenshot3 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 3.jpg'
+
+import projectCctvCover from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites Cover.jpg"
+import projectCctvScreenshot1 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 1.jpg"
+import projectCctvScreenshot2 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 2.jpg"
+import projectCctvScreenshot3 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 3.jpg"
+
+import projectHeTechCover from "./assets/Highways England Technology Cover.png"
+import projectHeTechScreenshot1 from "./assets/Highways England Technology screenshot 1.png"
+import projectHeTechScreenshot2 from "./assets/Highways England Technology screenshot 2.png"
+import projectHeTechScreenshot3 from "./assets/Highways England Technology screenshot 3.png"
+
+import projectNhCcmtCover from "./assets/National Highways CCMT System Cover.png"
+import projectNhCcmtScreenshot1 from "./assets/National Highways CCMT System screenshot 1.png"
+import projectNhCcmtScreenshot2 from "./assets/National Highways CCMT System screenshot 2.png"
+import projectNhCcmtScreenshot3 from "./assets/National Highways CCMT System screenshot 3.png"
+import projectNhCcmtScreenshot4 from "./assets/National Highways CCMT System screenshot 4.png"
+import projectNhCcmtScreenshot5 from "./assets/National Highways CCMT System screenshot 5.png"
+
+import projectNhRoadLightingCover from "./assets/National Highways Road Lighting Cover.jpg"
+import projectNhRoadLightingScreenshot1 from "./assets/National Highways Road Lighting screenshot 1.jpg"
+import projectNhRoadLightingScreenshot2 from "./assets/National Highways Road Lighting screenshot 2.jpg"
+import projectNhRoadLightingScreenshot3 from "./assets/National Highways Road Lighting screenshot 3.jpg"
+
+import projectNhDrainageCover from "./assets/National Highways Drainage Cover.jpg"
+import projectNhDrainageScreenshot1 from "./assets/National Highways Drainage screenshot 1.jpg"
+import projectNhDrainageScreenshot2 from "./assets/National Highways Drainage screenshot 2.jpg"
+import projectNhDrainageScreenshot3 from "./assets/National Highways Drainage screenshot 3.jpg"
 
 import combinedLogo from './assets/logo-wordmark-combined.png'
 import combinedLogoLight from './assets/logo-wordmark-combined_lighgr.png'
@@ -62,6 +101,13 @@ function Layout({ children }: { children: ReactNode }) {
     { label: 'Contact', to: { pathname: '/', hash: '#contact' } },
   ]
 
+  const location = useLocation()
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [location.pathname, location.hash])
+
   return (
     <div className='min-h-screen bg-white text-neutral-800'>
       <header className='sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur'>
@@ -70,20 +116,64 @@ function Layout({ children }: { children: ReactNode }) {
             <Link to='/' aria-label='AssetScape home' className='flex h-full items-center'>
               <LogoLockup className='h-12 md:h-14' />
             </Link>
-            <nav className='hidden md:flex items-center gap-5 text-sm font-medium text-neutral-700'>
-              {navLinks.map((item) => (
-                <Link key={item.label} to={item.to} className='transition-colors hover:text-neutral-900'>
-                  {item.label}
+            <div className='flex items-center gap-3'>
+              <nav className='hidden md:flex items-center gap-5 text-sm font-medium text-neutral-700'>
+                {navLinks.map((item) => (
+                  <Link key={item.label} to={item.to} className='transition-colors hover:text-neutral-900'>
+                    {item.label}
+                  </Link>
+                ))}
+                <Link
+                  to={{ pathname: '/', hash: '#full-video' }}
+                  className='inline-flex items-center rounded-full border border-neutral-900 bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
+                >
+                  Full-length video
                 </Link>
-              ))}
-              <Link
-                to={{ pathname: '/', hash: '#full-video' }}
-                className='inline-flex items-center rounded-full border border-neutral-900 bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
+              </nav>
+              <button
+                type='button'
+                className='inline-flex items-center justify-center rounded-full border border-neutral-300 p-2 text-neutral-700 transition hover:border-neutral-500 hover:text-neutral-900 md:hidden'
+                aria-label='Toggle navigation menu'
+                onClick={() => setMobileOpen((prev) => !prev)}
               >
-                Full-length video
-              </Link>
-            </nav>
+                {mobileOpen ? (
+                  <svg viewBox='0 0 24 24' className='h-5 w-5' aria-hidden='true' fill='none' stroke='currentColor' strokeWidth={1.8}>
+                    <path d='M6 6 18 18' />
+                    <path d='M18 6 6 18' />
+                  </svg>
+                ) : (
+                  <svg viewBox='0 0 24 24' className='h-5 w-5' aria-hidden='true' fill='none' stroke='currentColor' strokeWidth={1.8}>
+                    <path d='M4 7h16' />
+                    <path d='M4 12h16' />
+                    <path d='M4 17h16' />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
+          {mobileOpen && (
+            <div className='md:hidden border-t border-neutral-200 pb-6'>
+              <nav className='flex flex-col gap-4 pt-4 text-sm font-medium text-neutral-700'>
+                {navLinks.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    className='transition-colors hover:text-neutral-900'
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Link
+                  to={{ pathname: '/', hash: '#full-video' }}
+                  className='inline-flex items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Full-length video
+                </Link>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
       {children}
@@ -138,54 +228,186 @@ function SectionMarker({ label }: { label: string }) {
   )
 }
 
-function HomePage() {
-  const heroImg1 = 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/35.jpg'
-  const heroImg2 = 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/18.jpg'
-  const heroImg3 = 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/20.jpg'
+type IconProps = { className?: string }
 
+function IconCube({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      aria-hidden='true'
+      className={className}
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={1.6}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path d='M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Z' />
+      <path d='m4 7.5 8 4.5 8-4.5' />
+      <path d='M12 12v9' />
+    </svg>
+  )
+}
+
+function IconNetwork({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      aria-hidden='true'
+      className={className}
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={1.6}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <circle cx='5' cy='12' r='2.2' />
+      <circle cx='12' cy='5' r='2.2' />
+      <circle cx='19' cy='12' r='2.2' />
+      <circle cx='12' cy='19' r='2.2' />
+      <path d='M7.1 11.2 10.4 6.7' />
+      <path d='m13.6 6.7 3.3 4.5' />
+      <path d='m7.1 12.8 3.3 4.5' />
+      <path d='m13.6 17.3 3.3-4.5' />
+    </svg>
+  )
+}
+
+function IconSliders({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      aria-hidden='true'
+      className={className}
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={1.6}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path d='M7 4v8' />
+      <path d='M7 16v4' />
+      <path d='M12 4v4' />
+      <path d='M12 12v8' />
+      <path d='M17 4v12' />
+      <path d='M17 18v2' />
+      <circle cx='7' cy='13' r='2.4' />
+      <circle cx='12' cy='9' r='2.4' />
+      <circle cx='17' cy='16' r='2.4' />
+    </svg>
+  )
+}
+
+function IconShield({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      aria-hidden='true'
+      className={className}
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={1.6}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path d='M12 3 5 6v5.8c0 4.7 3 7.9 7 9.2 4-1.3 7-4.5 7-9.2V6Z' />
+      <path d='M9.5 12.5 11.3 14.3 14.7 10.9' />
+    </svg>
+  )
+}
+
+function IconTarget({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      aria-hidden='true'
+      className={className}
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={1.6}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <circle cx='12' cy='12' r='8.5' />
+      <circle cx='12' cy='12' r='5.5' />
+      <circle cx='12' cy='12' r='2.5' />
+      <path d='M12 3v3' />
+      <path d='M21 12h-3' />
+      <path d='M12 21v-3' />
+      <path d='M3 12h3' />
+    </svg>
+  )
+}
+
+function IconCompass({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      aria-hidden='true'
+      className={className}
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={1.6}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <circle cx='12' cy='12' r='9' />
+      <path d='m14.8 9.2-2.1 5.6-5.5 2.2 2.1-5.6Z' />
+      <path d='M12 12 9.4 9.4' />
+    </svg>
+  )
+}
+
+function HomePage() {
   const services = [
-    { title: '3D Visualisation', slug: '3d-visualisation', img: heroImg3 },
-    { title: 'Data Cleansing', slug: 'data-cleansing', img: heroImg1 },
-    { title: 'Strategic Asset Management', slug: 'strategic-asset-management', img: heroImg2 },
-    { title: 'Camera Placement', slug: 'camera-placement', img: heroImg1 },
-    { title: 'RouteWatcher', slug: 'routewatcher', img: heroImg2 },
-    { title: 'Mobile Data Capture', slug: 'mobile-data-capture', img: heroImg3 },
+    { title: '3D Visualisation', slug: '3d-visualisation', img: service3dCover },
+    { title: 'Data Cleansing', slug: 'data-cleansing', img: serviceDataCleansingCover },
+    { title: 'Strategic Asset Management', slug: 'strategic-asset-management', img: serviceStrategicCover },
+    { title: 'Camera Placement', slug: 'camera-placement', img: serviceCameraPlacementCover },
+    { title: 'RouteWatcher', slug: 'routewatcher', img: serviceRouteWatcherCover },
+    { title: 'Mobile Data Capture', slug: 'mobile-data-capture', img: serviceMobileDataCover },
   ]
 
   const featuresBullets = [
     {
       h: 'Visualise your data in 3D',
       p: `On site, assets function in three dimensions. AssetScape reflects this reality by building realistic 3D scenes that transform raw data into a tangible and interactive asset management experience. These 3D scenes enable you to picture your assets fully embedded in their real-world environment and provide new perspectives that two-dimensional software solutions simply cannot offer.`,
+      Icon: IconCube,
     },
     {
       h: 'From Local Nodes to National Networks',
       p: `AssetScape is more than an innovative asset management tool – it is a comprehensive asset management system. From day to day tasks, such as condition monitoring and assigning maintenance works, to longer term strategic planning, including asset replacement and renewal schemes, AssetScape enables you to manage your assets through their whole lifecycle.`,
+      Icon: IconNetwork,
     },
     {
       h: 'Flexible, Adaptable, Customisable',
       p: `AssetScape is designed to be suitable for any asset management task, from data cleansing and creating asset inventories, to new asset placement and monitoring existing assets. Optimise the system to meet your needs by customising tools, reorganising the user interface, altering asset models, changing the 3D scene visualisation and more.`,
+      Icon: IconSliders,
     },
     {
       h: 'Take Control of your Data',
       p: `Whatever its type, source or format AssetScape effortlessly brings all kinds of data together into one easily navigable 3D environment. Exploit the powerful insights this delivers to harness the true potential of your data. Our versatile toolkit enables you to visualise, analyse, reorganise, prioritise and utilise the full spectrum of data at your disposal quickly and effectively.`,
+      Icon: IconShield,
     },
     {
       h: 'From the Micro to the Macro',
       p: `Whether you need to interact with your data in micro or macro detail, AssetScape is designed to facilitate asset management on any scale. From exploring the placement of a single CCTV camera to managing the full asset inventory of a whole Area, AssetScape’s dynamic and fully customisable system can be adapted to suit any task, big or small.`,
+      Icon: IconTarget,
     },
     {
       h: 'Simple, Usable, Practical',
       p: `Our aim is to simplify the complex, and this extends to our user interface. Our controls are uncomplicated and intuitive, and our innovative ‘Tools Frame’ provides easy access to AssetScape’s toolkit. AssetScape requires only minimal training and new users can be up and running within hours.`,
+      Icon: IconCompass,
     },
   ]
 
   const projects = [
-    { title: 'M3 Junction 2 to 4a Asset Verification Task', slug: 'm3-j2-4a', cover: 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/M3-Figure-1-1024x555.jpg' },
-    { title: 'Assessing the Suitability of Proposed CCTV Camera Sites', slug: 'cctv-suitability', cover: 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-1-1024x555.jpg' },
-    { title: 'Highways England Technology', slug: 'highways-technology', cover: 'https://www.assetscape.co.uk/wp-content/uploads/2017/04/image001.png' },
-    { title: 'National Highways CCMT System', slug: 'nh-ccmt', cover: heroImg2 },
-    { title: 'National Highways Road Lighting', slug: 'nh-road-lighting', cover: heroImg1 },
-    { title: 'National Highways Drainage', slug: 'nh-drainage', cover: heroImg3 },
+    { title: 'M3 Junction 2 to 4a Asset Verification Task', slug: 'm3-j2-4a', cover: projectM3Cover },
+    { title: 'Assessing the Suitability of Proposed CCTV Camera Sites', slug: 'cctv-suitability', cover: projectCctvCover },
+    { title: 'Highways England Technology', slug: 'highways-technology', cover: projectHeTechCover },
+    { title: 'National Highways CCMT System', slug: 'nh-ccmt', cover: projectNhCcmtCover },
+    { title: 'National Highways Road Lighting', slug: 'nh-road-lighting', cover: projectNhRoadLightingCover },
+    { title: 'National Highways Drainage', slug: 'nh-drainage', cover: projectNhDrainageCover },
   ]
 
   return (
@@ -263,9 +485,14 @@ function HomePage() {
         </div>
         <div className='mt-8 grid md:grid-cols-2 gap-8'>
           {featuresBullets.map((f) => (
-            <div key={f.h} className='border border-neutral-200 rounded-xl p-5 shadow-sm'>
-              <h3 className='font-semibold'>{f.h}</h3>
-              <p className='mt-2 text-sm leading-relaxed'>{f.p}</p>
+            <div key={f.h} className='flex gap-4 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm'>
+              <div className='shrink-0'>
+                <f.Icon className='h-11 w-11 text-emerald-600' />
+              </div>
+              <div>
+                <h3 className='font-semibold'>{f.h}</h3>
+                <p className='mt-2 text-sm leading-relaxed text-neutral-700'>{f.p}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -317,11 +544,13 @@ function HomePage() {
 
       {/* Judge's quote without heading */}
       <section className='mx-auto max-w-6xl px-4 py-14'>
-        <figure className='border border-neutral-200 rounded-2xl p-6 bg-white'>
-          <blockquote className='text-sm leading-relaxed'>
+        <figure className='rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12'>
+          <blockquote className='text-2xl font-medium leading-relaxed text-neutral-800 italic font-[cursive] md:text-3xl'>
             “This is a very elegant approach to solving a real‑world problem. The innovation is highly transferrable and helps asset managers to manage their assets more effectively, and with greater accuracy. This is a promising innovation which has the potential to transform the way data for a major project is mapped and configured.”
           </blockquote>
-          <figcaption className='mt-3 text-xs text-neutral-600'>Judge's comments, CIOB International innovation & research award</figcaption>
+          <figcaption className='mt-6 text-sm font-semibold uppercase tracking-wide text-neutral-600 md:text-base'>
+            CIOB International innovation &amp; research award - Judge's comments
+          </figcaption>
         </figure>
       </section>
 
@@ -361,34 +590,63 @@ type DetailPageProps = {
 }
 
 function DetailPage({ title, subtitle, sections, images, backTo, backLabel }: DetailPageProps) {
+  const imageList = images ?? []
+  const trailingImages = imageList.slice(Math.min(imageList.length, sections.length))
+
   return (
-    <section className='mx-auto max-w-3xl px-4 py-10'>
-      <Link to={backTo} className='text-sm underline'>
+    <section className='mx-auto max-w-5xl px-4 py-10'>
+      <Link
+        to={backTo}
+        className='inline-flex items-center gap-2 text-sm font-medium text-neutral-700 transition hover:text-neutral-900'
+      >
         {backLabel}
       </Link>
-      <h1 className='mt-4 text-3xl font-semibold tracking-tight'>{title}</h1>
-      {subtitle && <p className='mt-2 text-base'>{subtitle}</p>}
-      {images && images.length > 0 && (
-        <div className='mt-6 grid grid-cols-1 gap-4'>
-          {images.map((src) => (
-            <img key={src} src={src} alt='Project illustration' className='w-full rounded-lg border border-neutral-200' />
+      <div className='mt-4 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8'>
+        <h1 className='text-3xl font-semibold tracking-tight'>{title}</h1>
+        {subtitle && <p className='mt-3 text-base text-neutral-700'>{subtitle}</p>}
+      </div>
+      <div className='mt-10 space-y-10'>
+        {sections.map((s, i) => {
+          const sectionImage = imageList[i]
+          return (
+            <article
+              key={i}
+              className='flex flex-col gap-6 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8 lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start'
+            >
+              <div>
+                {s.h && <h3 className='text-lg font-semibold text-neutral-900'>{s.h}</h3>}
+                {Array.isArray(s.p) ? (
+                  <ul className='mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-700'>
+                    {s.p.map((li, k) => (
+                      <li key={k}>{li}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className='mt-3 text-sm leading-relaxed text-neutral-700 whitespace-pre-line'>{s.p}</p>
+                )}
+              </div>
+              {sectionImage && (
+                <div className='overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50 p-2 shadow-inner lg:ml-auto lg:w-full'>
+                  <img
+                    src={sectionImage}
+                    alt={`${title} screenshot ${i + 1}`}
+                    className='h-full w-full rounded-xl object-cover'
+                  />
+                </div>
+              )}
+            </article>
+          )
+        })}
+      </div>
+      {trailingImages.length > 0 && (
+        <div className='mt-10 grid gap-4 sm:grid-cols-2'>
+          {trailingImages.map((src, idx) => (
+            <div key={src} className='overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm'>
+              <img src={src} alt={`${title} screenshot ${sections.length + idx + 1}`} className='w-full rounded-xl object-cover' />
+            </div>
           ))}
         </div>
       )}
-      <div className='mt-8 space-y-8'>
-        {sections.map((s, i) => (
-          <div key={i}>
-            {s.h && <h3 className='text-lg font-semibold'>{s.h}</h3>}
-            {Array.isArray(s.p) ? (
-              <ul className='mt-2 list-disc pl-5 space-y-1 text-sm leading-relaxed'>
-                {s.p.map((li, k) => (<li key={k}>{li}</li>))}
-              </ul>
-            ) : (
-              <p className='mt-2 text-sm leading-relaxed whitespace-pre-line'>{s.p}</p>
-            )}
-          </div>
-        ))}
-      </div>
     </section>
   )
 }
@@ -454,9 +712,9 @@ const P_M3 = {
   title: 'M3 Junction 2 to 4a Asset Verification Task',
   subtitle: 'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
   images: [
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/M3-Figure-1-1024x555.jpg',
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/M3-Figure-2-1024x555.jpg',
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/M3-Figure-3-1024x555.jpg',
+    projectM3Screenshot1,
+    projectM3Screenshot2,
+    projectM3Screenshot3,
   ],
   sections: [
     { h: 'Resources', p: ['Aerial LiDAR', 'Orthographic imagery', 'Google Street View', 'Existing inventory']},
@@ -485,9 +743,9 @@ const P_CCTV = {
   title: 'Assessing the Suitability of Proposed CCTV Camera Sites',
   subtitle: 'Clients use AssetScape to assess the suitability of proposed CCTV camera sites, eliminating the need for many site visits.',
   images: [
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-1-1024x555.jpg',
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-2-1024x555.jpg',
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-3-1024x742.jpg',
+    projectCctvScreenshot1,
+    projectCctvScreenshot2,
+    projectCctvScreenshot3,
   ],
   sections: [
     { h: 'Configuring the 3D world', p: [
@@ -514,9 +772,9 @@ const P_HE_Tech = {
   title: 'Highways England Technology',
   subtitle: 'Data cleansing for 25,000 technology assets for the NorthEast RCC Technology Area',
   images: [
-    'https://www.assetscape.co.uk/wp-content/uploads/2017/04/image001.png',
-    'https://www.assetscape.co.uk/wp-content/uploads/2017/04/Screen-Shot-2017-09-27-at-12.24.45-PM.png',
-    'https://www.assetscape.co.uk/wp-content/uploads/2017/04/Screen-Shot-2017-09-27-at-12.25.00-PM.png',
+    projectHeTechScreenshot1,
+    projectHeTechScreenshot2,
+    projectHeTechScreenshot3,
   ],
   sections: [
     { p: 'AssetScape provides a foundation for complex data cleansing across highways technology assets.' },
@@ -532,7 +790,13 @@ const P_HE_Tech = {
 const P_NH_CCMT = {
   title: 'National Highways CCMT System',
   subtitle: 'A configurable platform supporting Contract Completion and Handback workflows at scale.',
-  images: [],
+  images: [
+    projectNhCcmtScreenshot1,
+    projectNhCcmtScreenshot2,
+    projectNhCcmtScreenshot3,
+    projectNhCcmtScreenshot4,
+    projectNhCcmtScreenshot5,
+  ],
   sections: [
     { h: 'Scope', p: ['Decision tracking', 'Evidence and audit', 'Programme‑wide reporting']},
     { h: 'Approach', p: 'Configured modules for handback decisions, with role‑based workflows and versioned change control.' },
@@ -544,7 +808,11 @@ const P_NH_CCMT = {
 const P_NH_RL = {
   title: 'National Highways Road Lighting',
   subtitle: 'Inventory verification and condition intelligence for lighting assets.',
-  images: [],
+  images: [
+    projectNhRoadLightingScreenshot1,
+    projectNhRoadLightingScreenshot2,
+    projectNhRoadLightingScreenshot3,
+  ],
   sections: [
     { h: 'Data inputs', p: ['LiDAR', 'Night imagery', 'Existing inventory', 'Site records']},
     { h: 'Outcome', p: 'Clean inventory, prioritised interventions and export‑ready datasets.' },
@@ -556,7 +824,11 @@ const P_NH_RL = {
 const P_NH_DR = {
   title: 'National Highways Drainage',
   subtitle: 'Drainage asset identification, verification and risk insights.',
-  images: [],
+  images: [
+    projectNhDrainageScreenshot1,
+    projectNhDrainageScreenshot2,
+    projectNhDrainageScreenshot3,
+  ],
   sections: [
     { h: 'Process', p: ['Imagery‑led identification', 'Schema alignment', 'QA/QA with audits']},
     { h: 'Result', p: 'A verified drainage dataset aligned to export formats.' },
@@ -572,8 +844,7 @@ const S_3D = {
   title: '3D Visualisation',
   subtitle: 'Build immersive, navigable 3D scenes that place every asset in context.',
   images: [
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/20.jpg',
-    'https://www.assetscape.co.uk/wp-content/uploads/2018/04/35.jpg',
+    service3dCover,
   ],
   sections: [
     {
@@ -604,7 +875,7 @@ const S_3D = {
 const S_DataCleansing = {
   title: 'Data Cleansing',
   subtitle: 'Reconcile inventories and records into a single dependable dataset.',
-  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/18.jpg'],
+  images: [serviceDataCleansingCover],
   sections: [
     {
       h: 'Approach',
@@ -634,7 +905,7 @@ const S_DataCleansing = {
 const S_Strategic = {
   title: 'Strategic Asset Management',
   subtitle: 'Translate asset intelligence into clear investment decisions.',
-  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/35.jpg'],
+  images: [serviceStrategicCover],
   sections: [
     {
       h: 'Focus areas',
@@ -664,7 +935,7 @@ const S_Strategic = {
 const S_CameraPlacement = {
   title: 'Camera Placement',
   subtitle: 'Design effective CCTV schemes using virtual line-of-sight analysis.',
-  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/CCTV-Figure-1-1024x555.jpg'],
+  images: [serviceCameraPlacementCover],
   sections: [
     {
       h: 'Inputs',
@@ -694,7 +965,7 @@ const S_CameraPlacement = {
 const S_RouteWatcher = {
   title: 'RouteWatcher',
   subtitle: 'Monitor corridors remotely with scheduled capture and secure sharing.',
-  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/20.jpg'],
+  images: [serviceRouteWatcherCover],
   sections: [
     {
       h: 'What RouteWatcher delivers',
@@ -724,7 +995,7 @@ const S_RouteWatcher = {
 const S_MobileData = {
   title: 'Mobile Data Capture',
   subtitle: 'Capture georeferenced imagery and LiDAR to keep inventories current.',
-  images: ['https://www.assetscape.co.uk/wp-content/uploads/2018/04/18.jpg'],
+  images: [serviceMobileDataCover],
   sections: [
     {
       h: 'Capabilities',
@@ -762,7 +1033,6 @@ function DocumentsPage() {
   return (
     <section className='mx-auto max-w-3xl px-4 py-10'>
       <h1 className='text-3xl font-semibold tracking-tight'>Documents</h1>
-      <p className='mt-2 text-sm'>Download PDFs. Files are hosted with this site.</p>
       <ul className='mt-6 space-y-3'>
         {docs.map((d) => (
           <li key={d.file}>
@@ -772,6 +1042,12 @@ function DocumentsPage() {
           </li>
         ))}
       </ul>
+      <Link
+        to='/'
+        className='mt-8 inline-flex items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
+      >
+        <span aria-hidden>←</span> Back to home
+      </Link>
     </section>
   )
 }
