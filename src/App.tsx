@@ -223,7 +223,7 @@ function Layout({ children }: { children: ReactNode }) {
 }
 
 function VideoHero() {
-  const poster = 'https://www.assetscape.co.uk/wp-content/uploads/2018/04/18.jpg'
+  const poster = service3dCover
   const videoSrc = heroVideo
 
   return (
