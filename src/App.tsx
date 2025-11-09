@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import type { ReactNode } from 'react'
+import type { ReactNode, HTMLAttributes } from 'react'
 import type { To } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -238,16 +238,28 @@ function VideoHero() {
   )
 }
 
-function SectionMarker({ label }: { label: string }) {
+type SectionMarkerProps = {
+  label: string
+  as?: 'div' | 'h2' | 'h3' | 'h4' | 'h5'
+} & HTMLAttributes<HTMLDivElement>
+
+function SectionMarker({ label, as: Component = 'div', className = '', ...props }: SectionMarkerProps) {
+  const markerClasses = [
+    'flex items-center gap-3 text-xs md:text-sm font-semibold uppercase tracking-[0.35em] text-neutral-500',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
-    <div className='flex items-center gap-3 text-xs md:text-sm font-semibold uppercase tracking-[0.35em] text-neutral-500'>
+    <Component className={markerClasses} {...props}>
       <span aria-hidden className='hidden sm:block h-px flex-1 bg-neutral-200' />
       <span className='inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1.5 shadow-sm'>
         <span aria-hidden className='h-2.5 w-2.5 rounded-full bg-emerald-500' />
         {label}
       </span>
       <span aria-hidden className='hidden sm:block h-px flex-1 bg-neutral-200' />
-    </div>
+    </Component>
   )
 }
 
@@ -610,9 +622,10 @@ type DetailPageProps = {
   images?: string[]
   backTo: To
   backLabel: string
+  markerLabel?: string
 }
 
-function DetailPage({ title, subtitle, sections, images, backTo, backLabel }: DetailPageProps) {
+function DetailPage({ title, subtitle, sections, images, backTo, backLabel, markerLabel }: DetailPageProps) {
   const imageList = images ?? []
   const trailingImages = imageList.slice(Math.min(imageList.length, sections.length))
 
@@ -624,6 +637,11 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel }: De
       >
         {backLabel}
       </Link>
+      {markerLabel && (
+        <div className='mt-6 sm:mt-8'>
+          <SectionMarker label={markerLabel} />
+        </div>
+      )}
       <div className='mt-4 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8'>
         <h1 className='text-3xl font-semibold tracking-tight'>{title}</h1>
         {subtitle && <p className='mt-3 text-base text-neutral-700'>{subtitle}</p>}
@@ -636,16 +654,22 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel }: De
               key={i}
               className='flex flex-col gap-6 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8 lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start'
             >
-              <div>
-                {s.h && <h3 className='text-lg font-semibold text-neutral-900'>{s.h}</h3>}
+              <div className='space-y-3'>
+                {s.h && (
+                  <SectionMarker
+                    as='h3'
+                    label={s.h}
+                    className='text-[0.65rem] tracking-[0.32em] sm:text-xs'
+                  />
+                )}
                 {Array.isArray(s.p) ? (
-                  <ul className='mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-700'>
+                  <ul className='list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-700'>
                     {s.p.map((li, k) => (
                       <li key={k}>{li}</li>
                     ))}
                   </ul>
                 ) : (
-                  <p className='mt-3 text-sm leading-relaxed text-neutral-700 whitespace-pre-line'>{s.p}</p>
+                  <p className='text-sm leading-relaxed text-neutral-700 whitespace-pre-line'>{s.p}</p>
                 )}
               </div>
               {sectionImage && (
@@ -755,6 +779,7 @@ const P_M3 = {
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
+  markerLabel: 'Project',
 }
 
 // CCTV
@@ -780,6 +805,7 @@ const P_CCTV = {
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
+  markerLabel: 'Project',
 }
 
 // HE Tech
@@ -795,6 +821,7 @@ const P_HE_Tech = {
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
+  markerLabel: 'Project',
 }
 
 // New placeholder projects
@@ -808,6 +835,7 @@ const P_NH_CCMT = {
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
+  markerLabel: 'Project',
 }
 
 const P_NH_RL = {
@@ -820,6 +848,7 @@ const P_NH_RL = {
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
+  markerLabel: 'Project',
 }
 
 const P_NH_DR = {
@@ -832,6 +861,7 @@ const P_NH_DR = {
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
+  markerLabel: 'Project',
 }
 
 const SERVICE_BACK_TO: To = { pathname: '/', hash: '#services' }
@@ -867,6 +897,7 @@ const S_3D = {
   ],
   backTo: SERVICE_BACK_TO,
   backLabel: SERVICE_BACK_LABEL,
+  markerLabel: 'Service',
 }
 
 const S_DataCleansing = {
@@ -897,6 +928,7 @@ const S_DataCleansing = {
   ],
   backTo: SERVICE_BACK_TO,
   backLabel: SERVICE_BACK_LABEL,
+  markerLabel: 'Service',
 }
 
 const S_Strategic = {
@@ -927,6 +959,7 @@ const S_Strategic = {
   ],
   backTo: SERVICE_BACK_TO,
   backLabel: SERVICE_BACK_LABEL,
+  markerLabel: 'Service',
 }
 
 const S_CameraPlacement = {
@@ -957,6 +990,7 @@ const S_CameraPlacement = {
   ],
   backTo: SERVICE_BACK_TO,
   backLabel: SERVICE_BACK_LABEL,
+  markerLabel: 'Service',
 }
 
 const S_RouteWatcher = {
@@ -987,6 +1021,7 @@ const S_RouteWatcher = {
   ],
   backTo: SERVICE_BACK_TO,
   backLabel: SERVICE_BACK_LABEL,
+  markerLabel: 'Service',
 }
 
 const S_MobileData = {
@@ -1017,6 +1052,7 @@ const S_MobileData = {
   ],
   backTo: SERVICE_BACK_TO,
   backLabel: SERVICE_BACK_LABEL,
+  markerLabel: 'Service',
 }
 
 function DocumentsPage() {
