@@ -760,22 +760,29 @@ const P_M3 = {
   subtitle: 'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
   images: projectScreenshots['m3-j2-4a'],
   sections: [
-    { h: 'Resources', p: ['Aerial LiDAR', 'Orthographic imagery', 'Google Street View', 'Existing inventory']},
-    { h: 'Methodology', p: [
-      'Use imagery to establish the location and type of each asset on a route',
-      'Accept into the new asset catalogue assets from the existing inventory that can be positively identified',
-      'Add to the catalogue assets identified in the imagery but not present in the existing inventory',
-      'Add comments and alerts to assets that require them',
-      'Apply auditing with progress tracking, spot checks and comment and alert reviews',
-    ]},
-    { h: 'Overcoming Challenges', p: [
-      'Identify nearly 45 separate asset types',
-      'Select experienced data technicians with highways asset experience',
-      'Work with specialists to build an identification manual',
-      'Provide access to specialists for technicians',
-      'Maintain and clear a regularly updated issues log',
-    ]},
-    { h: 'Outcome', p: 'An accurate, up‑to‑date asset inventory, ready for integration.' },
+    {
+      h: 'Results',
+      p: 'Delivered an assured asset inventory covering every item on the upgraded M3 corridor between junctions 2 and 4a.',
+    },
+    {
+      h: 'Client & brief',
+      p: "Working with WSP and Balfour Beatty on behalf of National Highways, AssetScape was tasked with confirming the location, type and status of each highway asset and reconciling it with legacy records.",
+    },
+    {
+      h: 'Delivery',
+      p: [
+        'Mapped aerial LiDAR, orthographic imagery, Google Street View and inherited inventory data within AssetScape.',
+        'Identified nearly 45 asset categories using a bespoke identification manual and subject-matter support.',
+        'Tracked acceptance, additions, comments and alerts through structured auditing and progress dashboards.',
+      ],
+    },
+    {
+      h: 'Impact & evidence',
+      p: [
+        'Integrated verified data directly into the client catalogue for downstream asset management systems.',
+        'Issues log and spot-check audit trail provided evidence for National Highways assurance gates.',
+      ],
+    },
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
@@ -788,20 +795,29 @@ const P_CCTV = {
   subtitle: 'Clients use AssetScape to assess the suitability of proposed CCTV camera sites, eliminating the need for many site visits.',
   images: projectScreenshots['cctv-suitability'],
   sections: [
-    { h: 'Configuring the 3D world', p: [
-      'LiDAR (mobile and aerial) with refined point clouds',
-      'OS MasterMap with extruded buildings',
-      'Orthographic imagery',
-      'Google Street View',
-      'AssetScape 3D terrain maps',
-    ]},
-    { h: 'Line of Sight module', p: [
-      'Asset templates for different camera types and settings',
-      'Interactive camera assets for realistic operation',
-      'Polar Image with percentage visibility, screen height and depth',
-      'Regions centred on each proposed camera site',
-    ]},
-    { h: 'Usability', p: 'With a few hours of training, new users begin their assessments.' },
+    {
+      h: 'Results',
+      p: 'Planning teams reduced physical surveys while accelerating approvals for new roadside CCTV coverage.',
+    },
+    {
+      h: 'Client & brief',
+      p: 'AssetScape supported National Highways delivery partners who needed to validate proposed camera positions for UK strategic road network upgrades without repeated site visits.',
+    },
+    {
+      h: 'Delivery',
+      p: [
+        'Configured refined mobile and aerial LiDAR, OS MasterMap, orthographic imagery and Google Street View into a navigable 3D world.',
+        'Applied AssetScape Line of Sight tooling with camera templates, adjustable settings and interactive assets.',
+        'Generated polar imagery outputs showing percentage visibility, screen height and depth for each location.',
+      ],
+    },
+    {
+      h: 'Impact & evidence',
+      p: [
+        'Line-of-sight analytics documented coverage rationale for scheme reviews and safety cases.',
+        'New analysts achieved productive assessments after a few hours of onboarding, supporting nationwide roll-out.',
+      ],
+    },
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
@@ -814,10 +830,29 @@ const P_HE_Tech = {
   subtitle: 'Data cleansing for 25,000 technology assets for the NorthEast RCC Technology Area',
   images: projectScreenshots['highways-technology'],
   sections: [
-    { p: 'AssetScape provides a foundation for complex data cleansing across highways technology assets.' },
-    { p: 'Point‑cloud feature recognition and 3D visualisation enable accurate plotting to within less than a metre.' },
-    { p: 'The task used AVIS/OS imagery, LiDAR, OS mapping and a tailored schema.' },
-    { p: 'The approach included processing methodology, audit protocols and output specification with auditing and analytics.' },
+    {
+      h: 'Results',
+      p: 'Produced a cleansed and reconciled dataset for more than 25,000 roadside technology assets across the North East RCC.',
+    },
+    {
+      h: 'Client & brief',
+      p: 'Highways England’s technology team required sub-metre accurate locations and condition intelligence to underpin operations and maintenance contracts.',
+    },
+    {
+      h: 'Delivery',
+      p: [
+        'Combined AVIS and OS imagery, LiDAR point clouds and OS mapping within a tailored AssetScape schema.',
+        'Applied point-cloud feature recognition and 3D visualisation to digitise equipment to within less than a metre.',
+        'Implemented structured processing methodology, audit protocols and output specifications for downstream systems.',
+      ],
+    },
+    {
+      h: 'Impact & evidence',
+      p: [
+        'Delivered assurance packs with traceable edits and review history for Highways England governance.',
+        'Enabled technology service providers to plan interventions using a single, trusted source of asset data.',
+      ],
+    },
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
@@ -830,8 +865,29 @@ const P_NH_CCMT = {
   subtitle: 'A configurable platform supporting Contract Completion and Handback workflows at scale.',
   images: projectScreenshots['nh-ccmt'],
   sections: [
-    { h: 'Scope', p: ['Decision tracking', 'Evidence and audit', 'Programme‑wide reporting']},
-    { h: 'Approach', p: 'Configured modules for handback decisions, with role‑based workflows and versioned change control.' },
+    {
+      h: 'Results',
+      p: 'Established a national CCMT workspace where every contract handback decision, document and review is captured in one place.',
+    },
+    {
+      h: 'Client & brief',
+      p: 'National Highways required a configurable platform to govern contract completion, maintenance transfer and evidencing across multiple delivery partners.',
+    },
+    {
+      h: 'Delivery',
+      p: [
+        'Configured modules for decision tracking, evidence capture and programme-wide reporting.',
+        'Implemented role-based workflows with versioned change control to manage contractor and client inputs.',
+        'Integrated document storage, audit trails and dashboards tailored to National Highways governance.',
+      ],
+    },
+    {
+      h: 'Impact & evidence',
+      p: [
+        'Provided transparent readiness assessments for each handback milestone.',
+        'Audit histories and dashboards evidence compliance for regional operations teams and DfT scrutiny.',
+      ],
+    },
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
@@ -843,8 +899,29 @@ const P_NH_RL = {
   subtitle: 'Inventory verification and condition intelligence for lighting assets.',
   images: projectScreenshots['nh-road-lighting'],
   sections: [
-    { h: 'Data inputs', p: ['LiDAR', 'Night imagery', 'Existing inventory', 'Site records']},
-    { h: 'Outcome', p: 'Clean inventory, prioritised interventions and export‑ready datasets.' },
+    {
+      h: 'Results',
+      p: 'Delivered a verified lighting inventory with condition intelligence to guide renewal and maintenance planning.',
+    },
+    {
+      h: 'Client & brief',
+      p: 'National Highways asked AssetScape to reconcile disparate lighting records and quantify asset condition across the strategic road network.',
+    },
+    {
+      h: 'Delivery',
+      p: [
+        'Fused LiDAR, night-time imagery, existing inventory feeds and site records within AssetScape.',
+        'Applied rule-based checks and technician review to validate asset attributes and condition states.',
+        'Structured outputs for export into contractor maintenance and design systems.',
+      ],
+    },
+    {
+      h: 'Impact & evidence',
+      p: [
+        'Produced prioritised intervention lists backed by traceable evidence packs.',
+        'Enabled National Highways lighting teams to evidence funding bids using defensible data.',
+      ],
+    },
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
@@ -856,8 +933,29 @@ const P_NH_DR = {
   subtitle: 'Drainage asset identification, verification and risk insights.',
   images: projectScreenshots['nh-drainage'],
   sections: [
-    { h: 'Process', p: ['Imagery‑led identification', 'Schema alignment', 'QA/QA with audits']},
-    { h: 'Result', p: 'A verified drainage dataset aligned to export formats.' },
+    {
+      h: 'Results',
+      p: 'Produced a complete drainage asset dataset aligned to National Highways inventory standards.',
+    },
+    {
+      h: 'Client & brief',
+      p: 'National Highways required consistent records for drainage assets to support risk-based maintenance and flooding mitigation.',
+    },
+    {
+      h: 'Delivery',
+      p: [
+        'Led imagery-based identification supported by LiDAR, survey data and existing schema definitions.',
+        'Reconciled and aligned records to National Highways drainage data structures and location referencing.',
+        'Embedded QA/QC with audits, comment reviews and acceptance workflows inside AssetScape.',
+      ],
+    },
+    {
+      h: 'Impact & evidence',
+      p: [
+        'Enabled regional teams to target high-risk assets with reliable condition and connectivity information.',
+        'Delivered export-ready files and audit packs to evidence compliance with Design Manual for Roads and Bridges guidance.',
+      ],
+    },
   ],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
