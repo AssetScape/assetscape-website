@@ -50,9 +50,24 @@ import waterImg from './assets/water.png'
 import heroVideo from './assets/AS_SHORT_720_optimized.mp4'
 
 const projectScreenshots = {
-  'm3-j2-4a': [projectM3Screenshot1, projectM3Screenshot2, projectM3Screenshot3],
-  'cctv-suitability': [projectCctvScreenshot1, projectCctvScreenshot2, projectCctvScreenshot3],
-  'highways-technology': [projectHeTechScreenshot1, projectHeTechScreenshot2, projectHeTechScreenshot3],
+  'm3-j2-4a': [
+    projectM3Screenshot1,
+    projectM3Screenshot2,
+    projectM3Screenshot3,
+    projectM3Screenshot2,
+  ],
+  'cctv-suitability': [
+    projectCctvScreenshot1,
+    projectCctvScreenshot2,
+    projectCctvScreenshot3,
+    projectCctvScreenshot1,
+  ],
+  'highways-technology': [
+    projectHeTechScreenshot1,
+    projectHeTechScreenshot2,
+    projectHeTechScreenshot3,
+    projectHeTechScreenshot2,
+  ],
   'nh-ccmt': [
     projectNhCcmtScreenshot1,
     projectNhCcmtScreenshot2,
@@ -64,11 +79,13 @@ const projectScreenshots = {
     projectNhRoadLightingScreenshot1,
     projectNhRoadLightingScreenshot2,
     projectNhRoadLightingScreenshot3,
+    projectNhRoadLightingScreenshot2,
   ],
   'nh-drainage': [
     projectNhDrainageScreenshot1,
     projectNhDrainageScreenshot2,
     projectNhDrainageScreenshot3,
+    projectNhDrainageScreenshot2,
   ],
 } as const satisfies Record<string, string[]>
 
@@ -627,7 +644,8 @@ type DetailPageProps = {
 
 function DetailPage({ title, subtitle, sections, images, backTo, backLabel, markerLabel }: DetailPageProps) {
   const imageList = images ?? []
-  const trailingImages = imageList.slice(Math.min(imageList.length, sections.length))
+  const totalScreens = imageList.length
+  const trailingImages = imageList.slice(Math.min(totalScreens, sections.length))
 
   return (
     <section className='mx-auto max-w-5xl px-4 py-10'>
@@ -676,7 +694,7 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
                 <div className='overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50 p-2 shadow-inner lg:ml-auto lg:w-full'>
                   <img
                     src={sectionImage}
-                    alt={`${title} screenshot ${i + 1}`}
+                    alt={`${title} screenshot ${i + 1} of ${totalScreens}`}
                     className='h-full w-full rounded-xl object-cover'
                   />
                 </div>
@@ -689,7 +707,11 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
         <div className='mt-10 grid gap-4 sm:grid-cols-2'>
           {trailingImages.map((src, idx) => (
             <div key={src} className='overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm'>
-              <img src={src} alt={`${title} screenshot ${sections.length + idx + 1}`} className='w-full rounded-xl object-cover' />
+              <img
+                src={src}
+                alt={`${title} screenshot ${sections.length + idx + 1} of ${totalScreens}`}
+                className='w-full rounded-xl object-cover'
+              />
             </div>
           ))}
         </div>
