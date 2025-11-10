@@ -49,46 +49,6 @@ import railImg from './assets/rail.png'
 import waterImg from './assets/water.png'
 import heroVideo from './assets/AS_SHORT_720_optimized.mp4'
 
-const projectScreenshots = {
-  'm3-j2-4a': [
-    projectM3Screenshot1,
-    projectM3Screenshot2,
-    projectM3Screenshot3,
-    projectM3Screenshot2,
-  ],
-  'cctv-suitability': [
-    projectCctvScreenshot1,
-    projectCctvScreenshot2,
-    projectCctvScreenshot3,
-    projectCctvScreenshot1,
-  ],
-  'highways-technology': [
-    projectHeTechScreenshot1,
-    projectHeTechScreenshot2,
-    projectHeTechScreenshot3,
-    projectHeTechScreenshot2,
-  ],
-  'nh-ccmt': [
-    projectNhCcmtScreenshot1,
-    projectNhCcmtScreenshot2,
-    projectNhCcmtScreenshot3,
-    projectNhCcmtScreenshot4,
-    projectNhCcmtScreenshot5,
-  ],
-  'nh-road-lighting': [
-    projectNhRoadLightingScreenshot1,
-    projectNhRoadLightingScreenshot2,
-    projectNhRoadLightingScreenshot3,
-    projectNhRoadLightingScreenshot2,
-  ],
-  'nh-drainage': [
-    projectNhDrainageScreenshot1,
-    projectNhDrainageScreenshot2,
-    projectNhDrainageScreenshot3,
-    projectNhDrainageScreenshot2,
-  ],
-} as const satisfies Record<string, string[]>
-
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
 
@@ -631,7 +591,7 @@ function HomePage() {
   )
 }
 
-type Section = { h?: string; p: string | string[] }
+type Section = { h?: string; p: string | string[]; image?: string }
 type DetailPageProps = {
   title: string
   subtitle?: string
@@ -644,8 +604,14 @@ type DetailPageProps = {
 
 function DetailPage({ title, subtitle, sections, images, backTo, backLabel, markerLabel }: DetailPageProps) {
   const imageList = images ?? []
-  const totalScreens = imageList.length
-  const trailingImages = imageList.slice(Math.min(totalScreens, sections.length))
+  const sectionsNeedingFallback = sections.filter((section) => !section.image).length
+  const fallbackUsed = Math.min(imageList.length, sectionsNeedingFallback)
+  const trailingImages = imageList.slice(fallbackUsed)
+  const totalSectionImages = sections.length - sectionsNeedingFallback + fallbackUsed
+  const totalScreens = totalSectionImages + trailingImages.length
+
+  let fallbackIndex = 0
+  let sectionImageCount = 0
 
   return (
     <section className='mx-auto max-w-5xl px-4 py-10'>
@@ -666,7 +632,14 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
       </div>
       <div className='mt-10 space-y-10'>
         {sections.map((s, i) => {
-          const sectionImage = imageList[i]
+          let sectionImage = s.image
+          if (!sectionImage && fallbackIndex < fallbackUsed) {
+            sectionImage = imageList[fallbackIndex]
+            fallbackIndex += 1
+          }
+
+          const currentImageNumber = sectionImage ? ++sectionImageCount : null
+
           return (
             <article
               key={i}
@@ -694,7 +667,7 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
                 <div className='overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50 p-2 shadow-inner lg:ml-auto lg:w-full'>
                   <img
                     src={sectionImage}
-                    alt={`${title} screenshot ${i + 1} of ${totalScreens}`}
+                    alt={`${title} screenshot ${currentImageNumber} of ${totalScreens}`}
                     className='h-full w-full rounded-xl object-cover'
                   />
                 </div>
@@ -705,15 +678,18 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
       </div>
       {trailingImages.length > 0 && (
         <div className='mt-10 grid gap-4 sm:grid-cols-2'>
-          {trailingImages.map((src, idx) => (
-            <div key={src} className='overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm'>
-              <img
-                src={src}
-                alt={`${title} screenshot ${sections.length + idx + 1} of ${totalScreens}`}
-                className='w-full rounded-xl object-cover'
-              />
-            </div>
-          ))}
+          {trailingImages.map((src, idx) => {
+            const imageNumber = totalSectionImages + idx + 1
+            return (
+              <div key={src} className='overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm'>
+                <img
+                  src={src}
+                  alt={`${title} screenshot ${imageNumber} of ${totalScreens}`}
+                  className='w-full rounded-xl object-cover'
+                />
+              </div>
+            )
+          })}
         </div>
       )}
     </section>
@@ -780,15 +756,16 @@ function Footer() {
 const P_M3 = {
   title: 'M3 Junction 2 to 4a Asset Verification Task',
   subtitle: 'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
-  images: projectScreenshots['m3-j2-4a'],
   sections: [
     {
       h: 'Results',
       p: 'Delivered an assured asset inventory covering every item on the upgraded M3 corridor between junctions 2 and 4a.',
+      image: projectM3Screenshot1,
     },
     {
       h: 'Client & brief',
       p: "Working with WSP and Balfour Beatty on behalf of National Highways, AssetScape was tasked with confirming the location, type and status of each highway asset and reconciling it with legacy records.",
+      image: projectM3Screenshot2,
     },
     {
       h: 'Delivery',
@@ -797,6 +774,7 @@ const P_M3 = {
         'Identified nearly 45 asset categories using a bespoke identification manual and subject-matter support.',
         'Tracked acceptance, additions, comments and alerts through structured auditing and progress dashboards.',
       ],
+      image: projectM3Screenshot3,
     },
     {
       h: 'Impact & evidence',
@@ -804,6 +782,7 @@ const P_M3 = {
         'Integrated verified data directly into the client catalogue for downstream asset management systems.',
         'Issues log and spot-check audit trail provided evidence for National Highways assurance gates.',
       ],
+      image: projectM3Screenshot2,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -815,15 +794,16 @@ const P_M3 = {
 const P_CCTV = {
   title: 'Assessing the Suitability of Proposed CCTV Camera Sites',
   subtitle: 'Clients use AssetScape to assess the suitability of proposed CCTV camera sites, eliminating the need for many site visits.',
-  images: projectScreenshots['cctv-suitability'],
   sections: [
     {
       h: 'Results',
       p: 'Planning teams reduced physical surveys while accelerating approvals for new roadside CCTV coverage.',
+      image: projectCctvScreenshot1,
     },
     {
       h: 'Client & brief',
       p: 'AssetScape supported National Highways delivery partners who needed to validate proposed camera positions for UK strategic road network upgrades without repeated site visits.',
+      image: projectCctvScreenshot2,
     },
     {
       h: 'Delivery',
@@ -832,6 +812,7 @@ const P_CCTV = {
         'Applied AssetScape Line of Sight tooling with camera templates, adjustable settings and interactive assets.',
         'Generated polar imagery outputs showing percentage visibility, screen height and depth for each location.',
       ],
+      image: projectCctvScreenshot3,
     },
     {
       h: 'Impact & evidence',
@@ -839,6 +820,7 @@ const P_CCTV = {
         'Line-of-sight analytics documented coverage rationale for scheme reviews and safety cases.',
         'New analysts achieved productive assessments after a few hours of onboarding, supporting nationwide roll-out.',
       ],
+      image: projectCctvScreenshot1,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -850,15 +832,16 @@ const P_CCTV = {
 const P_HE_Tech = {
   title: 'Highways England Technology',
   subtitle: 'Data cleansing for 25,000 technology assets for the NorthEast RCC Technology Area',
-  images: projectScreenshots['highways-technology'],
   sections: [
     {
       h: 'Results',
       p: 'Produced a cleansed and reconciled dataset for more than 25,000 roadside technology assets across the North East RCC.',
+      image: projectHeTechScreenshot1,
     },
     {
       h: 'Client & brief',
       p: 'Highways England’s technology team required sub-metre accurate locations and condition intelligence to underpin operations and maintenance contracts.',
+      image: projectHeTechScreenshot2,
     },
     {
       h: 'Delivery',
@@ -867,6 +850,7 @@ const P_HE_Tech = {
         'Applied point-cloud feature recognition and 3D visualisation to digitise equipment to within less than a metre.',
         'Implemented structured processing methodology, audit protocols and output specifications for downstream systems.',
       ],
+      image: projectHeTechScreenshot3,
     },
     {
       h: 'Impact & evidence',
@@ -874,6 +858,7 @@ const P_HE_Tech = {
         'Delivered assurance packs with traceable edits and review history for Highways England governance.',
         'Enabled technology service providers to plan interventions using a single, trusted source of asset data.',
       ],
+      image: projectHeTechScreenshot2,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -885,15 +870,16 @@ const P_HE_Tech = {
 const P_NH_CCMT = {
   title: 'National Highways CCMT System',
   subtitle: 'A configurable platform supporting Contract Completion and Handback workflows at scale.',
-  images: projectScreenshots['nh-ccmt'],
   sections: [
     {
       h: 'Results',
       p: 'Established a national CCMT workspace where every contract handback decision, document and review is captured in one place.',
+      image: projectNhCcmtScreenshot1,
     },
     {
       h: 'Client & brief',
       p: 'National Highways required a configurable platform to govern contract completion, maintenance transfer and evidencing across multiple delivery partners.',
+      image: projectNhCcmtScreenshot2,
     },
     {
       h: 'Delivery',
@@ -902,6 +888,7 @@ const P_NH_CCMT = {
         'Implemented role-based workflows with versioned change control to manage contractor and client inputs.',
         'Integrated document storage, audit trails and dashboards tailored to National Highways governance.',
       ],
+      image: projectNhCcmtScreenshot3,
     },
     {
       h: 'Impact & evidence',
@@ -909,8 +896,10 @@ const P_NH_CCMT = {
         'Provided transparent readiness assessments for each handback milestone.',
         'Audit histories and dashboards evidence compliance for regional operations teams and DfT scrutiny.',
       ],
+      image: projectNhCcmtScreenshot4,
     },
   ],
+  images: [projectNhCcmtScreenshot5],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
   markerLabel: 'Project',
@@ -919,15 +908,16 @@ const P_NH_CCMT = {
 const P_NH_RL = {
   title: 'National Highways Road Lighting',
   subtitle: 'Inventory verification and condition intelligence for lighting assets.',
-  images: projectScreenshots['nh-road-lighting'],
   sections: [
     {
       h: 'Results',
       p: 'Delivered a verified lighting inventory with condition intelligence to guide renewal and maintenance planning.',
+      image: projectNhRoadLightingScreenshot1,
     },
     {
       h: 'Client & brief',
       p: 'National Highways asked AssetScape to reconcile disparate lighting records and quantify asset condition across the strategic road network.',
+      image: projectNhRoadLightingScreenshot2,
     },
     {
       h: 'Delivery',
@@ -936,6 +926,7 @@ const P_NH_RL = {
         'Applied rule-based checks and technician review to validate asset attributes and condition states.',
         'Structured outputs for export into contractor maintenance and design systems.',
       ],
+      image: projectNhRoadLightingScreenshot3,
     },
     {
       h: 'Impact & evidence',
@@ -943,6 +934,7 @@ const P_NH_RL = {
         'Produced prioritised intervention lists backed by traceable evidence packs.',
         'Enabled National Highways lighting teams to evidence funding bids using defensible data.',
       ],
+      image: projectNhRoadLightingScreenshot2,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -953,15 +945,16 @@ const P_NH_RL = {
 const P_NH_DR = {
   title: 'National Highways Drainage',
   subtitle: 'Drainage asset identification, verification and risk insights.',
-  images: projectScreenshots['nh-drainage'],
   sections: [
     {
       h: 'Results',
       p: 'Produced a complete drainage asset dataset aligned to National Highways inventory standards.',
+      image: projectNhDrainageScreenshot1,
     },
     {
       h: 'Client & brief',
       p: 'National Highways required consistent records for drainage assets to support risk-based maintenance and flooding mitigation.',
+      image: projectNhDrainageScreenshot2,
     },
     {
       h: 'Delivery',
@@ -970,6 +963,7 @@ const P_NH_DR = {
         'Reconciled and aligned records to National Highways drainage data structures and location referencing.',
         'Embedded QA/QC with audits, comment reviews and acceptance workflows inside AssetScape.',
       ],
+      image: projectNhDrainageScreenshot3,
     },
     {
       h: 'Impact & evidence',
@@ -977,6 +971,7 @@ const P_NH_DR = {
         'Enabled regional teams to target high-risk assets with reliable condition and connectivity information.',
         'Delivered export-ready files and audit packs to evidence compliance with Design Manual for Roads and Bridges guidance.',
       ],
+      image: projectNhDrainageScreenshot2,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
