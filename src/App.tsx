@@ -759,7 +759,8 @@ function Footer() {
 // Projects
 const P_M3 = {
   title: 'M3 Junction 2 to 4a Asset Verification Task',
-  subtitle: 'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
+  subtitle:
+    'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
   sections: [
     {
       h: 'Results',
@@ -768,7 +769,7 @@ const P_M3 = {
     },
     {
       h: 'Client & brief',
-      p: "Working with WSP and Balfour Beatty on behalf of National Highways, AssetScape was tasked with confirming the location, type and status of each highway asset and reconciling it with legacy records.",
+      p: 'Working with WSP and Balfour Beatty on behalf of National Highways, AssetScape was tasked with confirming the location, type and status of each highway asset and reconciling it with legacy records.',
       image: projectM3Screenshot2,
     },
     {
