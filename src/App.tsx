@@ -578,10 +578,10 @@ function HomePage() {
             <iframe
               loading='lazy'
               className='w-full h-full'
-              src='https://www.youtube-nocookie.com/embed/OZ3DrVDm3kU?rel=0&modestbranding=1&playsinline=1'
+              src='https://player.vimeo.com/video/1135808614?title=0&byline=0&portrait=0'
               title='AssetScape promo'
               frameBorder='0'
-              allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              allow='autoplay; fullscreen; picture-in-picture; clipboard-write'
               allowFullScreen
             ></iframe>
           </div>
