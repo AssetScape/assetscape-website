@@ -561,7 +561,7 @@ function HomePage() {
       {/* Judge's quote without heading */}
       <section className='mx-auto max-w-6xl px-4 py-14'>
         <figure className='rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12'>
-          <blockquote className='text-xl leading-relaxed text-neutral-800 italic md:text-2xl'>
+          <blockquote className='text-xl leading-relaxed text-neutral-800 italic md:text-xl'>
             “This is a very elegant approach to solving a real‑world problem. The innovation is highly transferrable and helps asset managers to manage their assets more effectively, and with greater accuracy. This is a promising innovation which has the potential to transform the way data for a major project is mapped and configured.”
           </blockquote>
           <figcaption className='mt-6 text-sm font-semibold uppercase tracking-wide text-neutral-600 md:text-base'>
