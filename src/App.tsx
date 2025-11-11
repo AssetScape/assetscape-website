@@ -607,14 +607,33 @@ type DetailPageProps = {
 }
 
 function DetailPage({ title, subtitle, sections, images, backTo, backLabel, markerLabel }: DetailPageProps) {
+  // Normalise the list of page-level images (used as a fallback / gallery)
   const imageList = images ?? []
-  const sectionsNeedingFallback = sections.filter((section) => !section.image).length
-  const fallbackUsed = Math.min(imageList.length, sectionsNeedingFallback)
-  const trailingImages = imageList.slice(fallbackUsed)
-  const totalSectionImages = sections.length - sectionsNeedingFallback + fallbackUsed
+
+  // Decide which image each section should use:
+  // 1) Prefer the section's own image (e.g. project screenshots)
+  // 2) If there is no section image, consume the next image from imageList
+  // This runs once so numbering and trailing gallery stay consistent.
+  const sectionImageSources: (string | undefined)[] = []
+  let imageCursor = 0
+
+  sections.forEach((section) => {
+    if (section.image) {
+      sectionImageSources.push(section.image)
+    } else if (imageCursor < imageList.length) {
+      sectionImageSources.push(imageList[imageCursor])
+      imageCursor += 1
+    } else {
+      sectionImageSources.push(undefined)
+    }
+  })
+
+  // Any remaining images become the trailing gallery after the sections
+  const trailingImages = imageList.slice(imageCursor)
+
+  const totalSectionImages = sectionImageSources.filter(Boolean).length
   const totalScreens = totalSectionImages + trailingImages.length
 
-  let fallbackIndex = 0
   let sectionImageCount = 0
 
   return (
@@ -625,23 +644,21 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
       >
         {backLabel}
       </Link>
+
       {markerLabel && (
         <div className='mt-6 sm:mt-8'>
           <SectionMarker label={markerLabel} />
         </div>
       )}
+
       <div className='mt-4 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8'>
         <h1 className='text-3xl font-semibold tracking-tight'>{title}</h1>
         {subtitle && <p className='mt-3 text-base text-neutral-700'>{subtitle}</p>}
       </div>
-      <div className='mt-10 space-y-10'>
-        {sections.map((s, i) => {
-          let sectionImage = s.image
-          if (!sectionImage && fallbackIndex < fallbackUsed) {
-            sectionImage = imageList[fallbackIndex]
-            fallbackIndex += 1
-          }
 
+      <div className='mt-8 space-y-6 sm:mt-10'>
+        {sections.map((s, i) => {
+          const sectionImage = sectionImageSources[i]
           const currentImageNumber = sectionImage ? ++sectionImageCount : null
 
           return (
@@ -657,21 +674,30 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
                     className='text-[0.65rem] tracking-[0.32em] sm:text-xs'
                   />
                 )}
+
                 {Array.isArray(s.p) ? (
-                  <ul className='list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-700'>
-                    {s.p.map((li, k) => (
-                      <li key={k}>{li}</li>
+                  <ul className='space-y-2 text-sm text-neutral-800 sm:text-base'>
+                    {s.p.map((line, idx) => (
+                      <li key={idx} className='flex gap-2'>
+                        <span className='mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-400' />
+                        <span>{line}</span>
+                      </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className='text-sm leading-relaxed text-neutral-700 whitespace-pre-line'>{s.p}</p>
+                  <p className='text-sm text-neutral-800 sm:text-base'>{s.p}</p>
                 )}
               </div>
+
               {sectionImage && (
                 <div className='overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50 p-2 shadow-inner lg:ml-auto lg:w-full'>
                   <img
                     src={sectionImage}
-                    alt={`${title} screenshot ${currentImageNumber} of ${totalScreens}`}
+                    alt={
+                      currentImageNumber
+                        ? `${title} screenshot ${currentImageNumber} of ${totalScreens}`
+                        : title
+                    }
                     className='h-full w-full rounded-xl object-cover'
                   />
                 </div>
@@ -680,12 +706,17 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
           )
         })}
       </div>
+
       {trailingImages.length > 0 && (
         <div className='mt-10 grid gap-4 sm:grid-cols-2'>
-          {trailingImages.map((src, idx) => {
-            const imageNumber = totalSectionImages + idx + 1
+          {trailingImages.map((src, index) => {
+            const imageNumber = totalSectionImages + index + 1
+
             return (
-              <div key={src} className='overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm'>
+              <div
+                key={src}
+                className='overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm'
+              >
                 <img
                   src={src}
                   alt={`${title} screenshot ${imageNumber} of ${totalScreens}`}
