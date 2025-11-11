@@ -573,7 +573,7 @@ function HomePage() {
         {/* Full-length promo video section */}
         <section id='full-video' className='bg-neutral-50 border-y border-neutral-200'>
         <div className='mx-auto max-w-6xl px-4 py-14'>
-          <h2 className='text-2xl font-semibold tracking-tight'>Watch the video</h2>
+          <h2 className='text-xs font-semibold tracking-tight'> </h2>
           <div className='mt-6 aspect-video w-full rounded-xl overflow-hidden border border-neutral-200'>
             <iframe
               loading='lazy'
