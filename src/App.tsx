@@ -10,11 +10,11 @@ import serviceCameraPlacementCover from './assets/CameraPlacementCover.jpg'
 import serviceRouteWatcherCover from './assets/RouteWatcherCover.jpg'
 import serviceMobileDataCover from './assets/MobileDataCaptureCover.jpg'
 
-import projectM3Cover from './assets/M3 Junction 2 to 4a Asset Verification Task Cover.jpg'
-import projectM3Screenshot1 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 1.jpg'
-import projectM3Screenshot2 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 2.jpg'
-import projectM3Screenshot3 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 3.jpg'
-import projectM3Screenshot4 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 4.jpg'
+import projectM3Cover from './assets/Project_M3_Cover.jpg'
+import projectM3Screenshot1 from './assets/Project_M3_screenshot_1.png'
+import projectM3Screenshot2 from './assets/Project_M3_screenshot_2.png'
+import projectM3Screenshot3 from './assets/Project_M3_screenshot_3.png'
+import projectM3Screenshot4 from './assets/Project_M3_screenshot_4.png'
 
 import projectCctvCover from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites Cover.jpg"
 import projectCctvScreenshot1 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 1.jpg"
@@ -607,13 +607,15 @@ type DetailPageProps = {
 }
 
 function DetailPage({ title, subtitle, sections, images, backTo, backLabel, markerLabel }: DetailPageProps) {
-  // Normalise the list of page-level images (used as a fallback / gallery)
-  const imageList = images ?? []
+  const hasSectionImages = sections.some((section) => Boolean(section.image))
+
+  // Normalise the list of page-level images (used as a fallback when no section images exist)
+  const imageList = hasSectionImages ? [] : images ?? []
 
   // Decide which image each section should use:
   // 1) Prefer the section's own image (e.g. project screenshots)
   // 2) If there is no section image, consume the next image from imageList
-  // This runs once so numbering and trailing gallery stay consistent.
+  // This runs once so numbering stays consistent.
   const sectionImageSources: (string | undefined)[] = []
   let imageCursor = 0
 
@@ -628,11 +630,8 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
     }
   })
 
-  // Any remaining images become the trailing gallery after the sections
-  const trailingImages = imageList.slice(imageCursor)
-
   const totalSectionImages = sectionImageSources.filter(Boolean).length
-  const totalScreens = totalSectionImages + trailingImages.length
+  const totalScreens = totalSectionImages
 
   let sectionImageCount = 0
 
@@ -706,27 +705,6 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
           )
         })}
       </div>
-
-      {trailingImages.length > 0 && (
-        <div className='mt-10 grid gap-4 sm:grid-cols-2'>
-          {trailingImages.map((src, index) => {
-            const imageNumber = totalSectionImages + index + 1
-
-            return (
-              <div
-                key={src}
-                className='overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm'
-              >
-                <img
-                  src={src}
-                  alt={`${title} screenshot ${imageNumber} of ${totalScreens}`}
-                  className='w-full rounded-xl object-cover'
-                />
-              </div>
-            )
-          })}
-        </div>
-      )}
     </section>
   )
 }
