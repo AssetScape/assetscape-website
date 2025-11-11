@@ -14,33 +14,37 @@ import projectM3Cover from './assets/M3 Junction 2 to 4a Asset Verification Task
 import projectM3Screenshot1 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 1.jpg'
 import projectM3Screenshot2 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 2.jpg'
 import projectM3Screenshot3 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 3.jpg'
+import projectM3Screenshot4 from './assets/M3 Junction 2 to 4a Asset Verification Task screenshot 4.jpg'
 
 import projectCctvCover from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites Cover.jpg"
 import projectCctvScreenshot1 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 1.jpg"
 import projectCctvScreenshot2 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 2.jpg"
 import projectCctvScreenshot3 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 3.jpg"
+import projectCctvScreenshot4 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 4.jpg"
 
 import projectHeTechCover from "./assets/Highways England Technology Cover.png"
 import projectHeTechScreenshot1 from "./assets/Highways England Technology screenshot 1.png"
 import projectHeTechScreenshot2 from "./assets/Highways England Technology screenshot 2.png"
 import projectHeTechScreenshot3 from "./assets/Highways England Technology screenshot 3.png"
+import projectHeTechScreenshot4 from "./assets/Highways England Technology screenshot 4.png"
 
 import projectNhCcmtCover from "./assets/National Highways CCMT System Cover.png"
 import projectNhCcmtScreenshot1 from "./assets/National Highways CCMT System screenshot 1.png"
 import projectNhCcmtScreenshot2 from "./assets/National Highways CCMT System screenshot 2.png"
 import projectNhCcmtScreenshot3 from "./assets/National Highways CCMT System screenshot 3.png"
 import projectNhCcmtScreenshot4 from "./assets/National Highways CCMT System screenshot 4.png"
-import projectNhCcmtScreenshot5 from "./assets/National Highways CCMT System screenshot 5.png"
 
 import projectNhRoadLightingCover from "./assets/National Highways Road Lighting Cover.jpg"
 import projectNhRoadLightingScreenshot1 from "./assets/National Highways Road Lighting screenshot 1.jpg"
 import projectNhRoadLightingScreenshot2 from "./assets/National Highways Road Lighting screenshot 2.jpg"
 import projectNhRoadLightingScreenshot3 from "./assets/National Highways Road Lighting screenshot 3.jpg"
+import projectNhRoadLightingScreenshot4 from "./assets/National Highways Road Lighting screenshot 4.jpg"
 
 import projectNhDrainageCover from "./assets/National Highways Drainage Cover.jpg"
 import projectNhDrainageScreenshot1 from "./assets/National Highways Drainage screenshot 1.jpg"
 import projectNhDrainageScreenshot2 from "./assets/National Highways Drainage screenshot 2.jpg"
 import projectNhDrainageScreenshot3 from "./assets/National Highways Drainage screenshot 3.jpg"
+import projectNhDrainageScreenshot4 from "./assets/National Highways Drainage screenshot 4.jpg"
 
 import combinedLogo from './assets/logo-wordmark-combined.png'
 import combinedLogoLight from './assets/logo-wordmark-combined_lighgr.png'
@@ -782,7 +786,7 @@ const P_M3 = {
         'Integrated verified data directly into the client catalogue for downstream asset management systems.',
         'Issues log and spot-check audit trail provided evidence for National Highways assurance gates.',
       ],
-      image: projectM3Screenshot2,
+      image: projectM3Screenshot4,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -820,7 +824,7 @@ const P_CCTV = {
         'Line-of-sight analytics documented coverage rationale for scheme reviews and safety cases.',
         'New analysts achieved productive assessments after a few hours of onboarding, supporting nationwide roll-out.',
       ],
-      image: projectCctvScreenshot1,
+      image: projectCctvScreenshot4,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -858,7 +862,7 @@ const P_HE_Tech = {
         'Delivered assurance packs with traceable edits and review history for Highways England governance.',
         'Enabled technology service providers to plan interventions using a single, trusted source of asset data.',
       ],
-      image: projectHeTechScreenshot2,
+      image: projectHeTechScreenshot4,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -899,7 +903,6 @@ const P_NH_CCMT = {
       image: projectNhCcmtScreenshot4,
     },
   ],
-  images: [projectNhCcmtScreenshot5],
   backTo: { pathname: '/', hash: '#projects' },
   backLabel: '← Back to Projects',
   markerLabel: 'Project',
@@ -934,7 +937,7 @@ const P_NH_RL = {
         'Produced prioritised intervention lists backed by traceable evidence packs.',
         'Enabled National Highways lighting teams to evidence funding bids using defensible data.',
       ],
-      image: projectNhRoadLightingScreenshot2,
+      image: projectNhRoadLightingScreenshot4,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
@@ -971,7 +974,7 @@ const P_NH_DR = {
         'Enabled regional teams to target high-risk assets with reliable condition and connectivity information.',
         'Delivered export-ready files and audit packs to evidence compliance with Design Manual for Roads and Bridges guidance.',
       ],
-      image: projectNhDrainageScreenshot2,
+      image: projectNhDrainageScreenshot4,
     },
   ],
   backTo: { pathname: '/', hash: '#projects' },
