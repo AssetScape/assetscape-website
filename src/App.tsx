@@ -582,7 +582,7 @@ function HomePage() {
               allowFullScreen
             ></iframe>
           </div>
-          <p className='mt-3 text-base font-medium text-neutral-800'>
+          <p className='mt-3 text-xl font-medium text-neutral-800'>
             Prefer a live demo?{' '}
             <a
               className='underline decoration-emerald-500 decoration-2 underline-offset-4 transition hover:text-emerald-600'
