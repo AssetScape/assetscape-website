@@ -415,10 +415,10 @@ function HomePage() {
   ]
 
   const projects = [
+    { title: 'National Highways CCMT System', slug: 'nh-ccmt', cover: projectNhCcmtCover },
     { title: 'M3 Junction 2 to 4a Asset Verification Task', slug: 'm3-j2-4a', cover: projectM3Cover },
     { title: 'Assessing the Suitability of Proposed CCTV Camera Sites', slug: 'cctv-suitability', cover: projectCctvCover },
     { title: 'Highways England Technology', slug: 'highways-technology', cover: projectHeTechCover },
-    { title: 'National Highways CCMT System', slug: 'nh-ccmt', cover: projectNhCcmtCover },
     { title: 'National Highways Road Lighting', slug: 'nh-road-lighting', cover: projectNhRoadLightingCover },
     { title: 'National Highways Drainage', slug: 'nh-drainage', cover: projectNhDrainageCover },
   ]
@@ -775,29 +775,29 @@ const P_M3 = {
     'Working for WSP and Balfour Beatty, we undertook the task of correctly identifying and recording every asset on the newly rebuilt section of the M3 between junctions 2 and 4a.',
   sections: [
     {
-      h: 'Results',
-      p: 'Delivered an assured asset inventory covering every item on the upgraded M3 corridor between junctions 2 and 4a.',
+      h: 'Background and objectives',
+      p: 'Working with WSP and Balfour Beatty on behalf of National Highways, AssetScape was tasked with confirming the location, type and status of each highway asset and reconciling it with legacy records so the upgraded corridor could be handed over with confidence.',
       image: projectM3Screenshot1,
     },
     {
-      h: 'Client & brief',
-      p: 'Working with WSP and Balfour Beatty on behalf of National Highways, AssetScape was tasked with confirming the location, type and status of each highway asset and reconciling it with legacy records.',
+      h: 'Delivery approach',
+      p: 'AssetScape coordinated multidisciplinary teams to validate inventory items, resolve discrepancies and progress approvals through structured auditing and dashboards.',
       image: projectM3Screenshot2,
     },
     {
-      h: 'Delivery',
+      h: 'Technical detail',
       p: [
         'Mapped aerial LiDAR, orthographic imagery, Google Street View and inherited inventory data within AssetScape.',
         'Identified nearly 45 asset categories using a bespoke identification manual and subject-matter support.',
-        'Tracked acceptance, additions, comments and alerts through structured auditing and progress dashboards.',
+        'Tracked acceptance, additions, comments and alerts to maintain a full audit trail of change.',
       ],
       image: projectM3Screenshot3,
     },
     {
-      h: 'Impact & evidence',
+      h: 'Outcomes and benefits',
       p: [
-        'Integrated verified data directly into the client catalogue for downstream asset management systems.',
-        'Issues log and spot-check audit trail provided evidence for National Highways assurance gates.',
+        'Delivered an assured asset inventory covering every item on the upgraded M3 corridor between junctions 2 and 4a.',
+        'Integrated verified data directly into the client catalogue, with evidence packs supporting National Highways assurance gates.',
       ],
       image: projectM3Screenshot4,
     },
@@ -813,26 +813,26 @@ const P_CCTV = {
   subtitle: 'Clients use AssetScape to assess the suitability of proposed CCTV camera sites, eliminating the need for many site visits.',
   sections: [
     {
-      h: 'Results',
-      p: 'Planning teams reduced physical surveys while accelerating approvals for new roadside CCTV coverage.',
+      h: 'Background and objectives',
+      p: 'AssetScape supported National Highways delivery partners who needed to validate proposed camera positions for strategic road network upgrades without repeated site visits, accelerating approvals for new roadside CCTV coverage.',
       image: projectCctvScreenshot1,
     },
     {
-      h: 'Client & brief',
-      p: 'AssetScape supported National Highways delivery partners who needed to validate proposed camera positions for UK strategic road network upgrades without repeated site visits.',
-      image: projectCctvScreenshot2,
-    },
-    {
-      h: 'Delivery',
+      h: 'Delivery approach',
       p: [
         'Configured refined mobile and aerial LiDAR, OS MasterMap, orthographic imagery and Google Street View into a navigable 3D world.',
         'Applied AssetScape Line of Sight tooling with camera templates, adjustable settings and interactive assets.',
         'Generated polar imagery outputs showing percentage visibility, screen height and depth for each location.',
       ],
+      image: projectCctvScreenshot2,
+    },
+    {
+      h: 'Technical detail',
+      p: 'Teams interrogate corridors virtually, overlaying proposed equipment with existing infrastructure to confirm visibility, mounting options and power connectivity before installation.',
       image: projectCctvScreenshot3,
     },
     {
-      h: 'Impact & evidence',
+      h: 'Outcomes and benefits',
       p: [
         'Line-of-sight analytics documented coverage rationale for scheme reviews and safety cases.',
         'New analysts achieved productive assessments after a few hours of onboarding, supporting nationwide roll-out.',
@@ -851,17 +851,17 @@ const P_HE_Tech = {
   subtitle: 'Data cleansing for 25,000 technology assets for the NorthEast RCC Technology Area',
   sections: [
     {
-      h: 'Results',
-      p: 'Produced a cleansed and reconciled dataset for more than 25,000 roadside technology assets across the North East RCC.',
+      h: 'Background and objectives',
+      p: 'Highways England’s technology team required sub-metre accurate locations and condition intelligence to underpin operations and maintenance contracts across more than 25,000 roadside assets.',
       image: projectHeTechScreenshot1,
     },
     {
-      h: 'Client & brief',
-      p: 'Highways England’s technology team required sub-metre accurate locations and condition intelligence to underpin operations and maintenance contracts.',
+      h: 'Delivery approach',
+      p: 'AssetScape orchestrated survey outputs and stakeholder reviews, running a repeatable workflow that digitised equipment, reconciled changes and secured approvals before publishing updates.',
       image: projectHeTechScreenshot2,
     },
     {
-      h: 'Delivery',
+      h: 'Technical detail',
       p: [
         'Combined AVIS and OS imagery, LiDAR point clouds and OS mapping within a tailored AssetScape schema.',
         'Applied point-cloud feature recognition and 3D visualisation to digitise equipment to within less than a metre.',
@@ -870,10 +870,10 @@ const P_HE_Tech = {
       image: projectHeTechScreenshot3,
     },
     {
-      h: 'Impact & evidence',
+      h: 'Outcomes and benefits',
       p: [
-        'Delivered assurance packs with traceable edits and review history for Highways England governance.',
-        'Enabled technology service providers to plan interventions using a single, trusted source of asset data.',
+        'Produced a cleansed and reconciled dataset for more than 25,000 roadside technology assets across the North East RCC.',
+        'Delivered assurance packs with traceable edits and review history, enabling technology service providers to plan interventions using a single, trusted source of asset data.',
       ],
       image: projectHeTechScreenshot4,
     },
@@ -889,30 +889,23 @@ const P_NH_CCMT = {
   subtitle: 'A configurable platform supporting Contract Completion and Handback workflows at scale.',
   sections: [
     {
-      h: 'Results',
-      p: 'Established a national CCMT workspace where every contract handback decision, document and review is captured in one place.',
+      h: 'Background and objectives',
+      p: 'Private Finance Initiative contracts fund and deliver public assets through private capital. Design, Build, Finance and Operate companies hold concessions on parts of the Strategic Road Network. Handback is the process at the end of a concession when the operator returns the asset to the authority in an agreed condition with defined residual life and evidence.',
       image: projectNhCcmtScreenshot1,
     },
     {
-      h: 'Client & brief',
-      p: 'National Highways required a configurable platform to govern contract completion, maintenance transfer and evidencing across multiple delivery partners.',
+      h: 'Delivery approach',
+      p: 'AssetScape connects client and third-party data and renders it in 3D along the linear network. In CCMT we used existing base layers and aligned incoming sources without custom modelling so teams could work in one place. CCMT runs the end-to-end process on a single source of truth. Teams plan and track work, attach evidence to assets, resolve RFIs, and manage decisions and documents. Users reached productive use after a few hours. We co-designed the workflow with National Highways and DBFO users and adjusted it in short cycles. The platform accepts new steps, rules and screens without rebuild.',
       image: projectNhCcmtScreenshot2,
     },
     {
-      h: 'Delivery',
-      p: [
-        'Configured modules for decision tracking, evidence capture and programme-wide reporting.',
-        'Implemented role-based workflows with versioned change control to manage contractor and client inputs.',
-        'Integrated document storage, audit trails and dashboards tailored to National Highways governance.',
-      ],
+      h: 'Technical detail',
+      p: 'AssetScape loaded LiDAR, mapping, imagery, Street View, source databases, inventory and condition data, and evidence packs from National Highways and DBFOs. Scenes auto-load from these connected sources, which cuts effort to create and maintain datasets. Data flows to Tableau Online so programme leads see progress by route and asset class with current throughput, blockers and gaps. CCMT includes tools for assessment. The road markings module uses machine learning on downward-facing camera images to build a dataset, classify defects and drive responses. The structures 3D viewer supports element-level inspection, defect review and capture of observations and comments, all tied to the correct component and location. TRACS Pavement Viewer aligns pavement data to the route with high-definition photo review.',
       image: projectNhCcmtScreenshot3,
     },
     {
-      h: 'Impact & evidence',
-      p: [
-        'Provided transparent readiness assessments for each handback milestone.',
-        'Audit histories and dashboards evidence compliance for regional operations teams and DfT scrutiny.',
-      ],
+      h: 'Outcomes and benefits',
+      p: 'Route and structures reviews occur online which reduces site visits. Evidence indicates a near 50 percent reduction in repeat site visits on sampled routes within the first three years. Evidence packs are attached to the record at the right location and time which moves milestone evidence pack creation from days to minutes once teams adopt the workflow. Decision cycles shorten because RFIs, comments and files sit on the same record and users work to one version of the truth. Required fields, validation and an audit trail cut rework and remove duplicate uploads, submissions and lost records as users operate from the same source. Tableau Online reporting shows progress, blockers and gaps by route and asset class so managers act on current data and can convert insights into actions.',
       image: projectNhCcmtScreenshot4,
     },
   ],
@@ -926,17 +919,17 @@ const P_NH_RL = {
   subtitle: 'Inventory verification and condition intelligence for lighting assets.',
   sections: [
     {
-      h: 'Results',
-      p: 'Delivered a verified lighting inventory with condition intelligence to guide renewal and maintenance planning.',
+      h: 'Background and objectives',
+      p: 'National Highways asked AssetScape to reconcile disparate lighting records and quantify asset condition across the strategic road network to steer renewal and maintenance planning.',
       image: projectNhRoadLightingScreenshot1,
     },
     {
-      h: 'Client & brief',
-      p: 'National Highways asked AssetScape to reconcile disparate lighting records and quantify asset condition across the strategic road network.',
+      h: 'Delivery approach',
+      p: 'We coordinated regional data owners and contractors, pushing updates through agreed workflows so the shared inventory reflected verified changes and commentary.',
       image: projectNhRoadLightingScreenshot2,
     },
     {
-      h: 'Delivery',
+      h: 'Technical detail',
       p: [
         'Fused LiDAR, night-time imagery, existing inventory feeds and site records within AssetScape.',
         'Applied rule-based checks and technician review to validate asset attributes and condition states.',
@@ -945,10 +938,10 @@ const P_NH_RL = {
       image: projectNhRoadLightingScreenshot3,
     },
     {
-      h: 'Impact & evidence',
+      h: 'Outcomes and benefits',
       p: [
-        'Produced prioritised intervention lists backed by traceable evidence packs.',
-        'Enabled National Highways lighting teams to evidence funding bids using defensible data.',
+        'Delivered a verified lighting inventory with condition intelligence to guide renewal and maintenance planning.',
+        'Produced prioritised intervention lists backed by traceable evidence packs and defensible data for funding bids.',
       ],
       image: projectNhRoadLightingScreenshot4,
     },
@@ -963,17 +956,17 @@ const P_NH_DR = {
   subtitle: 'Drainage asset identification, verification and risk insights.',
   sections: [
     {
-      h: 'Results',
-      p: 'Produced a complete drainage asset dataset aligned to National Highways inventory standards.',
+      h: 'Background and objectives',
+      p: 'National Highways required consistent records for drainage assets to support risk-based maintenance and flooding mitigation across the network.',
       image: projectNhDrainageScreenshot1,
     },
     {
-      h: 'Client & brief',
-      p: 'National Highways required consistent records for drainage assets to support risk-based maintenance and flooding mitigation.',
+      h: 'Delivery approach',
+      p: 'AssetScape led a coordinated verification campaign, aligning survey outputs and stakeholder reviews so drainage data could be trusted for programme planning.',
       image: projectNhDrainageScreenshot2,
     },
     {
-      h: 'Delivery',
+      h: 'Technical detail',
       p: [
         'Led imagery-based identification supported by LiDAR, survey data and existing schema definitions.',
         'Reconciled and aligned records to National Highways drainage data structures and location referencing.',
@@ -982,10 +975,10 @@ const P_NH_DR = {
       image: projectNhDrainageScreenshot3,
     },
     {
-      h: 'Impact & evidence',
+      h: 'Outcomes and benefits',
       p: [
-        'Enabled regional teams to target high-risk assets with reliable condition and connectivity information.',
-        'Delivered export-ready files and audit packs to evidence compliance with Design Manual for Roads and Bridges guidance.',
+        'Produced a complete drainage asset dataset aligned to National Highways inventory standards.',
+        'Enabled regional teams to target high-risk assets with reliable condition and connectivity information, supported by export-ready files and audit packs.',
       ],
       image: projectNhDrainageScreenshot4,
     },
