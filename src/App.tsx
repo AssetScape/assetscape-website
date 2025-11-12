@@ -207,7 +207,7 @@ function VideoHero() {
         <div className='relative z-10 mx-auto max-w-6xl px-4 h-full flex items-end pb-8'>
           <div className='rounded-xl bg-white/80 backdrop-blur p-4 md:p-6'>
             <h1 className='text-2xl md:text-3xl font-semibold tracking-tight'>
-              Intelligent asset management for road, rail and water infrastructure.
+              Intelligent asset management for road, rail and water infrastructure
             </h1>
           </div>
         </div>
