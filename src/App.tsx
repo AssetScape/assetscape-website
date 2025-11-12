@@ -209,9 +209,6 @@ function VideoHero() {
             <h1 className='text-2xl md:text-3xl font-semibold tracking-tight'>
               Intelligent asset management for road, rail and water infrastructure.
             </h1>
-            <p className='mt-2 text-sm md:text-base'>
-              We combine spatial data, LiDAR, imagery and records into a single 3D environment so teams can see context, make decisions and maintain assets with less site time.
-            </p>
           </div>
         </div>
       </div>
@@ -392,7 +389,7 @@ function HomePage() {
     },
     {
       h: 'From Local Nodes to National Networks',
-      p: `AssetScape is more than an innovative asset management tool – it is a comprehensive asset management system. From day to day tasks, such as condition monitoring and assigning maintenance works, to longer term strategic planning, including asset replacement and renewal schemes, AssetScape enables you to manage your assets through their whole lifecycle.`,
+      p: `AssetScape is more than an innovative asset management tool – it is a comprehensive asset management system. From day to day tasks, such as condition monitoring and assigning maintenance works, to longer term strategic planning, including asset replacement and renewal schemes, Assetscape has the capability to manage your assets through their whole lifecycle.`,
       Icon: IconNetwork,
     },
     {
@@ -476,9 +473,9 @@ function HomePage() {
             <h3 className='text-lg font-semibold'>Bring data to life</h3>
             <p className='mt-2 text-sm leading-relaxed'>
               As a 'World Management System', AssetScape integrates. It brings together data from a range of sources, including
-              LiDAR, external databases, shapefiles and mapping, and allows you visualise it all clearly. Whether the data comes
-              from several systems or surveys, is provided by you or is open source, and is concerned with assets or the
-              environment, AssetScape integrates it all to build a functional and dynamic 3D asset management environment.
+              LiDAR, external databases, shapefiles and mapping, and allows you to visualise everything clearly. Whether the
+              data comes from several systems or surveys, is provided by you or sourced openly, AssetScape integrates it all to
+              build a functional and dynamic 3D asset management environment.
             </p>
           </div>
           <div>
@@ -486,7 +483,7 @@ function HomePage() {
             <p className='mt-2 text-sm leading-relaxed'>
               AssetScape is aimed at asset management professionals looking to optimise their asset management systems and
               utilise the full potential of their data. Use our system to complete existing tasks more efficiently and to explore
-              new and innovative ways to take advantage of the full spectrum of data available to you. AssetScape has the tools to
+              new and innovative ways to take advantage of the full spectrum of data available to you. AssetScape has the capability to
               transform the way you approach asset management.
             </p>
           </div>
@@ -585,8 +582,14 @@ function HomePage() {
               allowFullScreen
             ></iframe>
           </div>
-          <p className='mt-3 text-sm'>
-            Prefer live demo? Reach out!
+          <p className='mt-3 text-base font-medium text-neutral-800'>
+            Prefer a live demo?{' '}
+            <a
+              className='underline decoration-emerald-500 decoration-2 underline-offset-4 transition hover:text-emerald-600'
+              href='mailto:enquiries@assetscape.co.uk?subject=Please%20can%20we%20arrange%20a%20demo%3F'
+            >
+              Just ask!
+            </a>
           </p>
         </div>
       </section>
@@ -750,9 +753,9 @@ function Footer() {
           <div className='space-y-3'>
             <h2 className='text-sm font-bold uppercase tracking-[0.3em] text-white'>GET IN TOUCH</h2>
             <p className='text-neutral-300'>
-              Let's discuss how AssetScape can support your next programme.
+              See how AssetScape can support your next project.
               <br />
-              Send us an email or call and we'll set up a session tailored to your assets and workflows.
+              Send us an email or call us to set up session to see how we can support your asset management needs.
             </p>
           </div>
         </div>
@@ -1184,25 +1187,13 @@ const S_MobileData = {
 }
 
 function DocumentsPage() {
-  const docs = [
-    { name: 'Capability (General)', file: 'AssetScape_Capability_General.pdf' },
-    { name: 'Capability Sheet 1 – LiDAR', file: 'AssetScape_Capability_Sheet1_LiDAR.pdf' },
-    { name: 'Capability Sheet 2 – AMS', file: 'AssetScape_Capability_Sheet2_AMS.pdf' },
-    { name: 'Capability Sheet 3 – Coastal', file: 'AssetScape_Capability_Sheet3_Coastal.pdf' },
-    { name: 'Data Cleansing', file: 'AssetScape_Capability_DataCleansing.pdf' },
-  ]
   return (
     <section className='mx-auto max-w-3xl px-4 py-10'>
       <h1 className='text-3xl font-semibold tracking-tight'>Documents</h1>
-      <ul className='mt-6 space-y-3'>
-        {docs.map((d) => (
-          <li key={d.file}>
-            <a className='underline' href={`${import.meta.env.BASE_URL}docs/${d.file}`} download>
-              {d.name}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <p className='mt-6 text-base text-neutral-700'>
+        Document downloads are temporarily unavailable while we refresh the library. Please contact us if you need a copy of a
+        specific document in the meantime.
+      </p>
       <Link
         to='/'
         className='mt-8 inline-flex items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
