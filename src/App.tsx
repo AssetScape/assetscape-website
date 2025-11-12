@@ -678,14 +678,11 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
                 )}
 
                 {Array.isArray(s.p) ? (
-                  <ul className='space-y-2 text-sm text-neutral-800 sm:text-base'>
+                  <div className='space-y-2 text-sm text-neutral-800 sm:text-base'>
                     {s.p.map((line, idx) => (
-                      <li key={idx} className='flex gap-2'>
-                        <span className='mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-400' />
-                        <span>{line}</span>
-                      </li>
+                      <p key={idx}>{line}</p>
                     ))}
-                  </ul>
+                  </div>
                 ) : (
                   <p className='text-sm text-neutral-800 sm:text-base'>{s.p}</p>
                 )}
