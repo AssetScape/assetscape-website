@@ -1012,7 +1012,7 @@ const S_Consultancy = {
   images: [serviceConsultancyCover],
   sections: [
     {
-      h: 'Section 1 – Introduction',
+      h: 'Introduction',
       p: [
         'Building software and developing utilities that integrate data and or connect to existing systems.  ',
         'Providing a wrapper to enable users to make better use of data for analysis and assessment.  ',
@@ -1020,7 +1020,7 @@ const S_Consultancy = {
       ],
     },
     {
-      h: 'Section 2 – Capabilities',
+      h: 'Capabilities',
       p: [
         'Creative thinkers, utilising the latest technology and AssetScape’s approach to developing solutions that deliver. ',
         'Provide ad-hoc support to clients managing data including asset, operational and condition datasets. ',
@@ -1030,7 +1030,7 @@ const S_Consultancy = {
       ],
     },
     {
-      h: 'Section 3 – Delivery',
+      h: 'Delivery',
       p: [
         'AssetScape’s vision is to provide clients with practical tools that enable them to do the job quicker, easier and to a higher quality. ',
         'Over the last 10 years, AssetScape has been successfully deploying solutions and supported clients with ad-hoc support, data mining, data cleansing, data analytics that includes the development and implementation of small utilities through to large scale systems. ',
@@ -1050,7 +1050,7 @@ const S_3D = {
   images: [service3dCover],
   sections: [
     {
-      h: 'Section 1 – Integrated data sources',
+      h: 'Integrated data sources',
       p: [
         'Combine LiDAR, photogrammetry and BIM to construct true-to-life environments.',
         'Overlay mapping, CAD and attribute data with precise georeferencing.',
@@ -1059,7 +1059,7 @@ const S_3D = {
       ],
     },
     {
-      h: 'Section 2 – Capabilities',
+      h: 'Capabilities',
       p: [
         'Interrogate assets with measurement, slicing and annotation tools.',
         'Switch viewpoints instantly to support design, maintenance and stakeholder reviews.',
@@ -1067,7 +1067,7 @@ const S_3D = {
       ],
     },
     {
-      h: 'Section 3 – Delivery',
+      h: 'Delivery',
       p: [
         'AssetScape tailors visualisations to your asset classes and workflows, ensuring key information is surfaced with minimal navigation.  ',
         'Can be used for infrastructure asset management, flooding assessments, line of sight assessments and much more. ',
@@ -1089,7 +1089,7 @@ const S_DataCleansing = {
   images: [serviceDataCleansingCover],
   sections: [
     {
-      h: 'Section 1 – Approach',
+      h: 'Approach',
       p: [
         'AssetScape data cleansing modules 2D and 3D versions -  ',
         '2D - Utilises mapping and imagery to cleanse data in a 2D environment  ',
@@ -1108,7 +1108,7 @@ const S_DataCleansing = {
       ],
     },
     {
-      h: 'Section 2 – Data inputs',
+      h: 'Data inputs',
       p: [
         'Historic inventories, spreadsheets and databases.',
         'Site observations, as-built drawings and survey outputs.',
@@ -1116,7 +1116,7 @@ const S_DataCleansing = {
       ],
     },
     {
-      h: 'Section 3 – Outcome',
+      h: 'Outcome',
       p: [
         ' ',
         'Deliver a cleansed, schema-compliant dataset ready for import into AMS, GIS or BIM platforms.',
@@ -1137,7 +1137,7 @@ const S_Strategic = {
   images: [serviceStrategicCover],
   sections: [
     {
-      h: 'Section 1 – Focus areas',
+      h: 'Focus areas',
       p: [
         'Lifecycle planning aligned to risk and performance utilising links to Decision Support Tools.',
         'Scenario modelling with configurable scoring and weighting.',
@@ -1145,7 +1145,7 @@ const S_Strategic = {
       ],
     },
     {
-      h: 'Section 2 – How AssetScape helps',
+      h: 'How AssetScape helps',
       p: [
         'Spatialise programme data to highlight hotspots and dependencies.',
         'Blend condition, utilisation and risk indicators into a single workspace.',
@@ -1153,7 +1153,7 @@ const S_Strategic = {
       ],
     },
     {
-      h: 'Section 3 – Result',
+      h: 'Result',
       p: [
         ' ',
         'Empower teams with a transparent evidence base for investment planning and prioritisation.',
@@ -1171,7 +1171,7 @@ const S_CameraPlacement = {
   images: [serviceCameraPlacementCover],
   sections: [
     {
-      h: 'Section 1 – Inputs',
+      h: 'Inputs',
       p: [
         '3D corridor models generated from LiDAR, imagery and mapping.',
         'Template libraries covering fixed, PTZ and specialist camera hardware.',
@@ -1179,7 +1179,7 @@ const S_CameraPlacement = {
       ],
     },
     {
-      h: 'Section 2 – Analysis',
+      h: 'Analysis',
       p: [
         'Simulate line-of-sight and coverage envelopes with adjustable mounting heights.',
         'Compare alternative pole and bracket locations inside the 3D world.',
@@ -1188,7 +1188,7 @@ const S_CameraPlacement = {
       ],
     },
     {
-      h: 'Section 3 – Outcome',
+      h: 'Outcome',
       p: [
         'Generate evidence packs and camera schedules to accelerate approvals and installation.',
         'No onsite requirement - “survey once, use many times”',
@@ -1208,7 +1208,7 @@ const S_MobileData = {
   images: [serviceMobileDataCover],
   sections: [
     {
-      h: 'Section 1 – Capabilities',
+      h: 'Capabilities',
       p: [
         'High-resolution imagery synchronised with GNSS positioning. ',
         'Highly configurable UI – Create for user, assets, inspection types. ',
@@ -1218,7 +1218,7 @@ const S_MobileData = {
       ],
     },
     {
-      h: 'Section 2 – Workflow',
+      h: 'Workflow',
       p: [
         'Plan survey routes, tasks and naming conventions inside AssetScape.',
         'Capture observations with configurable forms and prompts.',
@@ -1227,7 +1227,7 @@ const S_MobileData = {
       ],
     },
     {
-      h: 'Section 3 – Deliverables',
+      h: 'Deliverables',
       p: [
         'Structured datasets, QA reports and viewer-ready scenes ready for downstream systems.',
         'Connectivity via app to AssetScape and other systems.',
