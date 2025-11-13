@@ -204,9 +204,9 @@ function VideoHero() {
           <source src={videoSrc} type='video/mp4' />
         </video>
         <div className='absolute inset-0 bg-black/35' />
-        <div className='relative z-10 mx-auto max-w-6xl px-4 h-full flex items-end pb-8'>
-          <div className='rounded-xl bg-white/80 backdrop-blur p-4 md:p-6'>
-            <h1 className='text-2xl md:text-3xl font-semibold tracking-tight'>
+        <div className='absolute inset-x-0 bottom-0 z-10 flex justify-center'>
+          <div className='w-full rounded-t-xl bg-white/80 backdrop-blur px-4 py-3 md:px-6 md:py-4'>
+            <h1 className='text-xl md:text-2xl font-semibold tracking-tight text-center'>
               Intelligent asset management for road, rail and water infrastructure
             </h1>
           </div>
