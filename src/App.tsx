@@ -751,7 +751,8 @@ function Footer() {
             <p className='text-neutral-300'>
               See how AssetScape can support your next project.
               <br />
-              Send us an email or call us to set up session to see how we can support your asset management needs.
+              <br />
+              Send us an email or call us to set up a session to see how we can support your asset management needs.
             </p>
           </div>
         </div>
