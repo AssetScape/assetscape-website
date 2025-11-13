@@ -3,11 +3,11 @@ import type { ReactNode, HTMLAttributes } from 'react'
 import type { To } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import service3dCover from './assets/ConsultancyCover.png'
+import serviceConsultancyCover from './assets/ConsultancyCover.png'
+import service3dCover from './assets/3DVisualisationCover.jpg'
 import serviceDataCleansingCover from './assets/DataCleansingCover.jpg'
 import serviceStrategicCover from './assets/StrategicAssetManagementCover.jpg'
 import serviceCameraPlacementCover from './assets/CameraPlacementCover.jpg'
-import serviceRouteWatcherCover from './assets/RouteWatcherCover.jpg'
 import serviceMobileDataCover from './assets/MobileDataCaptureCover.jpg'
 
 import projectM3Cover from './assets/Project_M3_Cover.jpg'
@@ -374,11 +374,11 @@ function IconCompass({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
 
 function HomePage() {
   const services = [
+    { title: 'Consultancy', slug: 'consultancy', img: serviceConsultancyCover },
     { title: '3D Visualisation', slug: '3d-visualisation', img: service3dCover },
     { title: 'Data Cleansing', slug: 'data-cleansing', img: serviceDataCleansingCover },
     { title: 'Strategic Asset Management', slug: 'strategic-asset-management', img: serviceStrategicCover },
-    { title: 'Camera Placement', slug: 'camera-placement', img: serviceCameraPlacementCover },
-    { title: 'RouteWatcher', slug: 'routewatcher', img: serviceRouteWatcherCover },
+    { title: 'Camera Placement – CCTV Module', slug: 'camera-placement', img: serviceCameraPlacementCover },
     { title: 'Mobile Data Capture', slug: 'mobile-data-capture', img: serviceMobileDataCover },
   ]
 
@@ -1006,32 +1006,76 @@ const P_NH_DR = {
 const SERVICE_BACK_TO: To = { pathname: '/', hash: '#services' }
 const SERVICE_BACK_LABEL = '← Back to Services'
 
+const S_Consultancy = {
+  title: 'Consultancy',
+  subtitle: 'Creating and deploying bespoke solutions to unlock your data',
+  images: [serviceConsultancyCover],
+  sections: [
+    {
+      h: 'Section 1 – Introduction',
+      p: [
+        'Building software and developing utilities that integrate data and or connect to existing systems.  ',
+        'Providing a wrapper to enable users to make better use of data for analysis and assessment.  ',
+        'Creating tools that enable users to harness the latest technology that benefit your business delivery. ',
+      ],
+    },
+    {
+      h: 'Section 2 – Capabilities',
+      p: [
+        'Creative thinkers, utilising the latest technology and AssetScape’s approach to developing solutions that deliver. ',
+        'Provide ad-hoc support to clients managing data including asset, operational and condition datasets. ',
+        'Create innovative solutions, working with clients to deploy robust solutions that meet the needs of end users. ',
+        'Deliver flexible solutions that can be configured, added to and is future proofed. ',
+        'Provide specific data and systems solutions advice and support to get the best out of your data – Cost effective solutions that are cost effective. ',
+      ],
+    },
+    {
+      h: 'Section 3 – Delivery',
+      p: [
+        'AssetScape’s vision is to provide clients with practical tools that enable them to do the job quicker, easier and to a higher quality. ',
+        'Over the last 10 years, AssetScape has been successfully deploying solutions and supported clients with ad-hoc support, data mining, data cleansing, data analytics that includes the development and implementation of small utilities through to large scale systems. ',
+        'Our team are experienced team having knowledge of the domain, including asset datasets, systems architecture and understanding the end user requirements. This also includes solutions driven engineers who can get the most out of the digital technology, monitoring and using new technologies as appropriate.  ',
+        'We strive for innovative solutions and constantly are developing and testing are ideas to bring to market. Examples of this can be seen in the delivery of innovative utilities such as CCTV, Structure viewer and Road Markings Analysis Tool.  ',
+      ],
+    },
+  ],
+  backTo: SERVICE_BACK_TO,
+  backLabel: SERVICE_BACK_LABEL,
+  markerLabel: 'Service',
+}
+
 const S_3D = {
   title: '3D Visualisation',
   subtitle: 'Build immersive, navigable 3D scenes that place every asset in context.',
-  images: [
-    service3dCover,
-  ],
+  images: [service3dCover],
   sections: [
     {
-      h: 'Integrated data sources',
+      h: 'Section 1 – Integrated data sources',
       p: [
         'Combine LiDAR, photogrammetry and BIM to construct true-to-life environments.',
         'Overlay mapping, CAD and attribute data with precise georeferencing.',
         'Blend aerial and terrestrial imagery for full corridor coverage.',
+        'Used as a wrapper for existing systems and datasets or standalone system.',
       ],
     },
     {
-      h: 'Capabilities',
+      h: 'Section 2 – Capabilities',
       p: [
         'Interrogate assets with measurement, slicing and annotation tools.',
         'Switch viewpoints instantly to support design, maintenance and stakeholder reviews.',
-        'Export presentation-ready imagery and video fly-throughs.',
+        'Export presentation-ready imagery and video flythroughs.',
       ],
     },
     {
-      h: 'Delivery',
-      p: 'AssetScape tailors visualisations to your asset classes and workflows, ensuring key information is surfaced with minimal navigation.',
+      h: 'Section 3 – Delivery',
+      p: [
+        'AssetScape tailors visualisations to your asset classes and workflows, ensuring key information is surfaced with minimal navigation.  ',
+        'Can be used for infrastructure asset management, flooding assessments, line of sight assessments and much more. ',
+        'Easy to create scenes and overlay / link datasets to the scene. Scenes are auto created, so need for labour intensive scene building using many resources.  ',
+        'Intuitive Ui to manage scenes including route manager to build specific routes of interest. Group assets and operational enquiries around the route to enable efficient coordination and management within AssetScape’s platform. ',
+        'Create routes that are 100’s km’s in length once - travel along the route in a car, train, boat or fly through looking at topography, vegetation, assets, operational data (documents, queries, flags, risk areas etc). ',
+        'Note: Scenes are as accurate as the data loaded. Can be mm precise depending on the quality of the LiDAR, Ortho-imagery. Scene can be built with accurate data, open-source data and merged automatically. ',
+      ],
     },
   ],
   backTo: SERVICE_BACK_TO,
@@ -1045,15 +1089,26 @@ const S_DataCleansing = {
   images: [serviceDataCleansingCover],
   sections: [
     {
-      h: 'Approach',
+      h: 'Section 1 – Approach',
       p: [
+        'AssetScape data cleansing modules 2D and 3D versions -  ',
+        '2D - Utilises mapping and imagery to cleanse data in a 2D environment  ',
+        ' ',
+        'The system enables the process team to create, verify and audit assets in a specific data cleansing module. The module enables the Project manager to track progress, answer questions and sign off every asset. All decision is tracked as part of the timeline feature, so can be reviewed at any time.',
+        'The system enables users to:',
         'Review existing schemas and align to AssetScape taxonomies.',
         'Blend automated validation with expert QA/QC for critical assets.',
         'Capture commentary, discrepancies and approvals in an auditable log.',
+        'Client system emulators checkers – Create to meet project requirements',
+        'The module enables the Project manager to track progress, answer questions and sign off every asset. All decision is tracked as part of the timeline feature, so can be reviewed at any time.',
+        'Innovative approach deployed via AssetScape platform to manage data collation, cleansing using 3D. All other approaches utilised 2D ArcView based solutions with no DB connectivity of assets and a tile-based solution. AssetScape can provide a ’World Management System’ using our platform. This enables connectivity of assets throughout the project area, enabling the process team to dynamically work on all parts of the network in line with delivery plan.',
+        '3D - Utilises LiDAR, DTM, mapping and imagery to cleanse data in a 3D environment',
+        'Unique 3D view allows users to integrate topography into the data cleansing process. Assets float in 3D aspect to make it clearer when for multi-layer merging.',
+        'Provision of mobile solution connected to AssetScape’s instance of the project on request – on-site verification and additional surveying.',
       ],
     },
     {
-      h: 'Data inputs',
+      h: 'Section 2 – Data inputs',
       p: [
         'Historic inventories, spreadsheets and databases.',
         'Site observations, as-built drawings and survey outputs.',
@@ -1061,8 +1116,14 @@ const S_DataCleansing = {
       ],
     },
     {
-      h: 'Outcome',
-      p: 'Deliver a cleansed, schema-compliant dataset ready for import into AMS, GIS or BIM platforms.',
+      h: 'Section 3 – Outcome',
+      p: [
+        ' ',
+        'Deliver a cleansed, schema-compliant dataset ready for import into AMS, GIS or BIM platforms.',
+        'Clients provided with access to live outputs on progress via Power BI or Tableau reporting tools.',
+        'Create validated data loaders and scripts to ensure compliant data was loaded back to host system.',
+        'Fully auditable data cleansing datasets that can be reviewed, intergrated and used to maintain or add to in the future.',
+      ],
     },
   ],
   backTo: SERVICE_BACK_TO,
@@ -1076,15 +1137,15 @@ const S_Strategic = {
   images: [serviceStrategicCover],
   sections: [
     {
-      h: 'Focus areas',
+      h: 'Section 1 – Focus areas',
       p: [
-        'Lifecycle planning aligned to risk and performance.',
+        'Lifecycle planning aligned to risk and performance utilising links to Decision Support Tools.',
         'Scenario modelling with configurable scoring and weighting.',
         'Portfolio dashboards for leadership reporting.',
       ],
     },
     {
-      h: 'How AssetScape helps',
+      h: 'Section 2 – How AssetScape helps',
       p: [
         'Spatialise programme data to highlight hotspots and dependencies.',
         'Blend condition, utilisation and risk indicators into a single workspace.',
@@ -1092,8 +1153,11 @@ const S_Strategic = {
       ],
     },
     {
-      h: 'Result',
-      p: 'Empower teams with a transparent evidence base for investment planning and prioritisation.',
+      h: 'Section 3 – Result',
+      p: [
+        ' ',
+        'Empower teams with a transparent evidence base for investment planning and prioritisation.',
+      ],
     },
   ],
   backTo: SERVICE_BACK_TO,
@@ -1102,12 +1166,12 @@ const S_Strategic = {
 }
 
 const S_CameraPlacement = {
-  title: 'Camera Placement',
+  title: 'Camera Placement – CCTV Module',
   subtitle: 'Design effective CCTV schemes using virtual line-of-sight analysis.',
   images: [serviceCameraPlacementCover],
   sections: [
     {
-      h: 'Inputs',
+      h: 'Section 1 – Inputs',
       p: [
         '3D corridor models generated from LiDAR, imagery and mapping.',
         'Template libraries covering fixed, PTZ and specialist camera hardware.',
@@ -1115,47 +1179,22 @@ const S_CameraPlacement = {
       ],
     },
     {
-      h: 'Analysis',
+      h: 'Section 2 – Analysis',
       p: [
         'Simulate line-of-sight and coverage envelopes with adjustable mounting heights.',
         'Compare alternative pole and bracket locations inside the 3D world.',
         'Produce visibility heatmaps and polar plots for stakeholders.',
+        'CCTV Module includes template for carrying out technical assessment in accordance with standards for design.',
       ],
     },
     {
-      h: 'Outcome',
-      p: 'Generate evidence packs and camera schedules to accelerate approvals and installation.',
-    },
-  ],
-  backTo: SERVICE_BACK_TO,
-  backLabel: SERVICE_BACK_LABEL,
-  markerLabel: 'Service',
-}
-
-const S_RouteWatcher = {
-  title: 'RouteWatcher',
-  subtitle: 'Monitor corridors remotely with scheduled capture and secure sharing.',
-  images: [serviceRouteWatcherCover],
-  sections: [
-    {
-      h: 'What RouteWatcher delivers',
+      h: 'Section 3 – Outcome',
       p: [
-        'Browser-based access to the latest imagery and LiDAR along defined routes.',
-        'Timeline playback with bookmarking for incidents and inspections.',
-        'Role-based permissions to keep sensitive corridors secure.',
+        'Generate evidence packs and camera schedules to accelerate approvals and installation.',
+        'No onsite requirement - “survey once, use many times”',
+        'Develop many designs and options for approval.',
+        'Safe environment to design – No on-site surveys required',
       ],
-    },
-    {
-      h: 'Use cases',
-      p: [
-        'Incident investigation without site visits.',
-        'Works planning and clash detection for multiple contractors.',
-        'Evidence gathering for handback and audit.',
-      ],
-    },
-    {
-      h: 'Benefits',
-      p: 'Reduce repeat site visits while giving teams situational awareness on demand.',
     },
   ],
   backTo: SERVICE_BACK_TO,
@@ -1165,28 +1204,34 @@ const S_RouteWatcher = {
 
 const S_MobileData = {
   title: 'Mobile Data Capture',
-  subtitle: 'Capture georeferenced imagery and LiDAR to keep inventories current.',
+  subtitle: 'Keep inventories current.',
   images: [serviceMobileDataCover],
   sections: [
     {
-      h: 'Capabilities',
+      h: 'Section 1 – Capabilities',
       p: [
-        'Vehicle and backpack-based capture options with calibrated sensors.',
-        'High-resolution imagery synchronised with GNSS positioning.',
-        'Optional LiDAR integration for dense point-cloud creation.',
+        'High-resolution imagery synchronised with GNSS positioning. ',
+        'Highly configurable UI – Create for user, assets, inspection types. ',
+        'Intuitive UI design to enable quick and easy access to data and logging – Set up what you need to see before you survey. ',
+        'Vehicle and backpack-based capture options with calibrated sensors. ',
+        'Optional - Vehicle and backpack-based capture options with calibrated sensors. And LiDAR integration for dense point-cloud creation. ',
       ],
     },
     {
-      h: 'Workflow',
+      h: 'Section 2 – Workflow',
       p: [
         'Plan survey routes, tasks and naming conventions inside AssetScape.',
         'Capture observations with configurable forms and prompts.',
         'Upload data to the platform for validation, enrichment and publishing.',
+        'Wrap around solution for existing asset management systems – Enhanced functionality and use, moving away from windows-based screen layouts.',
       ],
     },
     {
-      h: 'Deliverables',
-      p: 'Structured datasets, QA reports and viewer-ready scenes ready for downstream systems.',
+      h: 'Section 3 – Deliverables',
+      p: [
+        'Structured datasets, QA reports and viewer-ready scenes ready for downstream systems.',
+        'Connectivity via app to AssetScape and other systems.',
+      ],
     },
   ],
   backTo: SERVICE_BACK_TO,
@@ -1225,11 +1270,11 @@ export default function App() {
         <Route path='/projects/nh-ccmt' element={<Layout><DetailPage {...P_NH_CCMT} /></Layout>} />
         <Route path='/projects/nh-road-lighting' element={<Layout><DetailPage {...P_NH_RL} /></Layout>} />
         <Route path='/projects/nh-drainage' element={<Layout><DetailPage {...P_NH_DR} /></Layout>} />
+        <Route path='/services/consultancy' element={<Layout><DetailPage {...S_Consultancy} /></Layout>} />
         <Route path='/services/3d-visualisation' element={<Layout><DetailPage {...S_3D} /></Layout>} />
         <Route path='/services/data-cleansing' element={<Layout><DetailPage {...S_DataCleansing} /></Layout>} />
         <Route path='/services/strategic-asset-management' element={<Layout><DetailPage {...S_Strategic} /></Layout>} />
         <Route path='/services/camera-placement' element={<Layout><DetailPage {...S_CameraPlacement} /></Layout>} />
-        <Route path='/services/routewatcher' element={<Layout><DetailPage {...S_RouteWatcher} /></Layout>} />
         <Route path='/services/mobile-data-capture' element={<Layout><DetailPage {...S_MobileData} /></Layout>} />
       </Routes>
     </HashRouter>
