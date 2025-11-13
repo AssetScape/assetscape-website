@@ -3,7 +3,7 @@ import type { ReactNode, HTMLAttributes } from 'react'
 import type { To } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import service3dCover from './assets/3DVisualisationCover.jpg'
+import service3dCover from './assets/ConsultancyCover.png'
 import serviceDataCleansingCover from './assets/DataCleansingCover.jpg'
 import serviceStrategicCover from './assets/StrategicAssetManagementCover.jpg'
 import serviceCameraPlacementCover from './assets/CameraPlacementCover.jpg'
@@ -52,6 +52,7 @@ import roadImg from './assets/road.png'
 import railImg from './assets/rail.png'
 import waterImg from './assets/water.png'
 import heroVideo from './assets/AS_SHORT_720_optimized.mp4'
+import heroImage from './assets/heroImage.jpg'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -187,7 +188,7 @@ function Layout({ children }: { children: ReactNode }) {
 }
 
 function VideoHero() {
-  const poster = service3dCover
+  const poster = heroImage
   const videoSrc = heroVideo
 
   return (
