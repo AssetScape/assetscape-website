@@ -582,15 +582,14 @@ function HomePage() {
               allowFullScreen
             ></iframe>
           </div>
-          <p className='mt-3 text-xl font-medium text-neutral-800'>
-            Prefer a live demo?{' '}
+          <div className='mt-6 flex justify-center'>
             <a
-              className='underline decoration-emerald-500 decoration-2 underline-offset-4 transition hover:text-emerald-600'
+              className='inline-flex items-center rounded-full border border-neutral-900 bg-neutral-900 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
               href='mailto:enquiries@assetscape.co.uk?subject=Please%20can%20we%20arrange%20a%20demo%3F'
             >
-              Just ask!
+              Request a demo
             </a>
-          </p>
+          </div>
         </div>
       </section>
 
