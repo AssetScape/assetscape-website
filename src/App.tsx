@@ -28,41 +28,41 @@ import serviceMobileDataCaptureImage1 from './assets/services/serviceMobileDataC
 import serviceMobileDataCaptureImage2 from './assets/services/serviceMobileDataCapture2.png'
 import serviceMobileDataCaptureImage3 from './assets/services/serviceMobileDataCapture3.png'
 
-import projectM3Cover from './assets/Project_M3_Cover.jpg'
-import projectM3Screenshot1 from './assets/Project_M3_screenshot_1.png'
-import projectM3Screenshot2 from './assets/Project_M3_screenshot_2.png'
-import projectM3Screenshot3 from './assets/Project_M3_screenshot_3.png'
-import projectM3Screenshot4 from './assets/Project_M3_screenshot_4.png'
+import projectM3Cover from './assets/projects/projectM3Cover.jpg'
+import projectM3Screenshot1 from './assets/projects/projectM3Screenshot1.jpg'
+import projectM3Screenshot2 from './assets/projects/projectM3Screenshot2.jpg'
+import projectM3Screenshot3 from './assets/projects/projectM3Screenshot3.jpg'
+import projectM3Screenshot4 from './assets/projects/projectM3Screenshot4.png'
 
-import projectCctvCover from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites Cover.jpg"
-import projectCctvScreenshot1 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 1.jpg"
-import projectCctvScreenshot2 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 2.jpg"
-import projectCctvScreenshot3 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 3.jpg"
-import projectCctvScreenshot4 from "./assets/Assessing the Suitability of Proposed CCTV Camera Sites screenshot 4.jpg"
+import projectCctvCover from './assets/projects/projectCctvCover.jpg'
+import projectCctvScreenshot1 from './assets/projects/projectCctvScreenshot1.jpg'
+import projectCctvScreenshot2 from './assets/projects/projectCctvScreenshot2.jpg'
+import projectCctvScreenshot3 from './assets/projects/projectCctvScreenshot3.jpg'
+import projectCctvScreenshot4 from './assets/projects/projectCctvScreenshot4.jpg'
 
-import projectHeTechCover from "./assets/Highways England Technology Cover.png"
-import projectHeTechScreenshot1 from "./assets/Highways England Technology screenshot 1.png"
-import projectHeTechScreenshot2 from "./assets/Highways England Technology screenshot 2.png"
-import projectHeTechScreenshot3 from "./assets/Highways England Technology screenshot 3.png"
-import projectHeTechScreenshot4 from "./assets/Highways England Technology screenshot 4.png"
+import projectHeTechCover from './assets/projects/projectHeTechCover.png'
+import projectHeTechScreenshot1 from './assets/projects/projectHeTechScreenshot1.png'
+import projectHeTechScreenshot2 from './assets/projects/projectHeTechScreenshot2.png'
+import projectHeTechScreenshot3 from './assets/projects/projectHeTechScreenshot3.png'
+import projectHeTechScreenshot4 from './assets/projects/projectHeTechScreenshot4.png'
 
-import projectNhCcmtCover from "./assets/National Highways CCMT System Cover.png"
-import projectNhCcmtScreenshot1 from "./assets/National Highways CCMT System screenshot 1.png"
-import projectNhCcmtScreenshot2 from "./assets/National Highways CCMT System screenshot 2.png"
-import projectNhCcmtScreenshot3 from "./assets/National Highways CCMT System screenshot 3.png"
-import projectNhCcmtScreenshot4 from "./assets/National Highways CCMT System screenshot 4.png"
+import projectNhCcmtCover from './assets/projects/projectCCMTCover.png'
+import projectNhCcmtScreenshot1 from './assets/projects/projectCCMTScreenshot1.png'
+import projectNhCcmtScreenshot2 from './assets/projects/projectCCMTScreenshot2.png'
+import projectNhCcmtScreenshot3 from './assets/projects/projectCCMTScreenshot3.png'
+import projectNhCcmtScreenshot4 from './assets/projects/projectCCMTScreenshot4.png'
 
-import projectNhRoadLightingCover from "./assets/National Highways Road Lighting Cover.jpg"
-import projectNhRoadLightingScreenshot1 from "./assets/National Highways Road Lighting screenshot 1.jpg"
-import projectNhRoadLightingScreenshot2 from "./assets/National Highways Road Lighting screenshot 2.jpg"
-import projectNhRoadLightingScreenshot3 from "./assets/National Highways Road Lighting screenshot 3.jpg"
-import projectNhRoadLightingScreenshot4 from "./assets/National Highways Road Lighting screenshot 4.jpg"
+import projectNhRoadLightingCover from './assets/projects/projectNhRoadLightingCover.jpg'
+import projectNhRoadLightingScreenshot1 from './assets/projects/projectNhRoadLightingScreenshot1.png'
+import projectNhRoadLightingScreenshot2 from './assets/projects/projectNhRoadLightingScreenshot2.png'
+import projectNhRoadLightingScreenshot3 from './assets/projects/projectNhRoadLightingScreenshot3.png'
+import projectNhRoadLightingScreenshot4 from './assets/projects/projectNhRoadLightingScreenshot4.png'
 
-import projectNhDrainageCover from "./assets/National Highways Drainage Cover.jpg"
-import projectNhDrainageScreenshot1 from "./assets/National Highways Drainage screenshot 1.jpg"
-import projectNhDrainageScreenshot2 from "./assets/National Highways Drainage screenshot 2.jpg"
-import projectNhDrainageScreenshot3 from "./assets/National Highways Drainage screenshot 3.jpg"
-import projectNhDrainageScreenshot4 from "./assets/National Highways Drainage screenshot 4.jpg"
+import projectNhDrainageCover from './assets/projects/projectNhDrainageCover.png'
+import projectNhDrainageScreenshot1 from './assets/projects/projectNhDrainageScreenshot1.png'
+import projectNhDrainageScreenshot2 from './assets/projects/projectNhDrainageScreenshot2.png'
+import projectNhDrainageScreenshot3 from './assets/projects/projectNhDrainageScreenshot3.png'
+import projectNhDrainageScreenshot4 from './assets/projects/projectNhDrainageScreenshot4.png'
 
 import combinedLogo from './assets/logo-wordmark-combined.png'
 import combinedLogoLight from './assets/logo-wordmark-combined_lighgr.png'
