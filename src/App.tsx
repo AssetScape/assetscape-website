@@ -397,7 +397,7 @@ function HomePage() {
     { title: 'Assessing the Suitability of Proposed CCTV Camera Sites', slug: 'cctv-suitability', cover: projectCctvCover },
     { title: 'National Highways Technology', slug: 'highways-technology', cover: projectHeTechCover },
     { title: 'National Highways Road Lighting', slug: 'nh-road-lighting', cover: projectNhRoadLightingCover },
-    { title: 'National Highways Drainage', slug: 'nh-drainage', cover: projectNhDrainageCover },
+    { title: 'National Highways Drainage – Area 2', slug: 'nh-drainage', cover: projectNhDrainageCover },
   ]
 
   return (
