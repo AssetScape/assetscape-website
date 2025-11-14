@@ -15,15 +15,17 @@ export const P_CCTV = {
     {
       h: 'Delivery approach',
       p: [
-        'Configured refined mobile and aerial LiDAR, OS MasterMap, orthographic imagery and Google Street View into a navigable 3D world.',
-        'Applied AssetScape Line of Sight tooling with camera templates, adjustable settings and interactive assets.',
-        'Generated polar imagery outputs showing percentage visibility, screen height and depth for each location.',
+        'AssetScape supported National Highways delivery partners who needed to validate proposed camera positions for UK strategic road network upgrades without repeated site visits.',
       ],
       image: projectCctvScreenshot2,
     },
     {
       h: 'Technical detail',
-      p: 'Teams interrogate corridors virtually, overlaying proposed equipment with existing infrastructure to confirm visibility, mounting options and power connectivity before installation.',
+      p: [
+        'Configured refined mobile and aerial LiDAR, OS MasterMap, orthographic imagery and Google Street View into a navigable 3D world.',
+        'Applied AssetScape Line of Sight tooling with camera templates, adjustable settings and interactive assets. Generated polar imagery outputs showing percentage visibility, screen height and depth for each location.',
+        'Generated polar imagery outputs showing percentage visibility, screen height and depth for each location.',
+      ],
       image: projectCctvScreenshot3,
     },
     {
