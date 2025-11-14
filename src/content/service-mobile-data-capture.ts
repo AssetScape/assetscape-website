@@ -15,11 +15,11 @@ export const S_MobileData = {
     {
       h: 'Capabilities',
       p: [
-        'High-resolution imagery synchronised with GNSS positioning. ',
-        'Highly configurable UI – Create for user, assets, inspection types. ',
-        'Intuitive UI design to enable quick and easy access to data and logging – Set up what you need to see before you survey. ',
-        'Vehicle and backpack-based capture options with calibrated sensors. ',
-        'Optional - Vehicle and backpack-based capture options with calibrated sensors. And LiDAR integration for dense point-cloud creation. ',
+        'High-resolution imagery synchronised with GNSS positioning.',
+        'Highly configurable UI – Create for user, assets, inspection types.',
+        'Intuitive UI design to enable quick and easy access to data and logging – Set up what you need to see before you survey.',
+        'Vehicle and backpack-based capture options with calibrated sensors.',
+        'Optional - Vehicle and backpack-based capture options with calibrated sensors. And LiDAR integration for dense point-cloud creation.',
       ],
     },
     {
