@@ -395,7 +395,7 @@ function HomePage() {
     { title: 'National Highways CCMT System', slug: 'nh-ccmt', cover: projectNhCcmtCover },
     { title: 'M3 Junction 2 to 4a Asset Verification Task', slug: 'm3-j2-4a', cover: projectM3Cover },
     { title: 'Assessing the Suitability of Proposed CCTV Camera Sites', slug: 'cctv-suitability', cover: projectCctvCover },
-    { title: 'Highways England Technology', slug: 'highways-technology', cover: projectHeTechCover },
+    { title: 'National Highways Technology', slug: 'highways-technology', cover: projectHeTechCover },
     { title: 'National Highways Road Lighting', slug: 'nh-road-lighting', cover: projectNhRoadLightingCover },
     { title: 'National Highways Drainage', slug: 'nh-drainage', cover: projectNhDrainageCover },
   ]
