@@ -9,6 +9,24 @@ import serviceDataCleansingCover from './assets/DataCleansingCover.jpg'
 import serviceStrategicCover from './assets/StrategicAssetManagementCover.jpg'
 import serviceCameraPlacementCover from './assets/CameraPlacementCover.jpg'
 import serviceMobileDataCover from './assets/MobileDataCaptureCover.jpg'
+import serviceConsultancyImage1 from './assets/services/serviceConsultancy1.jpg'
+import serviceConsultancyImage2 from './assets/services/serviceConsultancy2.png'
+import serviceConsultancyImage3 from './assets/services/serviceConsultancy3.png'
+import service3DVisualisationImage1 from './assets/services/service3DVis1.jpg'
+import service3DVisualisationImage2 from './assets/services/service3DVis2.jpg'
+import service3DVisualisationImage3 from './assets/services/service3DVis3.jpg'
+import serviceDataCleansingImage1 from './assets/services/serviceDataCleansing1.jpg'
+import serviceDataCleansingImage2 from './assets/services/serviceDataCleansing2.jpg'
+import serviceDataCleansingImage3 from './assets/services/serviceDataCleansing3.jpg'
+import serviceStrategicAssetManagementImage1 from './assets/services/serviceStrategicAssetManagement1.jpg'
+import serviceStrategicAssetManagementImage2 from './assets/services/serviceStrategicAssetManagement2.jpg'
+import serviceStrategicAssetManagementImage3 from './assets/services/serviceStrategicAssetManagement3.jpg'
+import serviceCctvImage1 from './assets/services/serviceCCTV1.jpg'
+import serviceCctvImage2 from './assets/services/serviceCCTV2.jpg'
+import serviceCctvImage3 from './assets/services/serviceCCTV3.jpg'
+import serviceMobileDataCaptureImage1 from './assets/services/serviceMobileDataCapture1.png'
+import serviceMobileDataCaptureImage2 from './assets/services/serviceMobileDataCapture2.png'
+import serviceMobileDataCaptureImage3 from './assets/services/serviceMobileDataCapture3.png'
 
 import projectM3Cover from './assets/Project_M3_Cover.jpg'
 import projectM3Screenshot1 from './assets/Project_M3_screenshot_1.png'
@@ -1008,7 +1026,7 @@ const SERVICE_BACK_LABEL = '← Back to Services'
 const S_Consultancy = {
   title: 'Consultancy',
   subtitle: 'Creating and deploying bespoke solutions to unlock your data',
-  images: [serviceConsultancyCover],
+  images: [serviceConsultancyImage1, serviceConsultancyImage2, serviceConsultancyImage3],
   sections: [
     {
       h: 'Introduction',
@@ -1046,7 +1064,7 @@ const S_Consultancy = {
 const S_3D = {
   title: '3D Visualisation',
   subtitle: 'Build immersive, navigable 3D scenes that place every asset in context.',
-  images: [service3dCover],
+  images: [service3DVisualisationImage1, service3DVisualisationImage2, service3DVisualisationImage3],
   sections: [
     {
       h: 'Integrated data sources',
@@ -1085,7 +1103,11 @@ const S_3D = {
 const S_DataCleansing = {
   title: 'Data Cleansing',
   subtitle: 'Reconcile inventories and records into a single dependable dataset.',
-  images: [serviceDataCleansingCover],
+  images: [
+    serviceDataCleansingImage1,
+    serviceDataCleansingImage2,
+    serviceDataCleansingImage3,
+  ],
   sections: [
     {
       h: 'Approach',
@@ -1133,7 +1155,11 @@ const S_DataCleansing = {
 const S_Strategic = {
   title: 'Strategic Asset Management',
   subtitle: 'Translate asset intelligence into clear investment decisions.',
-  images: [serviceStrategicCover],
+  images: [
+    serviceStrategicAssetManagementImage1,
+    serviceStrategicAssetManagementImage2,
+    serviceStrategicAssetManagementImage3,
+  ],
   sections: [
     {
       h: 'Focus areas',
@@ -1167,7 +1193,7 @@ const S_Strategic = {
 const S_CameraPlacement = {
   title: 'Camera Placement – CCTV Module',
   subtitle: 'Design effective CCTV schemes using virtual line-of-sight analysis.',
-  images: [serviceCameraPlacementCover],
+  images: [serviceCctvImage1, serviceCctvImage2, serviceCctvImage3],
   sections: [
     {
       h: 'Inputs',
@@ -1204,7 +1230,11 @@ const S_CameraPlacement = {
 const S_MobileData = {
   title: 'Mobile Data Capture',
   subtitle: 'Keep inventories current.',
-  images: [serviceMobileDataCover],
+  images: [
+    serviceMobileDataCaptureImage1,
+    serviceMobileDataCaptureImage2,
+    serviceMobileDataCaptureImage3,
+  ],
   sections: [
     {
       h: 'Capabilities',
