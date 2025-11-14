@@ -31,7 +31,6 @@ export const S_Strategic = {
     {
       h: 'Result',
       p: [
-        ' ',
         'Empower teams with a transparent evidence base for investment planning and prioritisation.',
       ],
     },

@@ -15,9 +15,9 @@ export const S_DataCleansing = {
     {
       h: 'Approach',
       p: [
-        'AssetScape data cleansing modules 2D and 3D versions -  ',
-        '2D - Utilises mapping and imagery to cleanse data in a 2D environment  ',
-        ' ',
+        'AssetScape data cleansing modules 2D and 3D versions -',
+        '2D - Utilises mapping and imagery to cleanse data in a 2D environment',
+        '',
         'The system enables the process team to create, verify and audit assets in a specific data cleansing module. The module enables the Project manager to track progress, answer questions and sign off every asset. All decision is tracked as part of the timeline feature, so can be reviewed at any time.',
         'The system enables users to:',
         'Review existing schemas and align to AssetScape taxonomies.',
@@ -42,7 +42,6 @@ export const S_DataCleansing = {
     {
       h: 'Outcome',
       p: [
-        ' ',
         'Deliver a cleansed, schema-compliant dataset ready for import into AMS, GIS or BIM platforms.',
         'Clients provided with access to live outputs on progress via Power BI or Tableau reporting tools.',
         'Create validated data loaders and scripts to ensure compliant data was loaded back to host system.',
