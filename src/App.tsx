@@ -526,8 +526,12 @@ function HomePage() {
                 to={`/services/${s.slug}`}
                 className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'
               >
-                <div className='aspect-[16/9] overflow-hidden'>
-                  <img src={s.img} alt={s.title} className='w-full h-full object-cover group-hover:scale-105 transition' />
+                <div className='aspect-[16/9] bg-white flex items-center justify-center'>
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className='max-h-full max-w-full object-contain transition duration-300'
+                  />
                 </div>
                 <div className='p-4'>
                   <h3 className='font-medium group-hover:underline'>{s.title}</h3>
@@ -689,7 +693,7 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
               </div>
 
               {sectionImage && (
-                <div className='overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50 p-2 shadow-inner lg:ml-auto lg:w-full'>
+                <div className='flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-neutral-100 bg-white p-4 shadow-inner lg:ml-auto lg:w-full'>
                   <img
                     src={sectionImage}
                     alt={
@@ -697,7 +701,7 @@ function DetailPage({ title, subtitle, sections, images, backTo, backLabel, mark
                         ? `${title} screenshot ${currentImageNumber} of ${totalScreens}`
                         : title
                     }
-                    className='h-full w-full rounded-xl object-cover'
+                    className='max-h-full max-w-full object-contain'
                   />
                 </div>
               )}
