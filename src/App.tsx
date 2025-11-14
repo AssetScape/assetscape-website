@@ -3,12 +3,6 @@ import type { ReactNode, HTMLAttributes } from 'react'
 import type { To } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import serviceConsultancyCover from './assets/ConsultancyCover.png'
-import service3dCover from './assets/3DVisualisationCover.jpg'
-import serviceDataCleansingCover from './assets/DataCleansingCover.jpg'
-import serviceStrategicCover from './assets/StrategicAssetManagementCover.jpg'
-import serviceCameraPlacementCover from './assets/CameraPlacementCover.jpg'
-import serviceMobileDataCover from './assets/MobileDataCaptureCover.jpg'
 import serviceConsultancyImage1 from './assets/services/serviceConsultancy1.jpg'
 import serviceConsultancyImage2 from './assets/services/serviceConsultancy2.png'
 import serviceConsultancyImage3 from './assets/services/serviceConsultancy3.png'
@@ -392,12 +386,12 @@ function IconCompass({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
 
 function HomePage() {
   const services = [
-    { title: 'Consultancy', slug: 'consultancy', img: serviceConsultancyCover },
-    { title: '3D Visualisation', slug: '3d-visualisation', img: service3dCover },
-    { title: 'Data Cleansing', slug: 'data-cleansing', img: serviceDataCleansingCover },
-    { title: 'Strategic Asset Management', slug: 'strategic-asset-management', img: serviceStrategicCover },
-    { title: 'Camera Placement – CCTV Module', slug: 'camera-placement', img: serviceCameraPlacementCover },
-    { title: 'Mobile Data Capture', slug: 'mobile-data-capture', img: serviceMobileDataCover },
+    { title: 'Consultancy', slug: 'consultancy' },
+    { title: '3D Visualisation', slug: '3d-visualisation' },
+    { title: 'Data Cleansing', slug: 'data-cleansing' },
+    { title: 'Strategic Asset Management', slug: 'strategic-asset-management' },
+    { title: 'Camera Placement – CCTV Module', slug: 'camera-placement' },
+    { title: 'Mobile Data Capture', slug: 'mobile-data-capture' },
   ]
 
   const featuresBullets = [
