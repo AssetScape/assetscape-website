@@ -524,17 +524,12 @@ function HomePage() {
               <Link
                 key={s.title}
                 to={`/services/${s.slug}`}
-                className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'
+                className='group block rounded-2xl border border-neutral-200 bg-white px-6 py-6 text-center shadow-sm transition hover:border-neutral-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900'
               >
-                <div className='aspect-[16/9] bg-white flex items-center justify-center'>
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    className='max-h-full max-w-full object-contain transition duration-300'
-                  />
-                </div>
-                <div className='p-4'>
-                  <h3 className='font-medium group-hover:underline'>{s.title}</h3>
+                <div className='flex min-h-[72px] items-center justify-center'>
+                  <h3 className='text-lg font-semibold leading-tight text-neutral-900 transition-colors group-hover:text-emerald-600'>
+                    {s.title}
+                  </h3>
                 </div>
               </Link>
             ))}
