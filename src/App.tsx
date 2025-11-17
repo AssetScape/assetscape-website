@@ -23,12 +23,6 @@ import { P_HE_Tech } from './content/project-highways-technology'
 import { P_NH_CCMT } from './content/project-nh-ccmt'
 import { P_NH_RL } from './content/project-nh-road-lighting'
 import { P_NH_DR } from './content/project-nh-drainage'
-import { S_Consultancy } from './content/service-consultancy'
-import { S_3D } from './content/service-3d-visualisation'
-import { S_DataCleansing } from './content/service-data-cleansing'
-import { S_Strategic } from './content/service-strategic-asset-management'
-import { S_CameraPlacement } from './content/service-camera-placement'
-import { S_MobileData } from './content/service-mobile-data-capture'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -351,13 +345,70 @@ function IconCompass({ className = 'h-10 w-10 text-emerald-600' }: IconProps) {
 
 function HomePage() {
   const services = [
-    { title: 'Consultancy', slug: 'consultancy' },
-    { title: '3D Visualisation', slug: '3d-visualisation' },
-    { title: 'Data Cleansing', slug: 'data-cleansing' },
-    { title: 'Strategic Asset Management', slug: 'strategic-asset-management' },
-    { title: 'Camera Placement – CCTV Module', slug: 'camera-placement' },
-    { title: 'Mobile Data Capture', slug: 'mobile-data-capture' },
+    {
+      title: 'Strategic asset management',
+      description:
+        'We use condition, risk and performance data to build clear renewal and maintenance plans for all assets. To enable better information management we assemble evidence, forecasts and dashboards that support a fair, data led outcome.',
+    },
+    {
+      title: 'Asset performance, risk and condition insight',
+      description:
+        'We combine inventory, condition, incident and usage data so you can see which assets drive operational risk, where performance falls short and where intervention will give the greatest benefit.',
+    },
+    {
+      title: 'Consultancy and digital solutions',
+      description:
+        'We work with you to define problems, shape options and specify practical data and system solutions for highways, rail and water assets.',
+    },
+    {
+      title: '3D corridor views and visual context',
+      description:
+        'We build 3D scenes from LiDAR, imagery and asset data so teams can review corridors, schemes and assets without repeated site visits and understand how everything fits together on the ground.',
+    },
+    {
+      title: 'Data standards, cleansing and verification',
+      description:
+        'We define data models and code lists, then cleanse and reconcile inventories from multiple sources. We verify records against surveys, as built information and works data so you hold one trusted picture of each asset.',
+    },
+    {
+      title: 'Mobile inspections and field data capture',
+      description:
+        'We design and support mobile workflows for inventory, defects and condition so inspectors capture the right attributes in the field and upload them safely into your asset systems.',
+    },
+    {
+      title: 'CCTV coverage and line-of-sight design',
+      description:
+        'We use virtual line of sight tools to test camera locations, check coverage and refine CCTV layouts so you resolve blind spots before you commit to hardware and installation.',
+    },
+    {
+      title: 'Lighting and technology asset intelligence',
+      description:
+        'We cleanse and verify lighting and technology inventories, link them to imagery and LiDAR, and produce datasets that support maintenance, energy and renewal decisions across the network.',
+    },
+    {
+      title: 'Drainage and network risk insights',
+      description:
+        'We identify and verify drainage assets, relate them to flooding and performance issues, and give you data that supports targeted maintenance and resilience planning.',
+    },
+    {
+      title: 'Platform configuration and bespoke utilities',
+      description:
+        'We configure AssetScape and build small tools, scripts and workflows so your teams can use data in the way they work day to day.',
+    },
+    {
+      title: 'Carriageway defects automated assessment',
+      description:
+        'We run automated assessment of pavement survey information and images to highlight likely defects before manual review. This approach focuses attention on the highest risk sections and supports consistent defect scoring.',
+    },
+    {
+      title: 'Road markings condition analysis',
+      description:
+        'We automatically combine and analyse TRACS pavement images to measure the condition of road markings. The output provides consistent score and helps you target renewal work where it is most needed.',
+    },
   ]
+
+  // Legacy service detail pages remain in src/content for potential future use even
+  // though the Services section now surfaces every description on the home page.
 
   const featuresBullets = [
     {
@@ -529,19 +580,15 @@ function HomePage() {
             <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>Services</h2>
             <p className='text-sm text-neutral-600'>From data capture to in-depth analysis, our team supports every stage of the asset lifecycle.</p>
           </div>
-          <div className='mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <div className='mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
             {services.map((s) => (
-              <Link
+              <div
                 key={s.title}
-                to={`/services/${s.slug}`}
-                className='group block rounded-2xl border border-neutral-200 bg-white px-6 py-6 text-center shadow-sm transition hover:border-neutral-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900'
+                className='flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 text-left shadow-sm transition hover:-translate-y-1 hover:border-neutral-300 hover:shadow-md'
               >
-                <div className='flex min-h-[72px] items-center justify-center'>
-                  <h3 className='text-lg font-semibold leading-tight text-neutral-900 transition-colors group-hover:text-emerald-600'>
-                    {s.title}
-                  </h3>
-                </div>
-              </Link>
+                <p className='text-lg font-semibold text-neutral-900'>{s.title}</p>
+                <p className='mt-3 text-sm leading-relaxed text-neutral-700'>{s.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -777,12 +824,7 @@ export default function App() {
         <Route path='/projects/nh-ccmt' element={<Layout><DetailPage {...P_NH_CCMT} /></Layout>} />
         <Route path='/projects/nh-road-lighting' element={<Layout><DetailPage {...P_NH_RL} /></Layout>} />
         <Route path='/projects/nh-drainage' element={<Layout><DetailPage {...P_NH_DR} /></Layout>} />
-        <Route path='/services/consultancy' element={<Layout><DetailPage {...S_Consultancy} /></Layout>} />
-        <Route path='/services/3d-visualisation' element={<Layout><DetailPage {...S_3D} /></Layout>} />
-        <Route path='/services/data-cleansing' element={<Layout><DetailPage {...S_DataCleansing} /></Layout>} />
-        <Route path='/services/strategic-asset-management' element={<Layout><DetailPage {...S_Strategic} /></Layout>} />
-        <Route path='/services/camera-placement' element={<Layout><DetailPage {...S_CameraPlacement} /></Layout>} />
-        <Route path='/services/mobile-data-capture' element={<Layout><DetailPage {...S_MobileData} /></Layout>} />
+        {/* Service detail pages remain in src/content for potential future reuse but are no longer routed while all services are presented inline on the home page. */}
       </Routes>
     </HashRouter>
   )
