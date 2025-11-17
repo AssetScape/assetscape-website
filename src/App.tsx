@@ -348,12 +348,12 @@ function HomePage() {
     {
       title: 'Strategic asset management',
       description:
-        'We use condition, risk and performance data to build clear renewal and maintenance plans for all assets. To enable better information management we assemble evidence, forecasts and dashboards that support a fair, data led outcome.',
+        'Using condition, risk and performance data, we build clear renewal and maintenance plans for all assets. To enable better information management we assemble evidence, forecasts and dashboards that support a fair, data led outcome.',
     },
     {
       title: 'Asset performance, risk and condition insight',
       description:
-        'We combine inventory, condition, incident and usage data so you can see which assets drive operational risk, where performance falls short and where intervention will give the greatest benefit.',
+        'Combining inventory, condition, incident and usage data, we enable you to see which assets drive operational risk, where performance falls short and where intervention will give the greatest benefit.',
     },
     {
       title: 'Consultancy and digital solutions',
@@ -363,7 +363,7 @@ function HomePage() {
     {
       title: '3D corridor views and visual context',
       description:
-        'We build 3D scenes from LiDAR, imagery and asset data so teams can review corridors, schemes and assets without repeated site visits and understand how everything fits together on the ground.',
+        '3D scenes are automatically built from LiDAR, point clouds, imagery and asset data so teams can review corridors, schemes and assets without repeated site visits and understand how everything fits together on the ground.',
     },
     {
       title: 'Data standards, cleansing and verification',
@@ -373,12 +373,12 @@ function HomePage() {
     {
       title: 'Mobile inspections and field data capture',
       description:
-        'We design and support mobile workflows for inventory, defects and condition so inspectors capture the right attributes in the field and upload them safely into your asset systems.',
+        'Our approach creates and supports mobile workflows for inventory, defects and condition so inspectors capture the right attributes in the field and upload them safely into your asset systems.',
     },
     {
       title: 'CCTV coverage and line-of-sight design',
       description:
-        'We use virtual line of sight tools to test camera locations, check coverage and refine CCTV layouts so you resolve blind spots before you commit to hardware and installation.',
+        'Using virtual line of sight tools to test camera locations, check coverage and refine CCTV layouts enables you to resolve blind spots before you commit to hardware and installation.',
     },
     {
       title: 'Lighting and technology asset intelligence',
@@ -403,7 +403,7 @@ function HomePage() {
     {
       title: 'Road markings condition analysis',
       description:
-        'We automatically combine and analyse TRACS pavement images to measure the condition of road markings. The output provides consistent score and helps you target renewal work where it is most needed.',
+        'Using machine learning and AI, we automatically combine and analyse TRACS pavement images to measure the condition of road markings. The output provides consistent score and helps you target renewal work where it is most needed.',
     },
   ]
 
