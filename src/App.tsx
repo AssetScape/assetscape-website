@@ -76,11 +76,12 @@ function Layout({ children }: { children: ReactNode }) {
   const navLinks: { label: string; to: To }[] = [
     { label: 'Home', to: '/' },
     { label: 'Features', to: { pathname: '/', hash: '#features' } },
-    { label: 'Services', to: { pathname: '/', hash: '#services' } },
     { label: 'Projects', to: { pathname: '/', hash: '#projects' } },
-    { label: 'Documents', to: '/documents' },
+    { label: 'Services', to: { pathname: '/', hash: '#services' } },
     { label: 'Contact', to: { pathname: '/', hash: '#contact' } },
   ]
+  // NOTE: The Documents page remains implemented for future use but the link has been
+  // intentionally removed from navigation so users cannot access it from the menu.
 
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -488,34 +489,12 @@ function HomePage() {
         </div>
       </section>
 
-      <section id='services' className='bg-neutral-50 border-y border-neutral-200'>
-        <div className='mx-auto max-w-6xl px-4 py-14'>
-          <div className='space-y-3 text-center md:text-left'>
-            <SectionMarker label='Services' />
-            <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>Specialist services</h2>
-            <p className='text-sm text-neutral-600'>From data capture to in-depth analysis, our team supports every stage of the asset lifecycle.</p>
-          </div>
-          <div className='mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-            {services.map((s) => (
-              <Link
-                key={s.title}
-                to={`/services/${s.slug}`}
-                className='group block rounded-2xl border border-neutral-200 bg-white px-6 py-6 text-center shadow-sm transition hover:border-neutral-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900'
-              >
-                <div className='flex min-h-[72px] items-center justify-center'>
-                  <h3 className='text-lg font-semibold leading-tight text-neutral-900 transition-colors group-hover:text-emerald-600'>
-                    {s.title}
-                  </h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id='projects' className='bg-neutral-50 border-y border-neutral-200'>
         <div className='mx-auto max-w-6xl px-4 py-14'>
-          <h2 className='text-2xl font-semibold tracking-tight'>Projects</h2>
+          <div className='space-y-3 text-center md:text-left'>
+            <SectionMarker label='Projects' />
+            <h2 className='text-2xl font-semibold tracking-tight'>Projects</h2>
+          </div>
           <div className='mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
             {projects.map((p) => (
               <Link key={p.slug} to={`/projects/${p.slug}`} className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'>
@@ -541,6 +520,31 @@ function HomePage() {
             CIOB International innovation &amp; research award - Judge's comments
           </figcaption>
         </figure>
+      </section>
+
+      <section id='services' className='bg-neutral-50 border-y border-neutral-200'>
+        <div className='mx-auto max-w-6xl px-4 py-14'>
+          <div className='space-y-3 text-center md:text-left'>
+            <SectionMarker label='Services' />
+            <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>Services</h2>
+            <p className='text-sm text-neutral-600'>From data capture to in-depth analysis, our team supports every stage of the asset lifecycle.</p>
+          </div>
+          <div className='mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {services.map((s) => (
+              <Link
+                key={s.title}
+                to={`/services/${s.slug}`}
+                className='group block rounded-2xl border border-neutral-200 bg-white px-6 py-6 text-center shadow-sm transition hover:border-neutral-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900'
+              >
+                <div className='flex min-h-[72px] items-center justify-center'>
+                  <h3 className='text-lg font-semibold leading-tight text-neutral-900 transition-colors group-hover:text-emerald-600'>
+                    {s.title}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
         {/* Full-length promo video section */}
@@ -765,6 +769,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Layout><HomePage /></Layout>} />
+        {/* The documents route stays live for future content even though it is hidden from navigation. */}
         <Route path='/documents' element={<Layout><DocumentsPage /></Layout>} />
         <Route path='/projects/m3-j2-4a' element={<Layout><DetailPage {...P_M3} /></Layout>} />
         <Route path='/projects/cctv-suitability' element={<Layout><DetailPage {...P_CCTV} /></Layout>} />
