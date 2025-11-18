@@ -9,13 +9,13 @@ export const P_CCTV = {
   sections: [
     {
       h: 'Background and objectives',
-      p: 'AssetScape supported National Highways delivery partners who needed to validate proposed camera positions for strategic road network upgrades without repeated site visits, accelerating approvals for new roadside CCTV coverage.',
+      p: 'National Highways and its delivery partners needed a way to validate proposed CCTV camera positions on the strategic road network without repeated site visits. The objective was to check coverage, line of sight and camera placement in a consistent environment and to reduce the time needed to agree CCTV layouts.',
       image: projectCctvScreenshot1,
     },
     {
       h: 'Delivery approach',
       p: [
-        'AssetScape supported National Highways delivery partners who needed to validate proposed camera positions for UK strategic road network upgrades without repeated site visits.',
+        'AssetScape configured a 3D view of the corridor using LiDAR, mapping and imagery, and loaded camera templates with line-of-sight tools. Design teams placed and adjusted camera locations in AssetScape, reviewed coverage and visibility, captured evidence from the views, and used this workflow to compare options, record decisions, and cut the number of site visits.',
       ],
       image: projectCctvScreenshot2,
     },
