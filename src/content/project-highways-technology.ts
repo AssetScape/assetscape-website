@@ -9,7 +9,7 @@ export const P_HE_Tech = {
   sections: [
     {
       h: 'Background and objectives',
-      p: 'Produce a cleansed and reconciled dataset for more than 250,000 roadside technology assets across the North East RCC.',
+      p: 'Produce a cleansed and reconciled dataset for more than 250,000 roadside technology assets across the Strategic Road Network (SRN) in England.',
       image: projectHeTechScreenshot1,
     },
     {
