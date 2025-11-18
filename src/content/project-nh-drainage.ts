@@ -18,11 +18,11 @@ export const P_NH_DR = {
     {
       h: 'Delivery approach',
       p: [
-        'Innovative approach deployed via AssetScape platform to manage data collation, cleansing using 3D. All other approaches utilised 2D ArcView based solutions with no DB connectivity of assets and a tile-based solution. AssetScape were able to create a ’World Management System’ using our platform. This enabled connectivity of assets throughout the project area, enabling the process team to dynamically work on all parts of the network in line with delivery plan.',
-        'The system enables the process team to create, verify and audit assets in a specific data cleansing module. The module enables the Project manager to track progress, answer questions and sign off every asset. All decision is tracked as part of the timeline feature, so can be reviewed at any time.',
-        'The system included an emulator that mirrored the clients checking system for loading in accordance with schema and data dictionary requirements. This enable AssetScape to validate data prior to loading into the client\'s system.',
-        'Unique 3D view allowed users to integrate topography into the data cleansing process. Able to validate ground levels for assets and exit points efficiently.',
-        'Also provided mobile solution connected to AssetScape’s instance of the project. If required, survey team could carry out ad-hoc validation of output and if required invent any obscure asset inventory (not required).',
+        'An innovative approach was deployed via the AssetScape platform to manage data collation and cleansing using 3D technology. All other approaches utilised 2D ArcView-based solutions with no database connectivity to assets and relied on tile-based systems. AssetScape was able to deliver a \'World Management System\' using its platform. This enabled connectivity of assets throughout the project area, allowing the processing team to work dynamically across all parts of the network in line with the delivery plan.',
+        'The system enabled the processing team to create, verify, and audit assets within a dedicated data-cleansing module. The module enabled the project manager to track progress, answer questions, and sign off every asset. All decisions were tracked as part of the timeline feature, allowing them to be reviewed at any time.',
+        'The system included an emulator that mirrored the client\'s checking system for loading in accordance with schema and data dictionary requirements. This enabled AssetScape to validate data prior to loading it into the client\'s system.',
+        'The unique 3D view allowed users to integrate topography into the data-cleansing process and efficiently validate ground levels for assets and exit points.',
+        'Provided a mobile solution connected to the project’s instance of AssetScape, enabling the survey team to carry out ad-hoc validation of outputs and record any missing or unusual assets when required (though this was not necessary during the project).',
       ],
       image: projectNhDrainageScreenshot2,
     },
