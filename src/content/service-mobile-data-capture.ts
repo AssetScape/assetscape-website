@@ -16,8 +16,8 @@ export const S_MobileData = {
       h: 'Capabilities',
       p: [
         'High-resolution imagery synchronised with GNSS positioning.',
-        'Highly configurable UI – Create for user, assets, inspection types.',
-        'Intuitive UI design to enable quick and easy access to data and logging – Set up what you need to see before you survey.',
+        'Highly configurable UI, create for user, assets, inspection types.',
+        'Intuitive UI design to enable quick and easy access to data and logging, set up what you need to see before you survey.',
         'Vehicle and backpack-based capture options with calibrated sensors.',
         'Optional - Vehicle and backpack-based capture options with calibrated sensors. And LiDAR integration for dense point-cloud creation.',
       ],
@@ -28,7 +28,7 @@ export const S_MobileData = {
         'Plan survey routes, tasks and naming conventions inside AssetScape.',
         'Capture observations with configurable forms and prompts.',
         'Upload data to the platform for validation, enrichment and publishing.',
-        'Wrap around solution for existing asset management systems – Enhanced functionality and use, moving away from windows-based screen layouts.',
+        'Connected solution for existing asset management systems, enhanced functionality and use, moving away from windows-based screen layouts.',
       ],
     },
     {

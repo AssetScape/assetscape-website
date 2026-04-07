@@ -4,7 +4,7 @@ import projectNhDrainageScreenshot3 from '../assets/projects/projectNhDrainageSc
 import projectNhDrainageScreenshot4 from '../assets/projects/projectNhDrainageScreenshot4.png'
 
 export const P_NH_DR = {
-  title: 'National Highways Drainage – Area 2',
+  title: 'National Highways Drainage, Area 2',
   subtitle: 'Drainage asset identification, verification and risk insights.',
   sections: [
     {

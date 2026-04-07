@@ -23,7 +23,7 @@ export const S_Consultancy = {
         'Provide ad-hoc support to clients managing data including asset, operational and condition datasets.',
         'Create innovative solutions, working with clients to deploy robust solutions that meet the needs of end users.',
         'Deliver flexible solutions that can be configured, added to and is future proofed.',
-        'Provide specific data and systems solutions advice and support to get the best out of your data – Creating cost effective solutions.',
+        'Provide specific data and systems solutions advice and support to get the best out of your data, creating cost effective solutions.',
       ],
     },
     {
@@ -32,7 +32,7 @@ export const S_Consultancy = {
         'AssetScape’s vision is to provide clients with practical tools that enable them to do the job quicker, easier and to a higher quality.',
         'Over the last 10 years, AssetScape has been successfully deploying solutions and supported clients with ad-hoc support, data mining, data cleansing, data analytics that includes the development and implementation of small utilities through to large scale systems.',
         'Our team are experienced team having knowledge of the domain, including asset datasets, systems architecture and understanding the end user requirements. This also includes solutions driven engineers who can get the most out of the digital technology, monitoring and using new technologies as appropriate.',
-        'We strive for innovative solutions and constantly are developing and testing are ideas to bring to market. Examples of this can be seen in the delivery of innovative utilities such as CCTV, Structure viewer and Road Markings Analysis Tool.',
+        'We strive for innovative solutions and are constantly developing and testing our ideas to bring to market. Examples of this can be seen in the delivery of innovative utilities such as CCTV, Structure viewer and Road Markings Analysis Tool.',
       ],
     },
   ],

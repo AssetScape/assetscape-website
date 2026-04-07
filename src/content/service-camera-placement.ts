@@ -4,7 +4,7 @@ import serviceCctvImage2 from '../assets/services/serviceCCTV2.jpg'
 import serviceCctvImage3 from '../assets/services/serviceCCTV3.jpg'
 
 export const S_CameraPlacement = {
-  title: 'Camera Placement – CCTV Module',
+  title: 'Camera Placement, CCTV Module',
   subtitle: 'Design effective CCTV schemes using virtual line-of-sight analysis.',
   images: [serviceCctvImage1, serviceCctvImage2, serviceCctvImage3],
   sections: [
@@ -31,7 +31,7 @@ export const S_CameraPlacement = {
         'Generate evidence packs and camera schedules to accelerate approvals and installation.',
         'No onsite requirement - “survey once, use many times”',
         'Develop many designs and options for approval.',
-        'Safe environment to design – No on-site surveys required',
+        'Safe environment to design: no on-site surveys required',
       ],
     },
   ],

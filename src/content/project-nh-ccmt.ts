@@ -34,7 +34,7 @@ export const P_NH_CCMT = {
       h: 'Technical detail',
       p: [
         'LiDAR, mapping, imagery, Street View, inventory, condition data, and evidence packs from National Highways and DBFOs were loaded into AssetScape. 3D scenes were auto-generated from these disparate sources, reducing the effort required to create and maintain working datasets. Data flows out of AssetScape and into Tableau Online, allowing programme leads to see progress by route and asset class, along with current throughput, blockers, and gaps.',
-        'CCMT includes tools for assessment. The road markings module uses machine learning on downward-facing camera images to build a dataset, classify defects, and drive responses. The structures 3D viewer supports element-level inspection, defect review, and the capture of observations and comments — all tied to the correct component and location. The TRACS Pavement Viewer aligns pavement data to the route with high-definition photo review.',
+        'CCMT includes tools for assessment. The road markings module uses machine learning on downward-facing camera images to build a dataset, classify defects, and drive responses. The structures 3D viewer supports element-level inspection, defect review, and the capture of observations and comments, all tied to the correct component and location. The TRACS Pavement Viewer aligns pavement data to the route with high-definition photo review.',
         'Automated data verification cross-checks inventories, surveys, and works records so conflicts can be resolved with a recorded decision on each item. Rule-based assessment reduces manual effort and focuses specialists on items that matter. For example, pavement construction matching compares lane parameters and proposes outcomes that users can accept or amend, with the audit trail noting the basis. Cross-mapping links data down to element level and back to the linear reference and contract record, while the platform maintains connections to client and supplier systems and can incorporate new AI methods as they mature.',
       ],
       image: projectNhCcmtScreenshot3,
@@ -48,7 +48,7 @@ export const P_NH_CCMT = {
         "Decision cycles shorten because RFIs, comments, and files sit on the same record, and users work to 'one version of the truth.'",
         'Required fields, validation, and an audit trail reduce rework and eliminate duplicate uploads, submissions, and lost records, as users operate from the same source.',
         'Tableau Online reporting shows progress, blockers, and gaps by route and asset class, enabling managers to act on current data and turn insights into actions.',
-        'Create a fully compliant inventory of assets – without the system, the data was held by eight DBFOs in varying states.',
+        'Create a fully compliant inventory of assets. Without the system, the data was held by eight DBFOs in varying states.',
         'AssetScape’s intuitive and user-friendly interface means that, after only a few hours of training, users who had never used AssetScape before were able to use the system effectively.',
       ],
       image: projectNhCcmtScreenshot4,
