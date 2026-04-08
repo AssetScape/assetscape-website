@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SectionMarker } from '../components/SectionMarker'
-import { IconLink, IconWrench, IconEye, IconBarChart } from '../components/Icons'
+import { IconLink, IconWrench, IconEye, IconBarChart, IconNetwork } from '../components/Icons'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 import heroVideo from '../assets/AS_SHORT_720_optimized.mp4'
@@ -34,70 +34,82 @@ const proofPoints = [
 
 const sections = [
   {
-    icon: IconLink,
-    marker: 'Connect, don\'t replace',
-    heading: 'Connects to your existing systems',
+    icon: IconEye,
+    marker: 'The challenge',
+    heading: 'Project data is often spread across too many systems',
     bullets: [
-      'AssetScape connects to your existing platforms, including GIS, sensor dashboards, engineering systems and asset databases, bringing their data into a shared 3D environment.',
-      'Direct connections to databases, APIs and file-based data sources mean your existing workflows stay in place.',
-      'ETL pipelines handle complex or legacy data, ensuring nothing is left behind.',
-      'Where geospatial data does not yet exist, we create it: 3D terrains from LiDAR, point clouds, satellite imagery and aerial photography.',
+      'GIS, survey data, sensor feeds, engineering records and asset information are often held in separate tools, making it difficult to review them together.',
+      'Teams can end up working from different sources, with limited spatial context and no shared view of the project.',
+      'This slows review, increases manual effort and makes coordination harder across complex programmes.',
+      'It can also make it difficult to understand how data, assets and issues relate to each other on the ground.',
+    ],
+  },
+  {
+    icon: IconLink,
+    marker: 'What AssetScape adds',
+    heading: 'A shared 3D view across project data',
+    bullets: [
+      'AssetScape brings project data together in a navigable 3D environment, giving teams a clearer view of assets, locations and surrounding context.',
+      'It helps users review information spatially, not just as records spread across separate systems and files.',
+      'Data from different sources can be brought together in one place so teams can compare, inspect and understand it more effectively.',
+      'This supports faster review, clearer communication and better-informed decisions across the project lifecycle.',
+    ],
+  },
+  {
+    icon: IconNetwork,
+    marker: 'How it fits',
+    heading: 'Works with established systems or new project setups',
+    bullets: [
+      'AssetScape can connect to GIS platforms, databases, APIs, sensor data, engineering systems and file-based sources.',
+      'Where data is fragmented, incomplete or held in legacy formats, ETL pipelines can prepare and structure it for use.',
+      'Where geospatial context does not yet exist, we can create it using LiDAR, point clouds, satellite imagery, aerial photography and terrain models.',
+      'This means AssetScape can support both projects that already have mature systems in place and projects being developed from the ground up.',
     ],
   },
   {
     icon: IconWrench,
-    marker: 'Configured for your project',
-    heading: 'Built around what you need, not a template',
+    marker: 'Example workflows',
+    heading: 'Configured for practical delivery needs',
     bullets: [
-      'Every deployment is configured around the requirements of your project and your teams.',
-      'We design and deliver custom modules and workflows for specific project needs, including CCTV line-of-sight analysis, contract completion tracking, drainage risk assessment and road markings condition scoring.',
-      'New capabilities are delivered in weeks, not months. Our agile approach means we respond quickly to changing project needs.',
-      'You get a solution that fits the way you work, not a generic tool you have to work around.',
-    ],
-  },
-  {
-    icon: IconEye,
-    marker: 'The 3D advantage',
-    heading: 'See what spreadsheets and 2D maps cannot show you',
-    bullets: [
-      'See every asset in its real-world position and surroundings, in three dimensions.',
-      'Reduce site visits by reviewing corridors, schemes and assets remotely.',
-      'Overlay data from multiple sources in a single view so teams can make better-informed decisions.',
-      'Give teams, from engineers to programme managers, a shared spatial reference point.',
+      'AssetScape can support targeted workflows and custom modules built around specific project requirements.',
+      'Examples include CCTV line-of-sight assessment, contract completion tracking, drainage risk assessment and road markings condition scoring.',
+      'It can also support desktop verification, data cleansing and project-specific review tasks where spatial context matters.',
+      'The aim is not to force teams into a fixed template, but to provide a solution that supports the way the project actually works.',
     ],
   },
   {
     icon: IconBarChart,
-    marker: 'Proven at scale',
-    heading: 'Delivering results on major programmes',
+    marker: 'Proof',
+    heading: 'Delivered on live infrastructure programmes',
     bullets: [
-      'AssetScape is already trusted on some of the UK\'s largest infrastructure asset management programmes.',
-      'From contract handback on DBFO schemes to national technology asset cleansing, we have demonstrated that the platform performs at scale.',
+      'AssetScape has already been used on major infrastructure and asset management programmes across the UK.',
+      'It has supported contract handback, desktop verification, asset cleansing and other data-led workflows at programme scale.',
+      'This page describes a practical delivery approach, not a future concept.',
     ],
   },
 ]
 
 const techStack = [
   'GIS platforms',
-  'Sensor networks',
-  'LiDAR',
-  'Point clouds',
-  'CAD / BIM',
-  'Aerial imagery',
   'Databases',
   'APIs',
-  'Mapping services',
   'Survey data',
+  'Sensor data',
+  'Engineering systems',
+  'LiDAR',
+  'Point clouds',
+  'Aerial imagery',
+  'CAD / BIM',
 ]
 
 export function ConnectedDataPage() {
-  useDocumentTitle('AssetScape — Connected 3D for your existing systems and data')
+  useDocumentTitle('AssetScape | Connected Data')
 
   return (
     <>
       {/* Hero */}
       <section className='relative'>
-        <div className='relative h-[42vh] md:h-[55vh] overflow-hidden bg-black'>
+        <div className='relative h-[42vh] overflow-hidden bg-black md:h-[55vh]'>
           <video
             className='absolute inset-0 h-full w-full object-contain'
             autoPlay
@@ -110,12 +122,15 @@ export function ConnectedDataPage() {
           </video>
           <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25' />
           <div className='absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white'>
-            <p className='text-xs font-semibold uppercase tracking-[0.35em] text-emerald-400 mb-3'>Connected Data</p>
-            <h1 className='max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl leading-tight'>
-              Connected 3D for your existing systems and data
+            <p className='mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-400'>
+              Connected Data
+            </p>
+            <h1 className='max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl'>
+              Bring project data together in one navigable 3D environment
             </h1>
             <p className='mt-4 max-w-2xl text-base leading-relaxed text-neutral-200 sm:text-lg'>
-              Bring your GIS platforms, sensor feeds, survey data and engineering systems together in one navigable 3D environment, without replacing your existing systems.
+              Connect systems, surveys and spatial data in one navigable 3D environment. See every asset in
+              context. Make decisions faster.
             </p>
             <div className='mt-8'>
               <a
@@ -130,11 +145,11 @@ export function ConnectedDataPage() {
       </section>
 
       {/* Content sections */}
-      <div className='mx-auto max-w-5xl px-4 py-14 space-y-12'>
+      <div className='mx-auto max-w-5xl space-y-12 px-4 py-14'>
         {sections.map((s, i) => (
           <section key={i} className='rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8'>
             <div className='flex items-start gap-4'>
-              <div className='shrink-0 hidden sm:block'>
+              <div className='hidden shrink-0 sm:block'>
                 <s.icon className='h-11 w-11 text-emerald-600' />
               </div>
               <div className='space-y-3'>
@@ -154,32 +169,47 @@ export function ConnectedDataPage() {
           </section>
         ))}
 
-        {/* Proof points — project cards */}
-        <div className='grid sm:grid-cols-3 gap-6'>
-          {proofPoints.map((p) => (
-            <Link
-              key={p.slug}
-              to={`/projects/${p.slug}`}
-              className='group block rounded-2xl overflow-hidden border border-neutral-200 bg-white'
-            >
-              <div className='aspect-[16/9] overflow-hidden'>
-                <img
-                  src={p.cover}
-                  alt={p.title}
-                  className='w-full h-full object-cover group-hover:scale-105 transition'
-                />
-              </div>
-              <div className='p-4'>
-                <h3 className='font-medium leading-snug group-hover:underline'>{p.title}</h3>
-                <p className='mt-1 text-xs text-neutral-500'>{p.stat}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* Proof points */}
+        <section className='space-y-6'>
+          <div className='text-center sm:text-left'>
+            <SectionMarker label='Relevant project examples' />
+            <h2 className='mt-3 text-2xl font-semibold tracking-tight'>Applied on live projects</h2>
+            <p className='mt-3 max-w-3xl text-sm leading-relaxed text-neutral-700 sm:text-base'>
+              The examples below show how AssetScape has been applied in live environments, from large-scale
+              asset management programmes to focused desktop verification and workflow delivery.
+            </p>
+          </div>
+
+          <div className='grid gap-6 sm:grid-cols-3'>
+            {proofPoints.map((p) => (
+              <Link
+                key={p.slug}
+                to={`/projects/${p.slug}`}
+                className='group block overflow-hidden rounded-2xl border border-neutral-200 bg-white'
+              >
+                <div className='aspect-[16/9] overflow-hidden'>
+                  <img
+                    src={p.cover}
+                    alt={p.title}
+                    className='h-full w-full object-cover transition group-hover:scale-105'
+                  />
+                </div>
+                <div className='p-4'>
+                  <h3 className='font-medium leading-snug group-hover:underline'>{p.title}</h3>
+                  <p className='mt-1 text-xs text-neutral-500'>{p.stat}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* Technology compatibility */}
-        <section className='rounded-3xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8 text-center'>
-          <SectionMarker label='Compatible with your technology' />
+        <section className='rounded-3xl border border-neutral-200 bg-neutral-50 p-6 text-center sm:p-8'>
+          <SectionMarker label='Works with your data and technology' />
+          <p className='mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-neutral-700 sm:text-base'>
+            AssetScape can work with a wide range of project data sources and technology environments, helping
+            teams bring information together without forcing a single fixed setup.
+          </p>
           <div className='mt-6 flex flex-wrap justify-center gap-3'>
             {techStack.map((t) => (
               <span
@@ -193,10 +223,14 @@ export function ConnectedDataPage() {
         </section>
 
         {/* Closing CTA */}
-        <section className='rounded-3xl bg-neutral-900 p-8 md:p-12 text-center text-white'>
-          <h2 className='text-xl md:text-2xl font-semibold tracking-tight'>
-            Let us show you how AssetScape can connect to your existing systems.
+        <section className='rounded-3xl bg-neutral-900 p-8 text-center text-white md:p-12'>
+          <h2 className='text-xl font-semibold tracking-tight md:text-2xl'>
+            See how AssetScape could support your project
           </h2>
+          <p className='mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-300 sm:text-base'>
+            Whether you need to connect established systems or build a clearer 3D view from the ground up, we
+            can help.
+          </p>
           <div className='mt-6'>
             <a
               href={MAILTO}
