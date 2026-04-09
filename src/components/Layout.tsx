@@ -80,7 +80,7 @@ export function Footer() {
 export function Layout({ children }: { children: ReactNode }) {
   const navLinks: { label: string; to: To }[] = [
     { label: 'Home', to: '/' },
-    { label: 'Connected Data', to: '/connected-data' },
+    { label: '3D Data Wrapper', to: '/3d-data-wrapper' },
     { label: 'Features', to: { pathname: '/', hash: '#features' } },
     { label: 'Projects', to: { pathname: '/', hash: '#projects' } },
     { label: 'Services', to: { pathname: '/', hash: '#services' } },

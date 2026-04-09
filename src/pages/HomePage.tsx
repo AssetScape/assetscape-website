@@ -36,7 +36,7 @@ function VideoHero() {
         <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20' />
         <div className='absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white'>
           <h1 className='max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl leading-tight'>
-            One 3D environment for connected project data
+            One 3D environment for connected infrastructure data
           </h1>
           <p className='mt-4 max-w-2xl text-base leading-relaxed text-neutral-200 sm:text-lg'>
             Connect systems, surveys and spatial data into one navigable 3D environment. See every asset in context. Make decisions faster.
@@ -62,7 +62,7 @@ function VideoHero() {
 }
 
 export function HomePage() {
-  useDocumentTitle('AssetScape — One 3D environment for connected project data')
+  useDocumentTitle('AssetScape — One 3D environment for connected infrastructure data')
 
   const services = [
     {
@@ -179,7 +179,7 @@ export function HomePage() {
             <SectionMarker label='About' />
             <h2 className='text-2xl md:text-3xl font-semibold tracking-tight'>About AssetScape</h2>
             <p className='mt-4 text-base leading-relaxed'>
-              By combining a multi-dimensional data management approach with our 3D graphics engine, we have created a unique product that brings asset and infrastructure management into a new era. AssetScape® provides one 3D environment for connected project data, bringing together your existing systems, surveys and spatial information into a single, navigable view.
+              By combining a multi-dimensional data management approach with our 3D graphics engine, we have created a platform for connecting and visualising infrastructure and asset data. AssetScape® provides one 3D environment for connected infrastructure data, whether as a standalone platform or integrated with existing systems.
             </p>
             <p className='text-base leading-relaxed'>
               We work with your teams from initial data setup through to ongoing support, delivering solutions configured for your workflows and systems.
@@ -239,20 +239,20 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Connected Data teaser */}
+      {/* 3D Data Wrapper teaser */}
       <section className='mx-auto max-w-6xl px-4 py-14'>
         <div className='rounded-3xl border border-emerald-200 bg-emerald-50/50 p-8 md:p-12 text-center'>
           <h2 className='text-xl md:text-2xl font-semibold tracking-tight'>
             Already have a GIS platform or asset management system?
           </h2>
           <p className='mt-3 mx-auto max-w-2xl text-sm md:text-base text-neutral-700 leading-relaxed'>
-            AssetScape connects to your existing tools and adds the 3D context that helps teams see the full picture. Connect your data without replacing anything.
+            AssetScape wraps around your existing tools and adds a 3D visual layer that helps teams see the full picture, without replacing anything already in place.
           </p>
           <Link
-            to='/connected-data'
+            to='/3d-data-wrapper'
             className='mt-6 inline-flex items-center rounded-full border border-neutral-900 bg-neutral-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-white hover:text-neutral-900'
           >
-            Learn more →
+            Explore the 3D Data Wrapper →
           </Link>
         </div>
       </section>

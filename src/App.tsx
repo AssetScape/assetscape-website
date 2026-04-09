@@ -18,7 +18,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Layout><HomePage /></Layout>} />
-        <Route path='/connected-data' element={<Layout><ConnectedDataPage /></Layout>} />
+        <Route path='/3d-data-wrapper' element={<Layout><ConnectedDataPage /></Layout>} />
         <Route path='/projects/m3-j2-4a' element={<Layout><DetailPage {...P_M3} /></Layout>} />
         <Route path='/projects/cctv-suitability' element={<Layout><DetailPage {...P_CCTV} /></Layout>} />
         <Route path='/projects/highways-technology' element={<Layout><DetailPage {...P_HE_Tech} /></Layout>} />
