@@ -18,6 +18,20 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AssetScape — One 3D environment for connected project data" />
     <meta name="twitter:description" content="Connect your existing systems, surveys and spatial data into a single navigable 3D world." />
+
+    <!-- Single Page App restore script for GitHub Pages -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
   </head>
   <body>
     <div id="root"></div>
