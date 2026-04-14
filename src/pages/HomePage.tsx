@@ -39,7 +39,7 @@ function VideoHero() {
             One 3D environment for connected infrastructure data
           </h1>
           <p className='mt-4 max-w-2xl text-base leading-relaxed text-neutral-200 sm:text-lg'>
-            Connect systems, surveys and spatial data into one navigable 3D environment. See every asset in context. Make decisions faster.
+            Connect systems, asset data and spatial information into one navigable 3D environment. See every asset in context. Make decisions faster.
           </p>
           <div className='mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4'>
             <a

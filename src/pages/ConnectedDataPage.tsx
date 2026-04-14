@@ -80,7 +80,7 @@ const moduleExamples = [
 
 const workSteps = [
   'Review your current systems and data',
-  'Connect or build the 3D context',
+  'Connect or generate the 3D context',
   'Configure AssetScape around your workflows',
   'Deliver, refine and support ongoing needs',
 ]
@@ -116,11 +116,10 @@ export function ConnectedDataPage() {
           <div className='absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white'>
             <p className='mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-400'>3D Data Wrapper</p>
             <h1 className='max-w-4xl text-3xl font-bold leading-tight tracking-tight md:text-4xl'>
-              A 3D wrapper for your existing asset data and systems
+              A 3D wrapper for your existing data and systems
             </h1>
             <p className='mt-5 max-w-3xl text-base leading-relaxed text-neutral-200 sm:text-lg'>
-              AssetScape wraps around your existing platforms, surveys and spatial data, bringing them together in
-              one visual 3D environment for clearer review, faster workflows and better decisions.
+              AssetScape brings your existing platforms, systems and data into one visual 3D environment, giving teams a clearer way to review, interact with and manage connected information.
             </p>
             <div className='mt-8'>
               <a
@@ -142,10 +141,7 @@ export function ConnectedDataPage() {
             A clearer way to use the systems you already rely on
           </h2>
           <p className='text-base leading-relaxed text-neutral-700 sm:text-lg'>
-            AssetScape is designed to work alongside your existing asset management, GIS, engineering and data
-            systems as a 3D data wrapper. It brings information from multiple sources into one visual environment,
-            helping teams inspect assets, understand context and work more effectively without replacing the systems
-            already doing the core job.
+            AssetScape works alongside your existing asset management, GIS, engineering and data systems as a 3D data wrapper. It brings information from multiple sources into one visual environment where teams can review assets, update records, capture decisions and move information back into connected workflows without replacing the systems already doing the core job.
           </p>
           <p className='text-base leading-relaxed text-neutral-700 sm:text-lg'>
             Where 3D context does not yet exist, we can create it using LiDAR, point clouds, imagery, terrain data
@@ -154,7 +150,7 @@ export function ConnectedDataPage() {
           </p>
           <div className='rounded-2xl border border-emerald-200 bg-emerald-50 px-6 py-5 text-center'>
             <p className='text-sm font-semibold uppercase tracking-[0.28em] text-emerald-700 sm:text-[0.8rem]'>
-              On top of your current systems, not instead of them
+              Built to complement your current systems, not replace them
             </p>
           </div>
         </section>
@@ -171,8 +167,7 @@ export function ConnectedDataPage() {
                   </h2>
                   <p className='max-w-2xl text-base leading-relaxed text-neutral-700'>
                     AssetScape brings together the systems, records and spatial context that teams often have to
-                    review separately. It adds a clearer visual layer without asking you to replace the platforms
-                    already in place.
+                    review separately. This can also provide a practical visual layer for digital twin use cases, without requiring wholesale replacement of existing systems. It adds an interactive 3D layer where users can inspect, organise, update and connect information in context, without replacing the platforms already in place.
                   </p>
                 </div>
 
@@ -252,7 +247,7 @@ export function ConnectedDataPage() {
               <div className='space-y-4'>
                 <SectionMarker label='Creating context' className='text-[0.65rem] tracking-[0.32em] sm:text-xs' />
                 <h2 className='text-2xl font-semibold tracking-tight sm:text-3xl'>
-                  No existing 3D environment? We can build it
+                  No 3D environment? We can generate it
                 </h2>
                 <p className='text-base leading-relaxed text-neutral-700'>
                   Some clients already have strong geospatial and model data. Others do not. AssetScape can work in
@@ -286,12 +281,11 @@ export function ConnectedDataPage() {
 
           {/* Practical use */}
           <section className='rounded-3xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8 lg:p-10'>
-            <div className='max-w-3xl space-y-4'>
-              <SectionMarker label='Practical use' className='text-[0.65rem] tracking-[0.32em] sm:text-xs' />
+            <div className='mx-auto max-w-3xl space-y-4 text-center'>
+              <SectionMarker label='Practical use' className='justify-center text-[0.65rem] tracking-[0.32em] sm:text-xs' />
               <h2 className='text-2xl font-semibold tracking-tight sm:text-3xl'>What teams can do inside AssetScape</h2>
               <p className='text-base leading-relaxed text-neutral-700'>
-                AssetScape is not just for displaying data in 3D. It supports real delivery tasks by helping teams
-                review, organise and work with connected information in context.
+                AssetScape supports real delivery work by helping teams interact with connected data in 3D, build links between systems and manage actions in a clearer operational context.
               </p>
             </div>
 
@@ -398,7 +392,7 @@ export function ConnectedDataPage() {
                 </div>
 
                 <div className='rounded-3xl border border-neutral-200 bg-neutral-50 p-5 sm:p-6'>
-                  <p className='text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700'>How we work with you</p>
+                  <p className='text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700 text-center'>How we work with you</p>
                   <div className='mt-5 grid gap-3 sm:grid-cols-2'>
                     {workSteps.map((step, idx) => (
                       <div key={step} className='rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm'>
@@ -432,11 +426,7 @@ export function ConnectedDataPage() {
                   <p>Provide a clearer foundation for search, automation, review support and other AI-related use cases.</p>
                   <p>Improve data usability without requiring wholesale replacement of existing systems.</p>
                 </div>
-                <div className='rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-4'>
-                  <p className='text-sm font-medium text-emerald-900'>
-                    AI works better when the underlying data is connected, understandable and grounded in context.
-                  </p>
-                </div>
+
               </div>
 
               <div className='overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50'>
@@ -452,8 +442,8 @@ export function ConnectedDataPage() {
 
           {/* Proof */}
           <section className='space-y-6'>
-            <div className='max-w-3xl space-y-3'>
-              <SectionMarker label='Live examples' className='text-[0.65rem] tracking-[0.32em] sm:text-xs' />
+            <div className='mx-auto max-w-3xl space-y-3 text-center'>
+              <SectionMarker label='Live examples' className='justify-center text-[0.65rem] tracking-[0.32em] sm:text-xs' />
               <h2 className='text-2xl font-semibold tracking-tight sm:text-3xl'>Applied on real infrastructure programmes</h2>
               <p className='text-base leading-relaxed text-neutral-700'>
                 AssetScape has already been used across live infrastructure and asset management work, from
@@ -490,8 +480,7 @@ export function ConnectedDataPage() {
               See how AssetScape could work alongside your existing systems
             </h2>
             <p className='mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-neutral-300 sm:text-base'>
-              Whether you need a clearer 3D view of existing data, a new visual environment built from source
-              material, or a fast custom module around a specific workflow, AssetScape can help.
+              Whether you need to connect existing systems in a clearer 3D environment, create new 3D context from source material, or support a specific workflow with a custom module, AssetScape can help without replacing existing systems.
             </p>
             <div className='mt-7'>
               <a
