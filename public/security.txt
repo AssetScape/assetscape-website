@@ -1,4 +1,0 @@
-Contact: mailto:enquiries@assetscape.co.uk
-Expires: 2027-04-15T00:00:00.000Z
-Preferred-Languages: en
-Canonical: https://assetscape.co.uk/.well-known/security.txt
