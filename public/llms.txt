@@ -1,0 +1,9 @@
+AssetScape
+AssetScape is a platform for connected infrastructure and asset data in one navigable 3D environment, working alongside existing systems.
+
+Key pages
+- https://assetscape.co.uk/ — Home page overview of AssetScape, core platform capabilities, and service focus.
+- https://assetscape.co.uk/3d-data-wrapper — 3D Data Wrapper page describing how existing systems and data are brought into one visual 3D environment.
+- https://assetscape.co.uk/projects/nh-ccmt — National Highways CCMT example showing contract completion and handback workflows at scale.
+- https://assetscape.co.uk/projects/highways-technology — National Highways technology asset cleansing and verification example.
+- https://assetscape.co.uk/projects/m3-j2-4a — M3 Junction 2 to 4a asset verification example using desktop and survey data workflows.
