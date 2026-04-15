@@ -1,0 +1,32 @@
+AssetScape
+Main website: https://assetscape.co.uk/
+
+What AssetScape is
+AssetScape is a platform for connecting and visualising infrastructure and asset data in one navigable 3D environment. It is positioned to work as a standalone platform or alongside existing systems so teams can review, coordinate, and manage connected information in context.
+
+Home page summary
+The home page presents AssetScape as one 3D environment for connected infrastructure data. It describes bringing systems, asset data, and spatial information together so users can see assets in context and make faster decisions.
+
+It explains that AssetScape can combine multiple data sources into one visual environment, including LiDAR, point clouds, imagery, mapping, and related asset records. The page highlights practical asset-management uses such as data standards and cleansing, verification, condition and risk insight, strategic planning support, field workflows, and corridor-level visual context.
+
+The home page also introduces proof projects and positions the platform as practical and configurable for real operational workflows.
+
+3D Data Wrapper page summary
+The 3D Data Wrapper page explains how AssetScape wraps around existing GIS, asset management, engineering, and data systems rather than replacing them. It describes connecting multiple sources into one visual 3D environment so teams can review assets, update records, coordinate work, and support decisions with clearer physical context.
+
+It states that where 3D context does not already exist, AssetScape can help create it from LiDAR, point clouds, imagery, terrain data, and related sources. The page presents this as a way to create usable operational context and AI-ready data foundations from fragmented source material.
+
+It also describes practical usage areas such as data review, workflow configuration, cross-team coordination, and operational tracking in a shared visual environment.
+
+Selected project examples
+NH CCMT
+https://assetscape.co.uk/projects/nh-ccmt
+National Highways Contract Completion Toolkit example covering handback workflows across multiple DBFO schemes, combining inventory, condition, evidence, and decision processes in one connected platform.
+
+Highways Technology
+https://assetscape.co.uk/projects/highways-technology
+National Highways technology asset cleansing example focused on producing a reconciled dataset for a large roadside technology asset portfolio with auditable verification workflows.
+
+M3 J2 to 4a
+https://assetscape.co.uk/projects/m3-j2-4a
+Asset verification example for the rebuilt M3 corridor, using LiDAR and imagery-backed workflows to create and assure an inventory for downstream system loading.
