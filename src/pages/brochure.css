@@ -81,7 +81,7 @@
 
 .brochure-footer {
   display: grid;
-  grid-template-columns: 1.1fr 1.3fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 8mm;
   margin-top: 5mm;
@@ -111,7 +111,7 @@
 .brochure-footer-links {
   display: flex;
   justify-content: center;
-  gap: 5mm;
+  gap: 20mm;
   min-width: 0;
 }
 
@@ -144,7 +144,7 @@
   font-size: 42px;
   font-weight: 760;
   letter-spacing: -0.02em;
-  line-height: 0.98;
+  line-height: 1.4;
 }
 
 .brochure-root h2 {

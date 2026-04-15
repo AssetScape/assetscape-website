@@ -121,7 +121,6 @@ function BrochureFooter() {
     <footer className="brochure-footer">
       <div className="brochure-footer-brand">
         <img src={logoImg} alt="AssetScape" />
-        <span>AssetScape</span>
       </div>
       <div className="brochure-footer-links">
         <a href="mailto:enquiries@assetscape.co.uk">enquiries@assetscape.co.uk</a>
@@ -165,7 +164,7 @@ export function BrochurePage() {
       <BrochurePageFrame variant="brochure-page-cover">
         <div className="cover-masthead">
           <img src={logoImg} alt="AssetScape" />
-          <p>Infrastructure asset data in 3D</p>
+          <p>One 3D environment for connected data</p>
         </div>
 
         <div className="cover-title-grid">
@@ -294,7 +293,8 @@ export function BrochurePage() {
           <img src={building3dWorldImg} alt="Building the 3D world from LiDAR, point clouds and imagery" />
           <div>
             <p className="brochure-section-label">Creating context</p>
-            <h2>No 3D environment? We can generate it</h2>
+            <h2>No 3D environment?<br />
+              We can generate it</h2>
             <p>
               Some clients already have strong geospatial and model data. Others do not. AssetScape can work in both
               situations. Where the underlying 3D world does not yet exist, we can help create it.
@@ -340,8 +340,8 @@ export function BrochurePage() {
 
         <section className="work-steps brochure-no-break">
           <div>
-            <p className="brochure-section-label">How we work with you</p>
-            <h2>From current systems to a working 3D environment</h2>
+            <p className="brochure-section-label">From current systems to a working 3D environment</p>
+            <h2>How we work with you</h2>
           </div>
           <ol>
             {workSteps.map((step, index) => (
@@ -354,10 +354,10 @@ export function BrochurePage() {
         </section>
       </BrochurePageFrame>
 
-      <BrochurePageFrame headerLabel="Project Proof">
+      <BrochurePageFrame headerLabel="Projects">
         <div className="proof-heading">
-          <p className="brochure-section-label">Applied on real infrastructure programmes</p>
-          <h2>Concise proof from live asset management work</h2>
+          <p className="brochure-section-label">Applied on real infrastructure projects</p>
+          <h2>Real-world outcomes from delivered projects</h2>
           <p>
             AssetScape has already been used across live infrastructure and asset management work, from large-scale data
             and workflow challenges to focused verification and review tasks.
