@@ -3,6 +3,7 @@ import { Layout, ScrollToTop } from './components/Layout'
 import { DetailPage } from './components/DetailPage'
 import { HomePage } from './pages/HomePage'
 import { ConnectedDataPage } from './pages/ConnectedDataPage'
+import { BrochurePage } from './pages/BrochurePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 
 import { P_M3 } from './content/project-m3-j2-4a'
@@ -19,6 +20,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Layout><HomePage /></Layout>} />
         <Route path='/3d-data-wrapper' element={<Layout><ConnectedDataPage /></Layout>} />
+        <Route path='/brochure' element={<BrochurePage />} />
         <Route path='/projects/m3-j2-4a' element={<Layout><DetailPage {...P_M3} /></Layout>} />
         <Route path='/projects/cctv-suitability' element={<Layout><DetailPage {...P_CCTV} /></Layout>} />
         <Route path='/projects/highways-technology' element={<Layout><DetailPage {...P_HE_Tech} /></Layout>} />

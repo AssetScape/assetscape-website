@@ -1,0 +1,772 @@
+/* Brochure print and screen-preview styles */
+
+.brochure-root {
+  min-height: 100vh;
+  background: #eef0f1;
+  color: #171717;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.brochure-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #d9dddf;
+  backdrop-filter: blur(8px);
+}
+
+.brochure-toolbar button {
+  border: 1px solid #111827;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 14px;
+}
+
+.brochure-toolbar span {
+  color: #525252;
+  font-size: 11px;
+}
+
+.brochure-page {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 18px auto;
+  padding: 11mm 14mm 8.5mm;
+  background: #fff;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.16);
+}
+
+.brochure-page-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.brochure-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7mm;
+  padding-bottom: 3mm;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brochure-header img {
+  width: 31mm;
+  height: auto;
+}
+
+.brochure-header span {
+  color: #737373;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.brochure-footer {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr auto;
+  align-items: center;
+  gap: 8mm;
+  margin-top: 5mm;
+  padding-top: 3.2mm;
+  border-top: 1.5px solid #059669;
+  color: #737373;
+  font-size: 8.5px;
+}
+
+.brochure-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  min-width: 0;
+}
+
+.brochure-footer-brand img {
+  width: 24mm;
+  height: auto;
+}
+
+.brochure-footer-brand span {
+  color: #262626;
+  font-weight: 700;
+}
+
+.brochure-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 5mm;
+  min-width: 0;
+}
+
+.brochure-footer a,
+.closing-panel a {
+  color: #047857;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.brochure-footer p {
+  color: #8a8a8a;
+  font-size: 8.5px;
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.brochure-root h1,
+.brochure-root h2,
+.brochure-root h3,
+.brochure-root p,
+.brochure-root li,
+.brochure-root figure {
+  margin: 0;
+}
+
+.brochure-root h1 {
+  color: #0a0a0a;
+  font-size: 42px;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+.brochure-root h2 {
+  color: #0a0a0a;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  line-height: 1.18;
+}
+
+.brochure-root h3 {
+  color: #0a0a0a;
+  font-size: 12.6px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.brochure-root p,
+.brochure-root li {
+  color: #404040;
+  font-size: 10.9px;
+  line-height: 1.5;
+}
+
+.brochure-section-label {
+  color: #047857;
+  font-size: 8.3px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  line-height: 1.4;
+  margin-bottom: 1.8mm;
+  text-transform: uppercase;
+}
+
+.brochure-no-break {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cover-masthead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8mm;
+}
+
+.cover-masthead img {
+  width: 43mm;
+  height: auto;
+}
+
+.cover-masthead p {
+  max-width: 52mm;
+  color: #737373;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.cover-title-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 12mm;
+  align-items: end;
+  margin-bottom: 7mm;
+}
+
+.cover-subtitle {
+  max-width: 112mm;
+  margin-top: 4mm;
+  color: #262626;
+  font-size: 16.2px;
+  line-height: 1.32;
+}
+
+.cover-audience {
+  padding-left: 7mm;
+  border-left: 2px solid #059669;
+  color: #525252;
+  font-size: 10.8px;
+  line-height: 1.55;
+}
+
+.cover-hero {
+  position: relative;
+  overflow: hidden;
+  height: 73mm;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  background: #f5f5f5;
+}
+
+.cover-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-hero figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 78mm;
+  padding: 3.4mm 4.2mm;
+  background: rgba(255, 255, 255, 0.94);
+  border-left: 2px solid #059669;
+  color: #404040;
+  font-size: 9.2px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.cover-intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 10mm;
+  margin-top: 7mm;
+}
+
+.cover-intro,
+.cover-principles {
+  padding-top: 5mm;
+  border-top: 1px solid #d4d4d4;
+}
+
+.cover-intro h2 {
+  margin-bottom: 3mm;
+}
+
+.cover-intro p + p {
+  margin-top: 3mm;
+}
+
+.cover-principles {
+  display: grid;
+  gap: 3.3mm;
+}
+
+.cover-principles div {
+  padding-left: 4mm;
+  border-left: 1px solid #d4d4d4;
+}
+
+.cover-principles h3 {
+  margin-bottom: 1mm;
+}
+
+.cover-principles p {
+  color: #525252;
+  font-size: 9.9px;
+  line-height: 1.45;
+}
+
+.cover-proof-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5mm;
+  margin-top: auto;
+  padding-top: 5mm;
+}
+
+.cover-proof-band div {
+  min-height: 21mm;
+  padding: 4mm;
+  border-top: 2px solid #059669;
+  background: #f7f8f8;
+}
+
+.cover-proof-band strong {
+  display: block;
+  color: #0a0a0a;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.cover-proof-band span {
+  display: block;
+  margin-top: 1.5mm;
+  color: #525252;
+  font-size: 9.2px;
+  line-height: 1.4;
+}
+
+.page-heading {
+  max-width: 136mm;
+  margin-bottom: 5mm;
+}
+
+.page-heading h2 {
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.wrapper-lead {
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 7mm;
+  align-items: center;
+}
+
+.wrapper-lead > div {
+  display: grid;
+  gap: 4mm;
+}
+
+.wrapper-lead img {
+  display: block;
+  width: 100%;
+  height: 58mm;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f8faf9;
+}
+
+.brochure-callout {
+  padding: 3.2mm 4mm;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  background: #ecfdf5;
+}
+
+.brochure-callout p {
+  color: #047857;
+  font-size: 8.8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.connection-panel {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 8mm;
+  align-items: center;
+  margin-top: 5mm;
+  padding: 4mm 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.connection-panel p:not(.brochure-section-label) {
+  color: #525252;
+  font-size: 9.8px;
+}
+
+.brochure-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2mm;
+  justify-content: flex-end;
+}
+
+.brochure-pills span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 7.2mm;
+  padding: 0 3.2mm;
+  border: 1px solid #d9dddf;
+  border-radius: 8px;
+  background: #fff;
+  color: #404040;
+  font-size: 8.8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.brochure-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+  margin-top: 5mm;
+}
+
+.benefit-card {
+  min-height: 30mm;
+  padding: 3.2mm;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.benefit-card h3 {
+  margin-bottom: 1.5mm;
+  font-size: 10.5px;
+}
+
+.benefit-card p {
+  color: #666;
+  font-size: 9px;
+  line-height: 1.42;
+}
+
+.viewer-spotlight {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 6mm;
+  align-items: stretch;
+  margin-top: 6mm;
+  padding: 5mm;
+  border-top: 2px solid #059669;
+  border-radius: 0 0 8px 8px;
+  background: #f8faf9;
+}
+
+.viewer-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.viewer-copy h2 {
+  margin-bottom: 2.5mm;
+  font-size: 18px;
+}
+
+.viewer-copy > p:not(.brochure-section-label) {
+  margin-bottom: 3mm;
+}
+
+.viewer-spotlight img {
+  display: block;
+  width: 100%;
+  height: 60mm;
+  object-fit: cover;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+}
+
+.brochure-check-list {
+  display: grid;
+  gap: 1.5mm;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.brochure-check-list li {
+  position: relative;
+  padding-left: 4.2mm;
+  color: #4a4a4a;
+  font-size: 9.9px;
+  line-height: 1.42;
+}
+
+.brochure-check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2.2mm;
+  width: 1.7mm;
+  height: 1.7mm;
+  border-radius: 50%;
+  background: #059669;
+}
+
+.context-feature {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 8mm;
+  align-items: center;
+}
+
+.context-feature img {
+  display: block;
+  width: 100%;
+  height: 72mm;
+  object-fit: cover;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+}
+
+.context-feature h2,
+.brochure-panel h2 {
+  margin-bottom: 3mm;
+}
+
+.context-feature p {
+  margin-bottom: 3.5mm;
+}
+
+.supporting-capabilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+  margin-top: 7mm;
+}
+
+.brochure-panel {
+  padding: 5mm;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.brochure-panel p:not(.brochure-section-label) {
+  margin-bottom: 3mm;
+}
+
+.work-steps {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 7mm;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 6mm;
+  border-top: 1px solid #d4d4d4;
+}
+
+.work-steps ol {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.work-steps li {
+  min-height: 26mm;
+  padding: 3.2mm;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f8faf9;
+}
+
+.work-steps span {
+  display: block;
+  color: #047857;
+  font-size: 8.3px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin-bottom: 1.8mm;
+}
+
+.work-steps p {
+  color: #525252;
+  font-size: 9.3px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.proof-heading {
+  max-width: 134mm;
+  margin-bottom: 5mm;
+}
+
+.proof-heading h2 {
+  margin-bottom: 2.2mm;
+  font-size: 22px;
+}
+
+.proof-heading p:not(.brochure-section-label) {
+  color: #525252;
+}
+
+.project-proof-list {
+  display: grid;
+  gap: 4mm;
+}
+
+.project-proof {
+  display: grid;
+  grid-template-columns: 0.39fr 0.61fr;
+  gap: 5mm;
+  align-items: start;
+  padding-top: 4mm;
+  border-top: 1px solid #e5e7eb;
+}
+
+.project-proof:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.project-proof img {
+  display: block;
+  width: 100%;
+  height: 39mm;
+  object-fit: cover;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+}
+
+.project-proof h3 {
+  margin-bottom: 1mm;
+  font-size: 12.8px;
+}
+
+.project-subtitle {
+  color: #525252;
+  font-size: 9.7px;
+  font-style: italic;
+  line-height: 1.35;
+  margin-bottom: 2mm;
+}
+
+.project-body {
+  color: #404040;
+  font-size: 9.7px;
+  line-height: 1.43;
+  margin-bottom: 2mm;
+}
+
+.project-proof ul {
+  display: grid;
+  gap: 1mm;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.project-proof li {
+  position: relative;
+  padding-left: 3.5mm;
+  color: #525252;
+  font-size: 9px;
+  line-height: 1.36;
+}
+
+.project-proof li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.8mm;
+  width: 1.4mm;
+  height: 1.4mm;
+  background: #059669;
+}
+
+.closing-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8mm;
+  align-items: center;
+  margin-top: auto;
+  padding: 5mm;
+  border: 1px solid #d4d4d4;
+  border-left: 3px solid #059669;
+  border-radius: 8px;
+  background: #f8faf9;
+}
+
+.closing-panel h2 {
+  font-size: 18px;
+}
+
+.closing-panel > div:last-child {
+  display: grid;
+  gap: 1.5mm;
+  text-align: right;
+}
+
+.closing-panel a {
+  font-size: 10.4px;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body,
+  #root {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .brochure-root {
+    min-height: auto;
+    background: #fff;
+  }
+
+  .brochure-toolbar {
+    display: none !important;
+  }
+
+  .brochure-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .brochure-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .brochure-root,
+  .brochure-page,
+  .brochure-callout,
+  .cover-hero figcaption,
+  .cover-proof-band div,
+  .viewer-spotlight,
+  .brochure-panel,
+  .work-steps li,
+  .closing-panel {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  img {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a[href^="http"]::after,
+  a[href^="mailto"]::after {
+    content: none;
+  }
+}
