@@ -306,7 +306,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5mm;
-  margin-top: auto;
+  margin-top: 6mm;
   padding-top: 5mm;
 }
 
@@ -336,7 +336,7 @@
 
 .page-heading {
   max-width: 136mm;
-  margin-bottom: 5mm;
+  margin-bottom: 4mm;
 }
 
 .page-heading h2 {
@@ -347,7 +347,7 @@
 .wrapper-lead {
   display: grid;
   grid-template-columns: 1.04fr 0.96fr;
-  gap: 7mm;
+  gap: 6mm;
   align-items: center;
 }
 
@@ -359,7 +359,7 @@
 .wrapper-lead img {
   display: block;
   width: 100%;
-  height: 58mm;
+  height: 50mm;
   object-fit: contain;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -387,7 +387,7 @@
   grid-template-columns: 0.78fr 1.22fr;
   gap: 8mm;
   align-items: center;
-  margin-top: 5mm;
+  margin-top: 4mm;
   padding: 4mm 0;
   border-top: 1px solid #e5e7eb;
   border-bottom: 1px solid #e5e7eb;
@@ -423,11 +423,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2.5mm;
-  margin-top: 5mm;
+  margin-top: 4.5mm;
 }
 
 .benefit-card {
-  min-height: 30mm;
+  min-height: 31mm;
   padding: 3.2mm;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -449,7 +449,7 @@
   grid-template-columns: 0.92fr 1.08fr;
   gap: 6mm;
   align-items: stretch;
-  margin-top: 6mm;
+  margin-top: 5mm;
   padding: 5mm;
   border-top: 2px solid #059669;
   border-radius: 0 0 8px 8px;
@@ -474,7 +474,7 @@
 .viewer-spotlight img {
   display: block;
   width: 100%;
-  height: 60mm;
+  height: 62mm;
   object-fit: cover;
   border: 1px solid #d4d4d4;
   border-radius: 8px;
@@ -555,7 +555,7 @@
   grid-template-columns: 0.7fr 1.3fr;
   gap: 7mm;
   align-items: center;
-  margin-top: auto;
+  margin-top: 8mm;
   padding-top: 6mm;
   border-top: 1px solid #d4d4d4;
 }
@@ -686,7 +686,7 @@
   grid-template-columns: 1fr auto;
   gap: 8mm;
   align-items: center;
-  margin-top: auto;
+  margin-top: 6mm;
   padding: 5mm;
   border: 1px solid #d4d4d4;
   border-left: 3px solid #059669;

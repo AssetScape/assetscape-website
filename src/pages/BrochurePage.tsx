@@ -41,36 +41,36 @@ const openingProof = [
 
 const wrapperBenefits = [
   {
-    title: 'Less switching between tools',
-    text: 'Review related information in one place rather than moving between maps, records and separate interfaces.',
+    title: 'One place to review related information',
+    text: 'Review records, spatial data, imagery and documents together rather than checking each source separately.',
   },
   {
     title: 'Clearer physical context',
-    text: 'Understand how assets, issues and evidence relate to each other on the ground, not just in a database.',
+    text: 'See how assets, issues and evidence relate to each other physically, not only as separate records.',
   },
   {
-    title: 'Shared view for teams',
-    text: 'Give different disciplines a common visual reference point even when data comes from different systems.',
+    title: 'Shared view across teams',
+    text: 'Give different disciplines one visual reference point even when the source data sits in different systems.',
   },
   {
-    title: 'Better review and coordination',
-    text: 'Support clearer discussion, faster review and stronger decision-making around live delivery work.',
+    title: 'Faster review and coordination',
+    text: 'Support clearer discussion, quicker review and stronger decision-making on live delivery work.',
   },
 ]
 
 const workSteps = [
   'Review your current systems and data',
-  'Connect or generate the 3D context',
+  'Connect data and establish the 3D context',
   'Configure AssetScape around your workflows',
-  'Deliver, refine and support ongoing needs',
+  'Deliver, refine and support ongoing use',
 ]
 
 const projectProof = [
   {
     title: 'National Highways Contract Completion Toolkit (CCMT)',
-    subtitle: 'A configurable platform supporting Contract Completion and Handback workflows at scale.',
+    subtitle: 'Configurable platform supporting Contract Completion and Handback workflows at scale.',
     body:
-      "AssetScape provides the platform for National Highways' CCMT system, managing Handback across eight DBFO schemes. The system manages 2,900 km of pavements and over 160,000 assets, including 1,100 structures, within a single connected platform used by National Highways, DBFOs and advisers.",
+      "AssetScape provides the platform for National Highways' CCMT system, supporting Handback across eight DBFO schemes. The system manages 2,900 km of pavements and more than 160,000 assets, including 1,100 structures, within one connected platform used by National Highways, DBFOs and advisers.",
     points: [
       'More than ten organisations and over 100 users working to a common process with full audit trail',
       'Near 50% reduction in repeat site visits on sampled routes within the first three years',
@@ -81,9 +81,9 @@ const projectProof = [
   },
   {
     title: 'National Highways Technology',
-    subtitle: 'Data cleansing of technology assets for the whole National Highways technology network.',
+    subtitle: 'Data cleansing and reconciliation of technology assets across the National Highways network.',
     body:
-      'The project produced a cleansed and reconciled dataset for more than 250,000 roadside technology assets across the Strategic Road Network in England, giving National Highways sub-metre accurate locations and condition intelligence to underpin operations and maintenance contracts.',
+      'The project produced a cleansed and reconciled dataset for more than 250,000 roadside technology assets across the Strategic Road Network in England, giving National Highways sub-metre accurate locations and better information to support operations and maintenance contracts.',
     points: [
       'Semi-automated asset generation, verification and audit workflow driven entirely within AssetScape',
       'Delivered assurance packs with traceable edits and review history for National Highways governance',
@@ -96,7 +96,7 @@ const projectProof = [
     title: 'M3 Junction 2 to 4a Asset Verification',
     subtitle: 'Full corridor asset identification and recording on the M3 between junctions 2 and 4a.',
     body:
-      'AssetScape supported an assured asset inventory covering every asset above ground on the upgraded M3 corridor between junctions 2 and 4a. The post-construction inventory was developed off-site through a desktop approach.',
+      'AssetScape supported an assured post-construction asset inventory covering every above-ground asset on the upgraded M3 corridor between junctions 2 and 4a. The inventory was developed off-site through a desktop approach.',
     points: [
       'Semi-automated workflow for asset creation, verification and audit with full progress tracking',
       'Issues log and spot-check audit trail provided evidence for National Highways assurance gates',
@@ -164,25 +164,24 @@ export function BrochurePage() {
       <BrochurePageFrame variant="brochure-page-cover">
         <div className="cover-masthead">
           <img src={logoImg} alt="AssetScape" />
-          <p>One 3D environment for connected data</p>
+          <p>CONNECTED ASSET DATA IN ONE WORKING 3D ENVIRONMENT</p>
         </div>
 
         <div className="cover-title-grid">
           <div>
             <h1>AssetScape</h1>
             <p className="cover-subtitle">
-              Connect systems, asset data and spatial information in one 3D environment
+              Connect systems, asset data and spatial information in one working 3D environment
             </p>
           </div>
           <p className="cover-audience">
-            AssetScape works across roads, rail, water and broader public infrastructure, supporting asset owners,
-            managing agents, DBFOs, local authorities and delivery partners.
+            Used across roads, rail, water and public infrastructure by asset owners, managing agents, DBFOs, local authorities and delivery partners.
           </p>
         </div>
 
         <figure className="cover-hero">
           <img src={projectCCMTScreenshot1} alt="AssetScape 3D infrastructure corridor with connected asset data" />
-          <figcaption>Connected asset records, evidence and spatial context in one navigable 3D environment.</figcaption>
+          <figcaption>Work with asset records, evidence and spatial context in one navigable 3D environment.</figcaption>
         </figure>
 
         <div className="cover-intro-grid">
@@ -190,30 +189,26 @@ export function BrochurePage() {
             <p className="brochure-section-label">About</p>
             <h2>One 3D environment for connected infrastructure data</h2>
             <p>
-              By combining a multi-dimensional data management approach with our 3D graphics engine, we have created a
-              platform for connecting and visualising infrastructure and asset data. AssetScape&reg; provides one 3D
-              environment for connected infrastructure data, whether as a standalone platform or integrated with existing
-              systems.
+              AssetScape&reg; brings together asset records, GIS, surveys, engineering information, imagery and documents in one usable environment. Teams can review assets in context, manage evidence, support decisions and run practical workflows without replacing the systems already in place.
             </p>
             <p>
-              We work with your teams from initial data setup through to ongoing support, delivering solutions configured
-              for your workflows and systems.
+              We work with your teams from initial data setup through to delivery and ongoing support, configuring the platform around your data, processes and operational needs.
             </p>
           </div>
 
           <aside className="cover-principles">
             <p className="brochure-section-label">In practice</p>
             <div>
-              <h3>Simplify the complex</h3>
-              <p>Bring data together in one place and present it in a useful, informative and manageable way.</p>
+              <h3>Reduce switching between systems</h3>
+              <p>Bring connected data into one place so teams can review it faster and with less manual cross-checking.</p>
             </div>
             <div>
-              <h3>Bring data to life</h3>
-              <p>Combine LiDAR, external databases, shapefiles, mapping, surveys and imagery in a functional 3D environment.</p>
+              <h3>See assets in physical context</h3>
+              <p>Combine spatial data, surveys, imagery and records so teams can understand the asset, its condition and its surroundings together.</p>
             </div>
             <div>
-              <h3>Support practical delivery</h3>
-              <p>Configure modules and workflows around real project, inspection, review and operational needs.</p>
+              <h3>Configure around live workflows</h3>
+              <p>Support handback, inspection, review, verification and operational workflows without forcing every client into the same model.</p>
             </div>
           </aside>
         </div>
@@ -228,22 +223,21 @@ export function BrochurePage() {
         </div>
       </BrochurePageFrame>
 
-      <BrochurePageFrame headerLabel="3D Data Wrapper">
+      <BrochurePageFrame headerLabel="Working with existing systems">
         <div className="page-heading">
-          <p className="brochure-section-label">3D Data Wrapper</p>
-          <h2>A 3D wrapper for your existing infrastructure data and systems</h2>
+          <p className="brochure-section-label">Working with existing systems</p>
+          <h2>Work with existing systems, not against them</h2>
         </div>
 
         <section className="wrapper-lead brochure-no-break">
           <div>
             <p>
-              AssetScape works alongside your existing asset management, GIS, engineering and data systems as a 3D data
-              wrapper. It brings information from multiple sources into one visual environment where teams can review
-              assets, update records, capture decisions and move information back into connected workflows, without
-              replacing the systems already in place.
+              AssetScape works alongside your asset management, GIS, engineering and data systems as a working 3D layer.
+              It brings information from multiple sources into one visual environment where teams can review assets,
+              capture comments and decisions, and move outcomes back into connected processes.
             </p>
             <div className="brochure-callout">
-              <p>Built to complement your current systems, not replace them</p>
+              <p>Built to work with your current systems, not replace them</p>
             </div>
           </div>
           <img src={wrapperDiagramImg} alt="How AssetScape wraps your existing systems" />
@@ -252,7 +246,7 @@ export function BrochurePage() {
         <section className="connection-panel brochure-no-break">
           <div>
             <p className="brochure-section-label">What it connects</p>
-            <p>Systems, records and spatial context that teams often have to review separately.</p>
+            <p>Information that teams often have to review across separate systems, files and interfaces.</p>
           </div>
           <div className="brochure-pills">
             {wrapperInputs.map((item) => (
@@ -275,29 +269,30 @@ export function BrochurePage() {
             <p className="brochure-section-label">Feature spotlight</p>
             <h2>The Structures Viewer</h2>
             <p>
-              The Structures Viewer gives teams a clear 3D view of structures and their components, with tools that
-              support inspection, review and collaboration.
+              The Structures Viewer gives teams a clear 3D view of structures and their components, with tools for
+              inspection, review, comments and supporting evidence.
             </p>
             <ul className="brochure-check-list">
-              <li>Explore structures in 3D, including exploding views of individual elements.</li>
-              <li>Add comments, inspection notes, attachments and supporting photos directly within context.</li>
-              <li>Keep information tied to the relevant structure or component rather than spread across separate files and systems.</li>
+              <li>Explore structures in 3D, including exploded views of individual elements.</li>
+              <li>Add comments, inspection notes, attachments and supporting photos directly against the relevant structure or component.</li>
+              <li>Keep evidence and discussion tied to the correct asset rather than spread across separate files and systems.</li>
             </ul>
           </div>
           <img src={structuresViewerImg} alt="AssetScape Structures Viewer" />
         </section>
       </BrochurePageFrame>
 
-      <BrochurePageFrame headerLabel="Capability and Delivery">
+      <BrochurePageFrame headerLabel="Delivery and Implementation">
         <section className="context-feature brochure-no-break">
           <img src={building3dWorldImg} alt="Building the 3D world from LiDAR, point clouds and imagery" />
           <div>
             <p className="brochure-section-label">Creating context</p>
-            <h2>No 3D environment?<br />
-              We can generate it</h2>
+            <h2>No 3D environment yet?<br />
+              We can create the working context</h2>
             <p>
-              Some clients already have strong geospatial and model data. Others do not. AssetScape can work in both
-              situations. Where the underlying 3D world does not yet exist, we can help create it.
+              Some clients already have strong geospatial or model data. Others do not. AssetScape can work in both
+              situations. Where a usable 3D environment does not yet exist, we can help create the visual and spatial
+              context needed to get started.
             </p>
             <ul className="brochure-check-list">
               <li>Use LiDAR, point clouds, aerial imagery, photography, terrain data and related sources to build usable visual context.</li>
@@ -309,39 +304,38 @@ export function BrochurePage() {
 
         <section className="supporting-capabilities">
           <article className="brochure-panel brochure-no-break">
-            <p className="brochure-section-label">AI-ready data architecture</p>
-            <h2>AI-ready from day one</h2>
+            <p className="brochure-section-label">Data foundation for AI and automation</p>
+            <h2>Better data foundation for AI and automation</h2>
             <p>
-              Many organisations are asking how their existing data and systems can support AI. In practice, the main
-              barrier is often not the AI tool itself, but the condition of the data behind it. AssetScape helps solve
-              that problem by bringing fragmented sources into clearer spatial and operational context.
+              Organisations are asking how current data and systems can support AI and automation. In practice, the main
+              barrier is usually fragmented, inconsistent or hard-to-use data. AssetScape improves structure and context
+              so future search, automation and review workflows are easier to support.
             </p>
             <ul className="brochure-check-list">
               <li>Connect records, documents, imagery and location context in one environment.</li>
-              <li>Help shape data so it is more structured, accessible and usable for future AI-assisted workflows.</li>
+              <li>Improve how data is structured, accessed and reviewed for future search, automation and decision-support workflows.</li>
             </ul>
           </article>
 
           <article className="brochure-panel brochure-no-break">
             <p className="brochure-section-label">Delivery approach</p>
-            <h2>Built around real needs, with faster turnaround</h2>
+            <h2>Built around real delivery needs, with faster turnaround</h2>
             <p>
-              AssetScape is designed to support practical delivery, not force every client into the same rigid model. We
-              take a just-in-time approach, shaping modules and workflows around the real requirement and responding
-              quickly when needs change.
+              AssetScape is designed to support delivery, not force every client into the same rigid model. We shape
+              modules and workflows around the actual requirement and respond quickly when needs change.
             </p>
             <ul className="brochure-check-list">
               <li>Build targeted modules for specific review, inspection or operational needs.</li>
-              <li>Adapt quickly when a new workflow, data source or interface requirement emerges.</li>
-              <li>Offer the responsiveness of a smaller, local team with direct understanding of infrastructure and asset data challenges.</li>
+              <li>Adapt quickly when new workflow, data source or interface needs emerge.</li>
+              <li>Work with a smaller local team that understands infrastructure and asset data challenges.</li>
             </ul>
           </article>
         </section>
 
         <section className="work-steps brochure-no-break">
           <div>
-            <p className="brochure-section-label">From current systems to a working 3D environment</p>
-            <h2>How we work with you</h2>
+            <p className="brochure-section-label">Typical implementation path</p>
+            <h2>How implementation typically works</h2>
           </div>
           <ol>
             {workSteps.map((step, index) => (
@@ -356,11 +350,11 @@ export function BrochurePage() {
 
       <BrochurePageFrame headerLabel="Projects">
         <div className="proof-heading">
-          <p className="brochure-section-label">Applied on real infrastructure projects</p>
-          <h2>Real-world outcomes from delivered projects</h2>
+          <p className="brochure-section-label">Used on live infrastructure projects</p>
+          <h2>Proven on live infrastructure projects</h2>
           <p>
-            AssetScape has already been used across live infrastructure and asset management work, from large-scale data
-            and workflow challenges to focused verification and review tasks.
+            AssetScape has been used across live handback, data cleansing, asset verification and review workflows, from
+            large-scale programmes to focused corridor-level tasks.
           </p>
         </div>
 
@@ -385,7 +379,7 @@ export function BrochurePage() {
         <section className="closing-panel brochure-no-break">
           <div>
             <p className="brochure-section-label">Next step</p>
-            <h2>See how AssetScape can support your next project.</h2>
+            <h2>Request a short demo of AssetScape for your use case.</h2>
           </div>
           <div>
             <a href="mailto:enquiries@assetscape.co.uk">enquiries@assetscape.co.uk</a>
