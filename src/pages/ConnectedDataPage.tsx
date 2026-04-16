@@ -148,6 +148,9 @@ export function ConnectedDataPage() {
             and related sources. The result is a more useful view of your data, shaped around practical delivery
             needs rather than a fixed off-the-shelf model.
           </p>
+          <p className='text-base leading-relaxed text-neutral-700 sm:text-lg'>
+            Once data is brought together in a clearer and more usable structure, AssetScape can also support related delivery needs such as data cleansing, mobile workflows and bespoke features shaped around operational requirements. This helps improve data quality, reduce wasted time and support more informed decision-making.
+          </p>
           <div className='rounded-2xl border border-emerald-200 bg-emerald-50 px-6 py-5 text-center'>
             <p className='text-sm font-semibold uppercase tracking-[0.28em] text-emerald-700 sm:text-[0.8rem]'>
               Built to complement your current systems, not replace them
