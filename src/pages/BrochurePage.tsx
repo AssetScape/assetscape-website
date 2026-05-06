@@ -3,13 +3,13 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import './brochure.css'
 
 import logoImg from '../assets/logo-wordmark-combined.png'
-import wrapperDiagramImg from '../assets/wrapper/wrapperDiagram.png'
-import structuresViewerImg from '../assets/wrapper/structuresViewer.jpg'
-import building3dWorldImg from '../assets/wrapper/building3dWorld.jpg'
-import projectCCMTScreenshot1 from '../assets/projects/projectCCMTScreenshot1.png'
-import projectCCMTCover from '../assets/projects/projectCCMTCover.png'
-import projectHeTechCover from '../assets/projects/projectHeTechCover.png'
-import projectM3Cover from '../assets/projects/projectM3Cover.jpg'
+import wrapperDiagramImg from '../assets/brochure/wrapper-diagram.jpg'
+import structuresViewerImg from '../assets/brochure/structures-viewer.jpg'
+import building3dWorldImg from '../assets/brochure/building-3d-world.jpg'
+import projectCCMTScreenshot1 from '../assets/brochure/cover-hero.jpg'
+import projectCCMTCover from '../assets/brochure/project-ccmt-cover.jpg'
+import projectHeTechCover from '../assets/brochure/project-hetech-cover.jpg'
+import projectM3Cover from '../assets/brochure/project-m3-cover.jpg'
 
 const currentYear = new Date().getFullYear()
 
