@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <title>AssetScape</title>
     <script>
-      // Single-page app redirect for GitHub Pages
-      // Converts the path to a query string so index.html can handle it
-      var pathSegmentsToKeep = 1; // keep /assetscape-website/ prefix
+      // Single-page app redirect for static hosts.
+      // GitHub Pages needs the /assetscape-website/ prefix preserved; the
+      // production domain is served from /.
+      var isGithubProjectPage = window.location.hostname.indexOf('github.io') !== -1 &&
+        window.location.pathname.indexOf('/assetscape-website/') === 0;
+      var pathSegmentsToKeep = isGithubProjectPage ? 1 : 0;
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
