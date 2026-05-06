@@ -1,4 +1,5 @@
 node_modules/
 dist/
+builds/
 BuildPreview.ps1
 BuildPreview.bat
